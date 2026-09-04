@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Send, Twitter, Facebook, Instagram, ShieldCheck, ArrowUpRight } from 'lucide-react';
 
 export const Footer: React.FC = () => {
@@ -15,15 +16,14 @@ export const Footer: React.FC = () => {
           {/* Col 1: Brand & Mantra */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-bulverse-blue text-white font-bold">
-                <svg width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M7 21L12 15L17 19L25 10" stroke="#00D2FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M20 10H25V15" stroke="#00D2FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+              <div className="relative h-10 w-36">
+                <Image
+                  src="/brand/bulverse-logo-white.png"
+                  alt="Bulverse Digital Infrastructure"
+                  fill
+                  className="object-contain object-left"
+                />
               </div>
-              <span className="font-display text-xl font-black text-white tracking-tight">
-                BULVERSE <span className="text-bulverse-cyan">CLOUD</span>
-              </span>
             </div>
 
             <p className="max-w-sm text-xs leading-relaxed text-slate-400">

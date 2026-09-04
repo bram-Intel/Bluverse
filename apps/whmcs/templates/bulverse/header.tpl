@@ -13,13 +13,8 @@
 <body class="bulverse-portal">
   {$headeroutput}
   <header class="bulverse-navbar">
-    <a href="{$WEB_ROOT}/clientarea.php" class="bulverse-brand">
-      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="32" height="32" rx="8" fill="#1B4DF5"/>
-        <path d="M7 21L12 15L17 19L25 10" stroke="#00D2FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M21 10H25V14" stroke="#00D2FF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      BULVERSE <span>CLOUD</span>
+    <a href="{$WEB_ROOT}/clientarea.php" class="bulverse-brand" style="display:flex; align-items:center; gap:12px;">
+      <img src="{$WEB_ROOT}/templates/{$template}/images/logo.png" alt="Bulverse Cloud" style="height:34px; width:auto;">
     </a>
     <nav style="display:flex; align-items:center; gap:20px;">
       <a href="{$WEB_ROOT}/clientarea.php?action=services" style="color:#94A3B8; text-decoration:none; font-size:14px; font-weight:500;">Compute Fleet</a>

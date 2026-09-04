@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Server, Shield, Globe, Terminal, ChevronDown, Menu, X, ArrowUpRight, DollarSign } from 'lucide-react';
 
 interface NavbarProps {
@@ -18,13 +19,15 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         
         {/* Brand Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-tr from-bulverse-blue to-blue-400 shadow-lg shadow-bulverse-blue/30 group-hover:shadow-bulverse-cyan/40 transition-all duration-300">
-            <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M7 21L12 15L17 19L25 10" stroke="#FFFFFF" strokeWidth="2.75" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M20 10H25V15" stroke="#FFFFFF" strokeWidth="2.75" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M6 26H26" stroke="rgba(255,255,255,0.4)" strokeWidth="2" strokeLinecap="round"/>
-            </svg>
+        <Link href="/" className="flex items-center gap-3.5 group">
+          <div className="relative flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-tr from-bulverse-blue to-blue-500/80 p-2 shadow-lg shadow-bulverse-blue/35 group-hover:shadow-bulverse-cyan/50 transition-all duration-300">
+            <Image
+              src="/brand/bulverse-icon-white.png"
+              alt="Bulverse Official Brand Mark"
+              width={34}
+              height={22}
+              className="object-contain drop-shadow"
+            />
             <div className="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-bulverse-cyan ring-2 ring-[#030611] animate-pulse" />
           </div>
           <div>
