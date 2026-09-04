@@ -11,7 +11,6 @@ import { ConfiguratorModal } from '../components/ConfiguratorModal';
 import { Footer } from '../components/Footer';
 import { CATALOG_SERVICES, ServiceCategory, ServiceTier } from '../lib/catalog';
 import { ArrowRight, Sparkles } from 'lucide-react';
-import Image from 'next/image';
 
 export default function HomePage() {
   const [currency, setCurrency] = useState<'NGN' | 'USD'>('NGN');
@@ -101,20 +100,47 @@ export default function HomePage() {
                   </div>
                 </div>
 
+                {/* Clean Enterprise Infrastructure Diagnostic Card (Replaces the poster image) */}
                 <div className="lg:col-span-4 flex justify-center">
-                  <div className="relative p-2.5 rounded-2xl border border-slate-200 bg-white shadow-lg">
-                    <div className="relative w-48 h-64 sm:w-56 sm:h-72 rounded-xl overflow-hidden border border-slate-100">
-                      <Image
-                        src="/brand/bulverse-poster.png"
-                        alt="Bulverse Official Brand Poster"
-                        fill
-                        className="object-cover object-top hover:scale-105 transition-transform duration-500"
-                      />
+                  <div className="w-full max-w-sm rounded-2xl border border-slate-200 bg-slate-50/90 p-6 shadow-sm space-y-4">
+                    <div className="flex items-center justify-between pb-3 border-b border-slate-200">
+                      <div className="flex items-center gap-2">
+                        <span className="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                        <span className="text-xs font-mono font-bold text-[#04052D] uppercase tracking-wider">FLEET TELEMETRY</span>
+                      </div>
+                      <span className="text-xs font-mono font-bold text-bulverse-blue">99.9% SLA</span>
                     </div>
-                    <div className="text-center pt-2.5">
-                      <span className="text-[10px] font-mono font-bold text-bulverse-blue uppercase tracking-widest">
-                        Official Brand Identity Poster
-                      </span>
+
+                    <div className="space-y-3">
+                      <div className="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-between">
+                        <div>
+                          <div className="text-[11px] font-mono text-slate-500 uppercase">Primary Uplink</div>
+                          <div className="text-xs font-bold text-[#04052D]">10 Gbps Redundant Fiber</div>
+                        </div>
+                        <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-50 text-bulverse-blue border border-blue-200">ACTIVE</span>
+                      </div>
+
+                      <div className="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-between">
+                        <div>
+                          <div className="text-[11px] font-mono text-slate-500 uppercase">Storage Architecture</div>
+                          <div className="text-xs font-bold text-[#04052D]">PCIe Gen4 NVMe RAID 10</div>
+                        </div>
+                        <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-emerald-50 text-emerald-600 border border-emerald-200">HEALTHY</span>
+                      </div>
+
+                      <div className="p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-between">
+                        <div>
+                          <div className="text-[11px] font-mono text-slate-500 uppercase">DDoS Mitigation</div>
+                          <div className="text-xs font-bold text-[#04052D]">Layer 3/4 & Layer 7 Shield</div>
+                        </div>
+                        <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-50 text-bulverse-blue border border-blue-200">ARMED</span>
+                      </div>
+                    </div>
+
+                    <div className="pt-2 text-center border-t border-slate-200">
+                      <div className="text-[11px] font-mono font-medium text-slate-500">
+                        Zero Hypervisor Lock-in • 24/7 Operations Monitoring
+                      </div>
                     </div>
                   </div>
                 </div>
