@@ -34,6 +34,14 @@ export const metadata: Metadata = {
     locale: 'en_US',
     type: 'website',
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/brand/bulverse-icon-square.png', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/brand/bulverse-icon-square.png',
+  },
 };
 
 export default function RootLayout({
@@ -44,6 +52,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/brand/bulverse-icon-square.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/brand/bulverse-icon-square.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
