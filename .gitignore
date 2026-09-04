@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Next.js build output
+.next/
+out/
+build/
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Environment & Secrets (NEVER COMMIT CREDENTIALS)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+configuration.php
+*.key
+*.pem
+*.cert
+
+# WHMCS Vendor and Cache
+apps/whmcs/vendor/
+apps/whmcs/templates_c/
+apps/whmcs/downloads/
+apps/whmcs/attachments/
+
+# IDE & OS
+.DS_Store
+Thumbs.db
