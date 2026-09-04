@@ -10,17 +10,18 @@ const config: Config = {
     extend: {
       colors: {
         bulverse: {
-          blue: '#1B4DF5',
-          'blue-hover': '#1640D6',
-          'blue-dark': '#0B2174',
+          blue: '#0416C0',          // Poster Deep Royal Blue
+          'blue-hover': '#020E8A',
+          'blue-soft': '#EEF2FF',
+          'blue-light': '#E0E7FF',
+          navy: '#04052D',          // Poster Midnight Text
           cyan: '#00D2FF',
-          'cyan-glow': 'rgba(0, 210, 255, 0.35)',
-          void: '#030611',
-          card: '#080E24',
-          'card-hover': '#0E1738',
-          border: 'rgba(255, 255, 255, 0.08)',
-          'border-active': 'rgba(27, 77, 245, 0.5)',
-          muted: '#94A3B8',
+          canvas: '#F8FAFC',        // Poster Clean Off-White
+          card: '#FFFFFF',
+          border: '#E2E8F0',
+          'border-hover': '#93C5FD',
+          pill: '#0312B4',          // Poster Solid Blue Pill
+          muted: '#475569',
           subtle: '#64748B',
           active: '#10B981',
           warning: '#F59E0B',
@@ -33,25 +34,18 @@ const config: Config = {
         mono: ['var(--font-mono)', 'JetBrains Mono', 'monospace'],
       },
       boxShadow: {
-        'glow-blue': '0 0 40px -10px rgba(27, 77, 245, 0.5)',
-        'glow-cyan': '0 0 35px -8px rgba(0, 210, 255, 0.45)',
-        'pedestal': '0 20px 60px -15px rgba(27, 77, 245, 0.3)',
+        'poster-card': '0 4px 20px -2px rgba(4, 22, 192, 0.06), 0 2px 6px -1px rgba(0, 0, 0, 0.04)',
+        'poster-card-hover': '0 12px 30px -4px rgba(4, 22, 192, 0.12), 0 4px 10px -2px rgba(0, 0, 0, 0.05)',
+        'pedestal-light': '0 25px 60px -15px rgba(4, 22, 192, 0.25)',
       },
       animation: {
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'float': 'float 6s ease-in-out infinite',
-        'orbit-1': 'orbit 12s linear infinite',
-        'orbit-2': 'orbit 18s linear infinite reverse',
-        'ping-slow': 'ping 2.5s cubic-bezier(0, 0, 0.2, 1) infinite',
       },
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-10px)' },
-        },
-        orbit: {
-          '0%': { transform: 'rotate(0deg) translateX(120px) rotate(0deg)' },
-          '100%': { transform: 'rotate(360deg) translateX(120px) rotate(-360deg)' },
+          '50%': { transform: 'translateY(-8px)' },
         },
       },
     },

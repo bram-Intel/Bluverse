@@ -10,7 +10,7 @@ import { TerminalSimulator } from '../components/TerminalSimulator';
 import { ConfiguratorModal } from '../components/ConfiguratorModal';
 import { Footer } from '../components/Footer';
 import { CATALOG_SERVICES, ServiceCategory, ServiceTier } from '../lib/catalog';
-import { ArrowRight, Sparkles, CheckCircle2, Shield } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 import Image from 'next/image';
 
 export default function HomePage() {
@@ -28,15 +28,15 @@ export default function HomePage() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#030611] selection:bg-bulverse-blue selection:text-white">
-      {/* Top Brand Navbar */}
+    <div className="flex min-h-screen flex-col bg-[#FAFBFD] selection:bg-bulverse-blue selection:text-white">
+      {/* Top Brand Navbar in Clean White */}
       <Navbar
         currency={currency}
         onToggleCurrency={toggleCurrency}
       />
 
       <main className="flex-1">
-        {/* Hero Section featuring 3D Blade Server Rack & Orbit Nodes */}
+        {/* Hero Section Recreating Poster 3D Server Blade Assembly */}
         <Hero
           onOpenConfigurator={() => {
             setActiveTier(CATALOG_SERVICES[0].tiers[1]);
@@ -44,10 +44,10 @@ export default function HomePage() {
           }}
         />
 
-        {/* 5 Core Trust Badges from Poster */}
+        {/* 5 Core Trust Badges from Poster Bottom Banner */}
         <TrustBadges />
 
-        {/* 6 Infrastructure Service Pillars Grid */}
+        {/* 6 Infrastructure Service Pillars Grid in Poster White & Royal Blue */}
         <ServicePillars
           currency={currency}
           onSelectTier={handleOpenConfiguratorWithTier}
@@ -60,21 +60,23 @@ export default function HomePage() {
         <TerminalSimulator />
 
         {/* Enterprise Callout / Brand Identity Showcase */}
-        <section className="py-20 relative overflow-hidden bg-gradient-to-b from-[#030611] via-[#060B20] to-[#030611] border-t border-white/[0.06]">
+        <section className="py-20 bg-[#F5F8FE] border-b border-slate-200 relative overflow-hidden">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="rounded-3xl border border-white/15 bg-gradient-to-r from-blue-950/40 via-[#080E24] to-cyan-950/30 p-8 sm:p-12 backdrop-blur-2xl relative">
+            <div className="rounded-3xl border border-blue-200 bg-white p-8 sm:p-12 shadow-poster-card relative">
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 
                 <div className="lg:col-span-8 space-y-4">
-                  <div className="inline-flex items-center gap-2 text-xs font-mono text-bulverse-cyan uppercase tracking-widest">
+                  <div className="inline-flex items-center gap-2 text-xs font-mono font-bold text-bulverse-blue uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
                     <Sparkles className="h-4 w-4" />
-                    <span>BUILT FOR HYPER-GROWTH WORKLOADS</span>
+                    <span>BUILT FOR SCALE WITHOUT ARCHITECTURAL REPLACEMENT</span>
                   </div>
-                  <h3 className="font-display text-2xl sm:text-4xl font-black text-white uppercase tracking-tight">
-                    Scale From 1 VPS to Multi-Region Cluster Without Architectural Replacement
+
+                  <h3 className="font-display text-2xl sm:text-4xl font-black text-[#04052D] uppercase tracking-tight">
+                    Scale From 1 VPS to Multi-Region Cloud Fleet Seamlessly
                   </h3>
-                  <p className="text-sm text-slate-300 max-w-2xl leading-relaxed">
-                    Bulverse abstracts hypervisors and providers beneath a single unified control plane. Launch today with guaranteed enterprise SLA, and expand your compute capacity on demand.
+
+                  <p className="text-sm text-slate-600 max-w-2xl leading-relaxed">
+                    Bulverse separates the customer storefront, the commerce automation engine, and the compute hypervisor fleet. Launch with confidence and expand your compute capacity without changing a single line of customer-facing architecture.
                   </p>
                   
                   <div className="pt-2 flex flex-wrap gap-4">
@@ -82,7 +84,7 @@ export default function HomePage() {
                       href="https://portal.bulverse.com/cart.php"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-xl bg-bulverse-blue px-6 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-lg hover:bg-bulverse-blue-hover transition-all"
+                      className="inline-flex items-center gap-2 rounded-xl bg-bulverse-blue px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-md shadow-bulverse-blue/20 hover:bg-bulverse-blue-hover transition-all"
                     >
                       <span>Deploy Server Instance</span>
                       <ArrowRight className="h-4 w-4" />
@@ -92,7 +94,7 @@ export default function HomePage() {
                       href="https://portal.bulverse.com/contact.php"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] px-6 py-3 text-xs font-semibold text-white hover:bg-white/[0.08] transition-colors"
+                      className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-slate-50 px-6 py-3.5 text-xs font-bold text-slate-800 hover:border-bulverse-blue hover:text-bulverse-blue transition-colors"
                     >
                       <span>Contact Solutions Engineer</span>
                     </a>
@@ -100,8 +102,8 @@ export default function HomePage() {
                 </div>
 
                 <div className="lg:col-span-4 flex justify-center">
-                  <div className="relative p-2 rounded-2xl border border-white/10 bg-black/40 shadow-2xl">
-                    <div className="relative w-48 h-64 sm:w-56 sm:h-72 rounded-xl overflow-hidden">
+                  <div className="relative p-2.5 rounded-2xl border border-slate-200 bg-white shadow-lg">
+                    <div className="relative w-48 h-64 sm:w-56 sm:h-72 rounded-xl overflow-hidden border border-slate-100">
                       <Image
                         src="/brand/bulverse-poster.png"
                         alt="Bulverse Official Brand Poster"
@@ -109,9 +111,9 @@ export default function HomePage() {
                         className="object-cover object-top hover:scale-105 transition-transform duration-500"
                       />
                     </div>
-                    <div className="text-center pt-2">
-                      <span className="text-[10px] font-mono text-slate-400 uppercase tracking-widest">
-                        Official Brand Identity
+                    <div className="text-center pt-2.5">
+                      <span className="text-[10px] font-mono font-bold text-bulverse-blue uppercase tracking-widest">
+                        Official Brand Identity Poster
                       </span>
                     </div>
                   </div>

@@ -9,42 +9,39 @@
 }
 
 body {
-  background-color: #030611;
-  color: #FFFFFF;
+  background-color: #F8FAFC;
+  color: #04052D;
   font-family: var(--font-sans);
   overflow-x: hidden;
-  selection-background-color: #1B4DF5;
-  selection-color: #FFFFFF;
 }
 
 ::selection {
-  background-color: #1B4DF5;
+  background-color: #0416C0;
   color: #FFFFFF;
 }
 
-/* Custom Scrollbar for Dark Engineering Theme */
+/* Custom Clean Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #030611;
+  background: #F1F5F9;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #111A3E;
+  background: #CBD5E1;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #1B4DF5;
+  background: #0416C0;
 }
 
-/* Subtle Glassmorphism Utility */
-.glass-panel {
-  background: rgba(8, 14, 36, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+/* Poster Subtle Dotted Pattern */
+.poster-dots {
+  background-image: radial-gradient(#0416C0 1.5px, transparent 1.5px);
+  background-size: 16px 16px;
+  opacity: 0.18;
 }

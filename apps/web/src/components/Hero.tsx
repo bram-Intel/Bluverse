@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, Terminal, ShieldCheck, Zap, Server, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Server, CheckCircle2 } from 'lucide-react';
 import { HeroBladeRack } from './HeroBladeRack';
 
 interface HeroProps {
@@ -11,75 +11,90 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenConfigurator }) => {
   return (
-    <section className="relative overflow-hidden pt-8 pb-16 lg:pt-14 lg:pb-24 border-b border-white/[0.06]">
-      {/* Background Matrix Grid Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f293710_1px,transparent_1px),linear-gradient(to_bottom,#1f293710_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
+    <section className="relative overflow-hidden pt-10 pb-16 lg:pt-16 lg:pb-24 bg-gradient-to-b from-[#FAFBFD] via-[#F5F8FE] to-[#FAFBFD] border-b border-slate-200/80">
+      
+      {/* Poster Signature Blue Dotted Grid (Top Right) */}
+      <div className="absolute top-8 right-8 sm:right-16 z-10 pointer-events-none hidden sm:block">
+        <div className="grid grid-cols-5 gap-3 opacity-60">
+          {Array.from({ length: 25 }).map((_, i) => (
+            <div key={i} className="h-2 w-2 rounded-full bg-bulverse-blue" />
+          ))}
+        </div>
+      </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
-          {/* Left Hero Column: Typography & Intent */}
-          <div className="lg:col-span-7 space-y-7 text-center lg:text-left">
+          {/* Left Hero Column: Exact Typography from Poster */}
+          <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
             
             {/* Live Operational Status Tag */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-bulverse-blue/40 bg-bulverse-blue/10 px-3.5 py-1.5 text-xs font-mono text-bulverse-cyan backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50/80 px-3.5 py-1 text-xs font-mono text-bulverse-blue shadow-sm">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-bulverse-cyan opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              <span>FLEET STATUS: 100% OPERATIONAL • PROVISIONING ACTIVE</span>
+              <span className="font-semibold tracking-wide">ENTERPRISE CLOUD • PROVISIONING READY</span>
             </div>
 
-            {/* Poster Tagline (Preserved Exactly) */}
-            <h1 className="font-display text-4xl sm:text-6xl xl:text-7xl font-black tracking-tight text-white uppercase leading-[1.06]">
+            {/* Poster Headline */}
+            <h1 className="font-display text-4xl sm:text-6xl xl:text-7xl font-black tracking-tight text-[#04052D] uppercase leading-[1.08]">
               YOUR DIGITAL <br />
-              <span className="bg-gradient-to-r from-bulverse-blue via-blue-400 to-bulverse-cyan bg-clip-text text-transparent">
+              <span className="text-bulverse-blue">
                 INFRASTRUCTURE,
               </span> <br />
               ALL IN ONE PLACE.
             </h1>
 
-            {/* Sub-headline from Poster */}
-            <p className="max-w-2xl text-base sm:text-lg text-slate-300 font-normal leading-relaxed">
-              <span className="text-white font-semibold">Powerful. Reliable. Scalable.</span> Everything you need to{' '}
-              <span className="text-bulverse-cyan font-semibold">build</span>,{' '}
-              <span className="text-white font-semibold">run</span> and{' '}
-              <span className="text-bulverse-blue font-semibold">grow</span> your business online. From high-speed Cloud VPS to institutional trading infrastructure.
-            </p>
+            {/* Poster Signature Blue Accent Bar */}
+            <div className="w-16 h-1.5 bg-bulverse-blue rounded-full mx-auto lg:mx-0 -mt-2" />
 
-            {/* Feature Checklist Chips */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-1 max-w-xl mx-auto lg:mx-0">
-              <div className="flex items-center gap-2 text-xs text-slate-300 font-medium">
-                <CheckCircle2 className="h-4 w-4 text-bulverse-cyan shrink-0" />
+            {/* Supporting Text directly from Poster */}
+            <div className="space-y-1 text-slate-700 text-base sm:text-lg max-w-2xl leading-relaxed">
+              <p className="font-medium">
+                Powerful. Reliable. Scalable.
+              </p>
+              <p className="text-slate-600">
+                Everything you need to{' '}
+                <span className="text-bulverse-blue font-bold">build</span>,{' '}
+                <span className="text-bulverse-blue font-bold">run</span> and{' '}
+                <span className="text-bulverse-blue font-bold">grow</span> your business online.
+              </p>
+            </div>
+
+            {/* Feature Checklist */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 max-w-xl mx-auto lg:mx-0">
+              <div className="flex items-center gap-2 text-xs font-semibold text-slate-800">
+                <CheckCircle2 className="h-4 w-4 text-bulverse-blue shrink-0" />
                 <span>PCIe Gen4 NVMe</span>
               </div>
-              <div className="flex items-center gap-2 text-xs text-slate-300 font-medium">
-                <CheckCircle2 className="h-4 w-4 text-bulverse-cyan shrink-0" />
-                <span>32TB Monthly Traffic</span>
+              <div className="flex items-center gap-2 text-xs font-semibold text-slate-800">
+                <CheckCircle2 className="h-4 w-4 text-bulverse-blue shrink-0" />
+                <span>32TB Outbound Traffic</span>
               </div>
-              <div className="flex items-center gap-2 text-xs text-slate-300 font-medium">
-                <CheckCircle2 className="h-4 w-4 text-bulverse-cyan shrink-0" />
-                <span>Full Root & SSH</span>
+              <div className="flex items-center gap-2 text-xs font-semibold text-slate-800">
+                <CheckCircle2 className="h-4 w-4 text-bulverse-blue shrink-0" />
+                <span>Full Root Access</span>
               </div>
-              <div className="flex items-center gap-2 text-xs text-slate-300 font-medium">
-                <CheckCircle2 className="h-4 w-4 text-bulverse-cyan shrink-0" />
+              <div className="flex items-center gap-2 text-xs font-semibold text-slate-800">
+                <CheckCircle2 className="h-4 w-4 text-bulverse-blue shrink-0" />
                 <span>99.9% Uptime SLA</span>
               </div>
-              <div className="flex items-center gap-2 text-xs text-slate-300 font-medium">
-                <CheckCircle2 className="h-4 w-4 text-bulverse-cyan shrink-0" />
+              <div className="flex items-center gap-2 text-xs font-semibold text-slate-800">
+                <CheckCircle2 className="h-4 w-4 text-bulverse-blue shrink-0" />
                 <span>cPanel Included</span>
               </div>
-              <div className="flex items-center gap-2 text-xs text-slate-300 font-medium">
-                <CheckCircle2 className="h-4 w-4 text-bulverse-cyan shrink-0" />
-                <span>Sub-ms Trading VPS</span>
+              <div className="flex items-center gap-2 text-xs font-semibold text-slate-800">
+                <CheckCircle2 className="h-4 w-4 text-bulverse-blue shrink-0" />
+                <span>Trading VPS Ready</span>
               </div>
             </div>
 
-            {/* Call to Actions */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
+            {/* Action Buttons */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-3">
               <button
                 onClick={onOpenConfigurator}
-                className="group relative inline-flex items-center gap-2.5 rounded-xl bg-bulverse-blue px-6 py-3.5 text-sm font-bold text-white shadow-xl shadow-bulverse-blue/35 hover:bg-bulverse-blue-hover hover:shadow-bulverse-cyan/25 transition-all active:scale-[0.98]"
+                className="group inline-flex items-center gap-2.5 rounded-xl bg-bulverse-blue px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-bulverse-blue/25 hover:bg-bulverse-blue-hover transition-all active:scale-[0.98]"
               >
                 <span>Deploy Cloud VPS Now</span>
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
@@ -87,21 +102,21 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConfigurator }) => {
 
               <Link
                 href="#catalog"
-                className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/[0.04] px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/[0.08] hover:border-white/25 transition-all"
+                className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-bold text-slate-800 hover:border-bulverse-blue hover:text-bulverse-blue shadow-sm transition-all"
               >
-                <Server className="h-4 w-4 text-bulverse-cyan" />
-                <span>Explore 6 Pillars</span>
+                <Server className="h-4 w-4 text-bulverse-blue" />
+                <span>Explore 6 Services</span>
               </Link>
             </div>
 
-            {/* Brand Mantra Accent */}
-            <div className="pt-2 text-xs font-mono uppercase tracking-widest text-slate-400">
+            {/* Brand Mantra Accent from Poster */}
+            <div className="pt-2 text-xs font-mono font-bold uppercase tracking-widest text-bulverse-blue">
               BUILD. RUN. GROW WITH BULVERSE CLOUD.
             </div>
 
           </div>
 
-          {/* Right Hero Column: Bespoke 3D Blade Server Visual */}
+          {/* Right Hero Column: 3D Server Blade Visual */}
           <div className="lg:col-span-5 flex justify-center">
             <HeroBladeRack />
           </div>

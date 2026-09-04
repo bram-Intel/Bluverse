@@ -1,20 +1,18 @@
 /* ==========================================================================
-   BULVERSE WHMCS CHILD THEME — PRECISION INFRASTRUCTURE STYLES
+   BULVERSE WHMCS CHILD THEME — POSTER BRAND IDENTITY (CLEAN LIGHT THEME)
    ========================================================================== */
 
 :root {
-  --bulverse-primary: #1B4DF5;
-  --bulverse-primary-hover: #1640D6;
-  --bulverse-primary-glow: rgba(27, 77, 245, 0.35);
-  --bulverse-accent: #00D2FF;
-  --bulverse-accent-glow: rgba(0, 210, 255, 0.3);
-  --bulverse-bg: #030611;
-  --bulverse-surface: #0A0F24;
-  --bulverse-surface-elevated: #111A3A;
-  --bulverse-border: rgba(255, 255, 255, 0.08);
-  --bulverse-border-focus: rgba(27, 77, 245, 0.5);
-  --bulverse-text: #FFFFFF;
-  --bulverse-text-muted: #94A3B8;
+  --bulverse-primary: #0416C0;
+  --bulverse-primary-hover: #020E8A;
+  --bulverse-primary-glow: rgba(4, 22, 192, 0.2);
+  --bulverse-bg: #F8FAFC;
+  --bulverse-surface: #FFFFFF;
+  --bulverse-surface-elevated: #F1F5F9;
+  --bulverse-border: #E2E8F0;
+  --bulverse-border-focus: #0416C0;
+  --bulverse-text: #04052D;
+  --bulverse-text-muted: #64748B;
   --bulverse-font-display: 'Space Grotesk', -apple-system, sans-serif;
   --bulverse-font-mono: 'JetBrains Mono', monospace;
 }
@@ -30,7 +28,7 @@ body.bulverse-portal {
 
 /* Header & Navigation Bar */
 .bulverse-navbar {
-  background: rgba(10, 15, 36, 0.85);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--bulverse-border);
   padding: 14px 28px;
@@ -43,16 +41,7 @@ body.bulverse-portal {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-family: var(--bulverse-font-display);
-  font-size: 20px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: #FFFFFF;
   text-decoration: none;
-}
-
-.bulverse-brand span {
-  color: var(--bulverse-accent);
 }
 
 /* Stat Widgets */
@@ -68,6 +57,7 @@ body.bulverse-portal {
   border: 1px solid var(--bulverse-border);
   border-radius: 16px;
   padding: 24px;
+  box-shadow: 0 4px 15px -2px rgba(4, 22, 192, 0.05);
   position: relative;
   overflow: hidden;
   transition: border-color 0.2s ease, transform 0.2s ease;
@@ -79,7 +69,8 @@ body.bulverse-portal {
 }
 
 .bulverse-stat-label {
-  font-size: 13px;
+  font-size: 12px;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--bulverse-text-muted);
@@ -88,9 +79,9 @@ body.bulverse-portal {
 
 .bulverse-stat-value {
   font-size: 32px;
-  font-weight: 700;
+  font-weight: 800;
   font-family: var(--bulverse-font-display);
-  color: #FFFFFF;
+  color: var(--bulverse-text);
 }
 
 /* Server Table & Inventory */
@@ -98,6 +89,7 @@ body.bulverse-portal {
   background: var(--bulverse-surface);
   border: 1px solid var(--bulverse-border);
   border-radius: 16px;
+  box-shadow: 0 4px 15px -2px rgba(4, 22, 192, 0.05);
   overflow: hidden;
 }
 
@@ -107,6 +99,7 @@ body.bulverse-portal {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: #FFFFFF;
 }
 
 .bulverse-status-pill {
@@ -114,22 +107,22 @@ body.bulverse-portal {
   align-items: center;
   gap: 6px;
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   padding: 4px 10px;
   border-radius: 9999px;
 }
 
 .bulverse-status-active {
-  background: rgba(16, 185, 129, 0.12);
-  color: #10B981;
+  background: rgba(16, 185, 129, 0.1);
+  color: #059669;
   border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
 .bulverse-btn-primary {
   background: var(--bulverse-primary);
   color: #FFFFFF;
-  font-weight: 600;
+  font-weight: 700;
   border: none;
   padding: 10px 20px;
   border-radius: 10px;

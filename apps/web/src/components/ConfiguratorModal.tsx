@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { X, Server, Check, Shield, Cpu, HardDrive, Globe, ArrowRight } from 'lucide-react';
+import { X, Server, ArrowRight } from 'lucide-react';
 import { CATALOG_SERVICES, DATACENTERS, ServiceCategory, ServiceTier } from '../lib/catalog';
 
 interface ConfiguratorModalProps {
@@ -50,41 +50,40 @@ export const ConfiguratorModal: React.FC<ConfiguratorModalProps> = ({
   ];
 
   const handleDeploy = () => {
-    // Direct redirect to WHMCS cart with configuration query
     const whmcsUrl = `https://portal.bulverse.com/cart.php?a=add&pid=${selectedTier.whmcsPid}&billingcycle=monthly&os=${selectedOs}&datacenter=${selectedRegion}&hostname=${encodeURIComponent(hostname)}&backups=${addonBackups ? 1 : 0}&ip=${addonDedicatedIp ? 1 : 0}`;
     window.open(whmcsUrl, '_blank');
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl border border-white/15 bg-[#080E24] shadow-2xl p-6 sm:p-8 text-white">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-200">
+      <div className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl border border-slate-200 bg-white shadow-2xl p-6 sm:p-8 text-[#04052D]">
         
         {/* Header */}
-        <div className="flex items-center justify-between pb-5 border-b border-white/10">
+        <div className="flex items-center justify-between pb-5 border-b border-slate-200">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-bulverse-blue/20 text-bulverse-cyan border border-bulverse-blue/40">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-bulverse-blue border border-blue-200">
               <Server className="h-5 w-5" />
             </div>
             <div>
-              <h3 className="font-display text-xl font-bold uppercase tracking-tight">
+              <h3 className="font-display text-xl font-bold uppercase tracking-tight text-[#04052D]">
                 Server Provisioning Configurator
               </h3>
-              <p className="text-xs text-slate-400 font-mono">
+              <p className="text-xs text-slate-500 font-mono">
                 Select compute tier, operating system image, and target datacenter.
               </p>
             </div>
           </div>
           <button
             onClick={onClose}
-            className="p-2 rounded-xl text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
+            className="p-2 rounded-xl text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors"
           >
             <X className="h-5 w-5" />
           </button>
         </div>
 
         {/* Step 1: Select Tier */}
-        <div className="py-5 border-b border-white/10">
-          <div className="text-xs font-mono font-bold uppercase tracking-wider text-bulverse-cyan mb-3">
+        <div className="py-5 border-b border-slate-200">
+          <div className="text-xs font-mono font-bold uppercase tracking-wider text-bulverse-blue mb-3">
             1. Select Compute Capacity Tier
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
@@ -94,17 +93,17 @@ export const ConfiguratorModal: React.FC<ConfiguratorModalProps> = ({
                 <button
                   key={tier.id}
                   onClick={() => setSelectedTier(tier)}
-                  className={`p-3.5 rounded-2xl border text-left transition-all ${
+                  className={`p-3.5 rounded-xl border text-left transition-all ${
                     isSelected
-                      ? 'border-bulverse-cyan bg-bulverse-blue/20 ring-1 ring-bulverse-cyan shadow-md'
-                      : 'border-white/10 bg-white/[0.02] hover:border-white/20'
+                      ? 'border-bulverse-blue bg-blue-50/80 ring-2 ring-bulverse-blue shadow-sm'
+                      : 'border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50'
                   }`}
                 >
-                  <div className="text-xs font-bold text-white mb-1">{tier.name}</div>
-                  <div className="text-[11px] text-slate-400 font-mono">{tier.specs.cpu}</div>
-                  <div className="text-[11px] text-slate-400 font-mono">{tier.specs.ram}</div>
-                  <div className="text-[11px] text-slate-400 font-mono">{tier.specs.storage}</div>
-                  <div className="text-sm font-bold text-bulverse-cyan font-mono mt-2">
+                  <div className="text-xs font-bold text-slate-900 mb-1">{tier.name}</div>
+                  <div className="text-[11px] text-slate-500 font-mono">{tier.specs.cpu}</div>
+                  <div className="text-[11px] text-slate-500 font-mono">{tier.specs.ram}</div>
+                  <div className="text-[11px] text-slate-500 font-mono">{tier.specs.storage}</div>
+                  <div className="text-sm font-bold text-bulverse-blue font-mono mt-2">
                     {currency === 'NGN' ? `₦${tier.priceNgn.toLocaleString()}` : `$${tier.priceUsd.toFixed(2)}`} / mo
                   </div>
                 </button>
@@ -114,8 +113,8 @@ export const ConfiguratorModal: React.FC<ConfiguratorModalProps> = ({
         </div>
 
         {/* Step 2: Datacenter Region */}
-        <div className="py-5 border-b border-white/10">
-          <div className="text-xs font-mono font-bold uppercase tracking-wider text-bulverse-cyan mb-3">
+        <div className="py-5 border-b border-slate-200">
+          <div className="text-xs font-mono font-bold uppercase tracking-wider text-bulverse-blue mb-3">
             2. Datacenter Region Co-Location
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
@@ -125,26 +124,26 @@ export const ConfiguratorModal: React.FC<ConfiguratorModalProps> = ({
                 onClick={() => setSelectedRegion(dc.id)}
                 className={`p-3 rounded-xl border flex items-center justify-between text-left transition-all ${
                   selectedRegion === dc.id
-                    ? 'border-bulverse-cyan bg-bulverse-blue/20 ring-1 ring-bulverse-cyan'
-                    : 'border-white/10 bg-white/[0.02] hover:border-white/20'
+                    ? 'border-bulverse-blue bg-blue-50/80 ring-2 ring-bulverse-blue'
+                    : 'border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50'
                 }`}
               >
                 <div>
-                  <div className="text-xs font-bold flex items-center gap-1.5">
+                  <div className="text-xs font-bold text-slate-900 flex items-center gap-1.5">
                     <span>{dc.flag}</span>
                     <span>{dc.city}</span>
                   </div>
-                  <div className="text-[10px] text-slate-400 font-mono">{dc.region}</div>
+                  <div className="text-[10px] text-slate-500 font-mono">{dc.region}</div>
                 </div>
-                <span className="text-[10px] font-mono text-emerald-400">~{dc.ping}ms</span>
+                <span className="text-[10px] font-mono font-bold text-emerald-600">~{dc.ping}ms</span>
               </button>
             ))}
           </div>
         </div>
 
         {/* Step 3: Operating System */}
-        <div className="py-5 border-b border-white/10">
-          <div className="text-xs font-mono font-bold uppercase tracking-wider text-bulverse-cyan mb-3">
+        <div className="py-5 border-b border-slate-200">
+          <div className="text-xs font-mono font-bold uppercase tracking-wider text-bulverse-blue mb-3">
             3. Operating System Distribution
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -154,57 +153,57 @@ export const ConfiguratorModal: React.FC<ConfiguratorModalProps> = ({
                 onClick={() => setSelectedOs(os.id)}
                 className={`p-3 rounded-xl border text-left transition-all ${
                   selectedOs === os.id
-                    ? 'border-bulverse-cyan bg-bulverse-blue/20 ring-1 ring-bulverse-cyan'
-                    : 'border-white/10 bg-white/[0.02] hover:border-white/20'
+                    ? 'border-bulverse-blue bg-blue-50/80 ring-2 ring-bulverse-blue'
+                    : 'border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50'
                 }`}
               >
-                <div className="text-xs font-bold text-white">{os.name}</div>
-                <div className="text-[11px] text-slate-400">{os.desc}</div>
+                <div className="text-xs font-bold text-slate-900">{os.name}</div>
+                <div className="text-[11px] text-slate-500">{os.desc}</div>
               </button>
             ))}
           </div>
         </div>
 
         {/* Step 4: Hostname & Add-ons */}
-        <div className="py-5 border-b border-white/10 space-y-4">
+        <div className="py-5 border-b border-slate-200 space-y-4">
           <div>
-            <label className="block text-xs font-mono uppercase text-slate-400 mb-1.5">
+            <label className="block text-xs font-mono font-bold uppercase text-slate-600 mb-1.5">
               Server Hostname
             </label>
             <input
               type="text"
               value={hostname}
               onChange={(e) => setHostname(e.target.value)}
-              className="w-full rounded-xl border border-white/10 bg-black/40 px-3.5 py-2 text-xs font-mono text-white focus:border-bulverse-cyan focus:outline-none"
+              className="w-full rounded-xl border border-slate-300 bg-slate-50 px-3.5 py-2 text-xs font-mono text-slate-900 focus:border-bulverse-blue focus:bg-white focus:outline-none"
             />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-            <label className="flex items-center gap-3 p-3 rounded-xl border border-white/10 bg-white/[0.02] cursor-pointer hover:bg-white/[0.04]">
+            <label className="flex items-center gap-3 p-3 rounded-xl border border-slate-200 bg-slate-50/50 cursor-pointer hover:bg-slate-100">
               <input
                 type="checkbox"
                 checked={addonBackups}
                 onChange={(e) => setAddonBackups(e.target.checked)}
-                className="rounded border-white/20 bg-black text-bulverse-blue focus:ring-0"
+                className="rounded border-slate-300 text-bulverse-blue focus:ring-bulverse-blue"
               />
               <div className="text-xs">
-                <div className="font-bold text-white">Daily Cloud Snapshots</div>
-                <div className="text-slate-400 text-[11px]">
+                <div className="font-bold text-slate-900">Daily Cloud Snapshots</div>
+                <div className="text-slate-500 text-[11px]">
                   +{currency === 'NGN' ? `₦${backupPrice.toLocaleString()}` : `$${backupPrice.toFixed(2)}`} / mo
                 </div>
               </div>
             </label>
 
-            <label className="flex items-center gap-3 p-3 rounded-xl border border-white/10 bg-white/[0.02] cursor-pointer hover:bg-white/[0.04]">
+            <label className="flex items-center gap-3 p-3 rounded-xl border border-slate-200 bg-slate-50/50 cursor-pointer hover:bg-slate-100">
               <input
                 type="checkbox"
                 checked={addonDedicatedIp}
                 onChange={(e) => setAddonDedicatedIp(e.target.checked)}
-                className="rounded border-white/20 bg-black text-bulverse-blue focus:ring-0"
+                className="rounded border-slate-300 text-bulverse-blue focus:ring-bulverse-blue"
               />
               <div className="text-xs">
-                <div className="font-bold text-white">Additional Dedicated IPv4</div>
-                <div className="text-slate-400 text-[11px]">
+                <div className="font-bold text-slate-900">Additional Dedicated IPv4</div>
+                <div className="text-slate-500 text-[11px]">
                   +{currency === 'NGN' ? `₦${ipPrice.toLocaleString()}` : `$${ipPrice.toFixed(2)}`} / mo
                 </div>
               </div>
@@ -215,15 +214,15 @@ export const ConfiguratorModal: React.FC<ConfiguratorModalProps> = ({
         {/* Footer & Deploy Button */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <div className="text-xs text-slate-400 font-mono uppercase">Total Monthly Investment</div>
-            <div className="text-2xl sm:text-3xl font-black font-display text-white">
-              {formattedTotal} <span className="text-xs text-slate-400 font-mono font-normal">/ month</span>
+            <div className="text-xs text-slate-500 font-mono uppercase">Total Monthly Investment</div>
+            <div className="text-2xl sm:text-3xl font-black font-display text-bulverse-blue">
+              {formattedTotal} <span className="text-xs text-slate-500 font-mono font-normal">/ month</span>
             </div>
           </div>
 
           <button
             onClick={handleDeploy}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-bulverse-blue px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-xl shadow-bulverse-blue/30 hover:bg-bulverse-blue-hover transition-all active:scale-[0.98]"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-bulverse-blue px-7 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-md shadow-bulverse-blue/25 hover:bg-bulverse-blue-hover transition-all active:scale-[0.98]"
           >
             <span>Proceed to Secure Provisioning</span>
             <ArrowRight className="h-4 w-4" />
