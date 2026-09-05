@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Server, Shield, Globe, Terminal, ChevronDown, Menu, X, ArrowUpRight } from 'lucide-react';
+import { Server, Shield, Globe, Terminal, Database, Network, ChevronDown, Menu, X, ArrowUpRight } from 'lucide-react';
 
 interface NavbarProps {
   currency: 'NGN' | 'USD';
@@ -14,13 +14,25 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdown, setServicesDropdown] = useState(false);
 
+  // Prevent background scrolling when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
+
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/90 backdrop-blur-md">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/95 backdrop-blur-md">
+      <div className="mx-auto flex h-16 sm:h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         
-        {/* Brand Logo - Using Official Blue Logo Lockup from Poster */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative h-11 w-40">
+        {/* Brand Logo - Official Logo Mark & Wordmark */}
+        <Link href="/" className="flex items-center gap-2 group">
+          <div className="relative h-9 sm:h-11 w-36 sm:w-44">
             <Image
               src="/brand/bulverse-logo.png"
               alt="Bulverse Digital Infrastructure"
@@ -107,7 +119,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
           </Link>
         </nav>
 
-        {/* Right Action Cluster */}
+        {/* Right Action Cluster for Desktop */}
         <div className="hidden md:flex items-center gap-4">
           
           {/* Currency Switcher */}
@@ -131,7 +143,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
             Client Console
           </a>
 
-          {/* Primary CTA in Poster Royal Blue */}
+          {/* Primary CTA */}
           <a
             href="https://portal.bulverse.com/cart.php"
             target="_blank"
@@ -143,83 +155,156 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
           </a>
         </div>
 
-        {/* Mobile Hamburger Button */}
+        {/* Mobile Header Buttons (Right side on phones) */}
         <div className="flex md:hidden items-center gap-2">
+          {/* Quick Currency Toggle for Mobile Navbar */}
           <button
             onClick={onToggleCurrency}
-            className="px-2.5 py-1 rounded-md border border-slate-200 text-xs font-mono text-slate-700 bg-slate-50"
+            className="px-2.5 py-1.5 rounded-lg border border-slate-200 text-xs font-mono font-bold text-bulverse-blue bg-blue-50/80 active:bg-blue-100 transition-colors"
+            title="Switch Currency"
           >
-            {currency}
+            {currency === 'NGN' ? '₦ NGN' : '$ USD'}
           </button>
+
+          {/* Hamburger Menu Toggle Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-slate-700 hover:text-bulverse-blue"
-            aria-label="Toggle menu"
+            className="p-2 rounded-xl border border-slate-200 text-slate-700 hover:text-bulverse-blue hover:bg-slate-50 active:bg-slate-100 transition-colors"
+            aria-label="Toggle navigation menu"
           >
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {mobileMenuOpen ? <X className="h-6 w-6 text-bulverse-blue" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer Backdrop */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-slate-200 bg-white px-4 py-6 space-y-4">
-          <Link
-            href="#cloud-vps"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block text-sm font-semibold text-slate-800 hover:text-bulverse-blue"
-          >
-            Cloud VPS & Servers
-          </Link>
-          <Link
-            href="#website-hosting"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block text-sm font-semibold text-slate-800 hover:text-bulverse-blue"
-          >
-            Website Hosting
-          </Link>
-          <Link
-            href="#cloud-storage"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block text-sm font-semibold text-slate-800 hover:text-bulverse-blue"
-          >
-            Cloud Storage
-          </Link>
-          <Link
-            href="#cloud-networking"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block text-sm font-semibold text-slate-800 hover:text-bulverse-blue"
-          >
-            Cloud Networking
-          </Link>
-          <Link
-            href="#trading-infrastructure"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block text-sm font-semibold text-slate-800 hover:text-bulverse-blue"
-          >
-            Trading Infrastructure
-          </Link>
-          <Link
-            href="#datacenters"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block text-sm font-semibold text-slate-800 hover:text-bulverse-blue"
-          >
-            Datacenters & Latency
-          </Link>
-          <div className="pt-4 border-t border-slate-200 flex flex-col gap-3">
+        <div
+          onClick={() => setMobileMenuOpen(false)}
+          className="fixed inset-0 top-16 bg-slate-950/40 backdrop-blur-xs z-40 md:hidden animate-in fade-in duration-200"
+        />
+      )}
+
+      {/* Mobile Drawer Sheet */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-x-0 top-16 max-h-[calc(100vh-4rem)] overflow-y-auto bg-white border-b border-slate-200 p-5 shadow-2xl z-50 md:hidden animate-in slide-in-from-top-4 duration-200 space-y-5">
+          
+          <div>
+            <div className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-400 mb-2">
+              Infrastructure Services
+            </div>
+            <div className="grid grid-cols-1 gap-2">
+              <Link
+                href="#cloud-vps"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center gap-3 p-3 rounded-xl border border-slate-100 bg-slate-50/60 active:bg-blue-50 transition-colors"
+              >
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100/70 text-bulverse-blue">
+                  <Server className="h-5 w-5" />
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-slate-900">Cloud VPS & Dedicated</div>
+                  <div className="text-[11px] text-slate-500">1-2GB, 4-6GB, 8GB+ AMD EPYC™</div>
+                </div>
+              </Link>
+
+              <Link
+                href="#website-hosting"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center gap-3 p-3 rounded-xl border border-slate-100 bg-slate-50/60 active:bg-blue-50 transition-colors"
+              >
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100/70 text-bulverse-blue">
+                  <Globe className="h-5 w-5" />
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-slate-900">Website Hosting</div>
+                  <div className="text-[11px] text-slate-500">Fast NVMe with cPanel included</div>
+                </div>
+              </Link>
+
+              <Link
+                href="#cloud-storage"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center gap-3 p-3 rounded-xl border border-slate-100 bg-slate-50/60 active:bg-blue-50 transition-colors"
+              >
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100/70 text-bulverse-blue">
+                  <Database className="h-5 w-5" />
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-slate-900">Cloud Storage</div>
+                  <div className="text-[11px] text-slate-500">S3 API Compatible, 100GB to 1TB+</div>
+                </div>
+              </Link>
+
+              <Link
+                href="#cloud-networking"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center gap-3 p-3 rounded-xl border border-slate-100 bg-slate-50/60 active:bg-blue-50 transition-colors"
+              >
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100/70 text-bulverse-blue">
+                  <Network className="h-5 w-5" />
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-slate-900">Cloud Networking & VPN</div>
+                  <div className="text-[11px] text-slate-500">Dedicated IPs, Anycast DNS, DDoS</div>
+                </div>
+              </Link>
+
+              <Link
+                href="#trading-infrastructure"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center gap-3 p-3 rounded-xl border border-slate-100 bg-slate-50/60 active:bg-blue-50 transition-colors"
+              >
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100/70 text-bulverse-blue">
+                  <Terminal className="h-5 w-5" />
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-slate-900">Trading Infrastructure</div>
+                  <div className="text-[11px] text-slate-500">Sub-ms liquidity broker cross-connect</div>
+                </div>
+              </Link>
+            </div>
+          </div>
+
+          <div className="pt-2 border-t border-slate-200">
+            <div className="flex items-center justify-between py-2">
+              <Link
+                href="#datacenters"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-sm font-bold text-slate-700 hover:text-bulverse-blue"
+              >
+                Global Fleet & Latency Map
+              </Link>
+              <Link
+                href="#cli"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-sm font-bold text-slate-700 hover:text-bulverse-blue"
+              >
+                CLI & API Documentation
+              </Link>
+            </div>
+          </div>
+
+          {/* Quick Actions in Mobile Drawer */}
+          <div className="pt-2 border-t border-slate-200 flex flex-col gap-2.5">
             <a
               href="https://portal.bulverse.com/clientarea.php"
-              className="text-center py-2.5 text-sm font-bold text-slate-700 bg-slate-100 rounded-xl"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-center py-3 text-xs font-bold uppercase tracking-wider text-slate-800 bg-slate-100 rounded-xl active:bg-slate-200 transition-colors"
             >
-              Client Console Login
+              Client Area Console Login
             </a>
             <a
               href="https://portal.bulverse.com/cart.php"
-              className="text-center py-2.5 text-sm font-bold text-white bg-bulverse-blue rounded-xl shadow-md"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-center py-3.5 text-xs font-bold uppercase tracking-wider text-white bg-bulverse-blue rounded-xl shadow-md shadow-bulverse-blue/30 active:scale-[0.98] transition-transform"
             >
-              Deploy Server Now
+              Deploy Cloud Server Instance
             </a>
           </div>
+
         </div>
       )}
     </header>

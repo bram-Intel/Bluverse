@@ -71,63 +71,63 @@ root@api-gateway-prod:~# docker ps`,
   };
 
   return (
-    <section id="cli" className="py-20 bg-white border-b border-slate-200 relative overflow-hidden">
+    <section id="cli" className="py-12 sm:py-20 bg-white border-b border-slate-200 relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
           {/* Left Description Column */}
-          <div className="lg:col-span-5 space-y-5">
-            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3.5 py-1 text-xs font-mono font-bold text-bulverse-blue">
+          <div className="lg:col-span-5 space-y-4 sm:space-y-5">
+            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-[11px] sm:text-xs font-mono font-bold text-bulverse-blue">
               <Terminal className="h-3.5 w-3.5" />
               <span>DEVELOPER ORCHESTRATION</span>
             </div>
 
-            <h2 className="font-display text-3xl sm:text-4xl font-black text-[#04052D] uppercase tracking-tight leading-tight">
-              Control Your Fleet via CLI, REST API, or Client Console
+            <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-black text-[#04052D] uppercase tracking-tight leading-tight">
+              Control Your Fleet via CLI, REST API, or Console
             </h2>
 
-            <p className="text-slate-600 text-base leading-relaxed">
-              Automate deployments through standardized REST contracts, manage power states from the WHMCS console, or orchestrate high-availability instances programmatically.
+            <p className="text-slate-600 text-xs sm:text-base leading-relaxed">
+              Automate deployments through standardized REST contracts, manage power states from the console, or orchestrate instances programmatically.
             </p>
 
-            <div className="space-y-3 pt-2">
-              <div className="flex items-start gap-3">
-                <div className="h-2.5 w-2.5 rounded-full bg-bulverse-blue mt-1.5 shrink-0"></div>
+            <div className="space-y-2.5 pt-1">
+              <div className="flex items-start gap-2.5">
+                <div className="h-2 w-2 rounded-full bg-bulverse-blue mt-1.5 shrink-0"></div>
                 <div>
-                  <div className="text-sm font-bold text-[#04052D]">Full Root & SSH Console Access</div>
-                  <div className="text-xs text-slate-500">Zero restrictions on kernels, custom firewalls, or container runtimes.</div>
+                  <div className="text-xs sm:text-sm font-bold text-[#04052D]">Full Root & SSH Console Access</div>
+                  <div className="text-[11px] sm:text-xs text-slate-500">Zero restrictions on kernels, firewalls, or container runtimes.</div>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3">
-                <div className="h-2.5 w-2.5 rounded-full bg-bulverse-blue mt-1.5 shrink-0"></div>
+              <div className="flex items-start gap-2.5">
+                <div className="h-2 w-2 rounded-full bg-bulverse-blue mt-1.5 shrink-0"></div>
                 <div>
-                  <div className="text-sm font-bold text-[#04052D]">Deterministic Idempotency</div>
-                  <div className="text-xs text-slate-500">Guaranteed protection against duplicate instances on network retries.</div>
+                  <div className="text-xs sm:text-sm font-bold text-[#04052D]">Deterministic Idempotency</div>
+                  <div className="text-[11px] sm:text-xs text-slate-500">Guaranteed protection against duplicate instances on retries.</div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right Sleek Dark Terminal Frame */}
+          {/* Right Dark Terminal Frame */}
           <div className="lg:col-span-7">
-            <div className="rounded-2xl border border-slate-800 bg-[#080E24] shadow-2xl overflow-hidden">
+            <div className="rounded-xl sm:rounded-2xl border border-slate-800 bg-[#080E24] shadow-xl overflow-hidden">
               
               {/* Terminal Window Header */}
-              <div className="flex items-center justify-between px-4 py-3 bg-[#050A1A] border-b border-slate-800">
-                <div className="flex items-center gap-2">
-                  <div className="h-3 w-3 rounded-full bg-red-500/80" />
-                  <div className="h-3 w-3 rounded-full bg-yellow-500/80" />
-                  <div className="h-3 w-3 rounded-full bg-emerald-500/80" />
-                  <span className="ml-3 text-xs font-mono text-slate-400">terminal@bulverse:~</span>
+              <div className="flex items-center justify-between px-3.5 sm:px-4 py-2.5 sm:py-3 bg-[#050A1A] border-b border-slate-800">
+                <div className="flex items-center gap-1.5 sm:gap-2">
+                  <div className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-red-500/80" />
+                  <div className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-yellow-500/80" />
+                  <div className="h-2.5 w-2.5 sm:h-3 sm:w-3 rounded-full bg-emerald-500/80" />
+                  <span className="ml-2 text-[10px] sm:text-xs font-mono text-slate-400">terminal@bulverse:~</span>
                 </div>
 
-                {/* Tabs */}
-                <div className="flex items-center gap-1 bg-black/40 p-1 rounded-lg border border-white/5">
+                {/* Mobile-Friendly Tabs */}
+                <div className="flex items-center gap-1 bg-black/40 p-0.5 sm:p-1 rounded-lg border border-white/5">
                   <button
                     onClick={() => setActiveTab('cli')}
-                    className={`px-3 py-1 rounded-md text-[11px] font-mono transition-colors ${
+                    className={`px-2 sm:px-3 py-1 rounded-md text-[10px] sm:text-[11px] font-mono transition-colors ${
                       activeTab === 'cli' ? 'bg-bulverse-blue text-white font-bold' : 'text-slate-400 hover:text-white'
                     }`}
                   >
@@ -135,7 +135,7 @@ root@api-gateway-prod:~# docker ps`,
                   </button>
                   <button
                     onClick={() => setActiveTab('api')}
-                    className={`px-3 py-1 rounded-md text-[11px] font-mono transition-colors ${
+                    className={`px-2 sm:px-3 py-1 rounded-md text-[10px] sm:text-[11px] font-mono transition-colors ${
                       activeTab === 'api' ? 'bg-bulverse-blue text-white font-bold' : 'text-slate-400 hover:text-white'
                     }`}
                   >
@@ -143,27 +143,27 @@ root@api-gateway-prod:~# docker ps`,
                   </button>
                   <button
                     onClick={() => setActiveTab('ssh')}
-                    className={`px-3 py-1 rounded-md text-[11px] font-mono transition-colors ${
+                    className={`px-2 sm:px-3 py-1 rounded-md text-[10px] sm:text-[11px] font-mono transition-colors ${
                       activeTab === 'ssh' ? 'bg-bulverse-blue text-white font-bold' : 'text-slate-400 hover:text-white'
                     }`}
                   >
-                    SSH Root
+                    SSH
                   </button>
                 </div>
 
                 {/* Copy Button */}
                 <button
                   onClick={handleCopy}
-                  className="flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-mono text-slate-300 hover:text-white hover:bg-white/10 transition-colors"
+                  className="flex items-center gap-1 px-2 py-1 rounded-md text-[11px] font-mono text-slate-300 hover:text-white active:bg-white/10 transition-colors"
                   title="Copy snippet"
                 >
-                  {copied ? <Check className="h-3.5 w-3.5 text-emerald-400" /> : <Copy className="h-3.5 w-3.5" />}
-                  <span>{copied ? 'Copied' : 'Copy'}</span>
+                  {copied ? <Check className="h-3 w-3 text-emerald-400" /> : <Copy className="h-3 w-3" />}
+                  <span className="hidden sm:inline">{copied ? 'Copied' : 'Copy'}</span>
                 </button>
               </div>
 
               {/* Terminal Body */}
-              <div className="p-5 font-mono text-xs text-slate-200 overflow-x-auto bg-[#030717] max-h-[380px] leading-relaxed">
+              <div className="p-3.5 sm:p-5 font-mono text-[11px] sm:text-xs text-slate-200 overflow-x-auto bg-[#030717] max-h-[340px] sm:max-h-[380px] leading-relaxed">
                 <pre className="whitespace-pre">{snippets[activeTab]}</pre>
               </div>
 

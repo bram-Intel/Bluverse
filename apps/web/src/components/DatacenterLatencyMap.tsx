@@ -21,27 +21,27 @@ export const DatacenterLatencyMap: React.FC = () => {
   }, []);
 
   return (
-    <section id="datacenters" className="py-20 bg-[#FAFBFD] border-b border-slate-200 relative overflow-hidden">
+    <section id="datacenters" className="py-12 sm:py-20 bg-[#FAFBFD] border-b border-slate-200 relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-4 sm:gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-bulverse-blue mb-2">
+            <div className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-bulverse-blue mb-1.5">
               <Activity className="h-4 w-4" />
               <span>GLOBAL HIGH-SPEED FLEET</span>
             </div>
-            <h2 className="font-display text-3xl sm:text-4xl font-black text-[#04052D] uppercase tracking-tight">
-              Datacenter Presence & Network Routing
+            <h2 className="font-display text-2xl sm:text-4xl font-black text-[#04052D] uppercase tracking-tight">
+              Datacenter Presence & Latency
             </h2>
           </div>
-          <p className="max-w-md text-sm text-slate-600">
+          <p className="max-w-md text-xs sm:text-sm text-slate-600 leading-relaxed">
             Co-located inside Tier 3+ carrier-neutral facilities with multi-homed BGP uplinks to major internet exchanges.
           </p>
         </div>
 
-        {/* Datacenter Nodes Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+        {/* Datacenter Nodes Grid - 2 columns on mobile, 6 on desktop */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
           {DATACENTERS.map((dc) => {
             const isSelected = activeRegion.id === dc.id;
             const currentPing = latencyJitter[dc.id] ?? dc.ping;
@@ -50,28 +50,28 @@ export const DatacenterLatencyMap: React.FC = () => {
               <button
                 key={dc.id}
                 onClick={() => setActiveRegion(dc)}
-                className={`relative flex flex-col justify-between p-4 rounded-2xl border text-left transition-all duration-200 ${
+                className={`relative flex flex-col justify-between p-3.5 sm:p-4 rounded-xl sm:rounded-2xl border text-left transition-all duration-150 active:scale-[0.98] ${
                   isSelected
-                    ? 'border-bulverse-blue bg-blue-50/80 shadow-md ring-2 ring-bulverse-blue/30'
+                    ? 'border-bulverse-blue bg-blue-50/90 shadow-sm ring-2 ring-bulverse-blue/30'
                     : 'border-slate-200 bg-white hover:border-blue-300 hover:bg-slate-50'
                 }`}
               >
-                <div className="flex items-center justify-between mb-3">
-                  <span className="text-2xl">{dc.flag}</span>
-                  <div className="flex items-center gap-1 text-[11px] font-mono font-bold text-emerald-600">
-                    <span className="relative flex h-2 w-2">
+                <div className="flex items-center justify-between mb-2 sm:mb-3">
+                  <span className="text-xl sm:text-2xl">{dc.flag}</span>
+                  <div className="flex items-center gap-1 text-[10px] sm:text-[11px] font-mono font-bold text-emerald-600">
+                    <span className="relative flex h-1.5 w-1.5 sm:h-2 sm:w-2">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                      <span className="relative inline-flex rounded-full h-1.5 w-1.5 sm:h-2 sm:w-2 bg-emerald-500"></span>
                     </span>
                     <span>{currentPing}ms</span>
                   </div>
                 </div>
 
                 <div>
-                  <div className="text-sm font-bold text-slate-900">
+                  <div className="text-xs sm:text-sm font-bold text-slate-900 leading-tight">
                     {dc.city}
                   </div>
-                  <div className="text-[10px] font-mono text-slate-500 uppercase">
+                  <div className="text-[9px] sm:text-[10px] font-mono text-slate-500 uppercase mt-0.5">
                     {dc.region}
                   </div>
                 </div>
@@ -81,27 +81,27 @@ export const DatacenterLatencyMap: React.FC = () => {
         </div>
 
         {/* Selected Region Telemetry Diagnostic Card */}
-        <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div className="mt-6 sm:mt-8 rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-5">
             <div className="space-y-1">
-              <div className="text-xs font-mono font-bold text-bulverse-blue uppercase tracking-wider">
+              <div className="text-[11px] sm:text-xs font-mono font-bold text-bulverse-blue uppercase tracking-wider">
                 Telemetry Diagnostics • {activeRegion.city} Node
               </div>
-              <div className="text-lg font-bold text-[#04052D] flex items-center gap-2">
+              <div className="text-base sm:text-lg font-bold text-[#04052D] flex flex-wrap items-center gap-2">
                 <span>Direct BGP Uplink — {activeRegion.region}</span>
-                <span className="text-xs font-mono font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                  READY FOR PROVISIONING
+                <span className="text-[10px] font-mono font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                  READY
                 </span>
               </div>
               <div className="text-xs text-slate-600">
-                Redundant N+1 power generators, carrier-neutral cross connects, and automated hardware failover.
+                Redundant N+1 power generators and automated hardware failover.
               </div>
             </div>
 
-            <div className="flex items-center gap-4">
-              <div className="text-right">
-                <div className="text-[11px] font-mono text-slate-500 uppercase">Estimated Latency</div>
-                <div className="text-2xl font-mono font-black text-emerald-600">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2 md:pt-0 border-t md:border-t-0 border-slate-100">
+              <div className="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center">
+                <div className="text-[11px] font-mono text-slate-500 uppercase">Estimated Latency:</div>
+                <div className="text-xl sm:text-2xl font-mono font-black text-emerald-600">
                   {latencyJitter[activeRegion.id] ?? activeRegion.ping} ms
                 </div>
               </div>
@@ -109,7 +109,7 @@ export const DatacenterLatencyMap: React.FC = () => {
                 href={`https://portal.bulverse.com/cart.php?datacenter=${activeRegion.id}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl bg-bulverse-blue px-4 py-2.5 text-xs font-bold text-white shadow-sm hover:bg-bulverse-blue-hover transition-colors"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-bulverse-blue px-5 py-3 text-xs font-bold text-white shadow-sm hover:bg-bulverse-blue-hover active:scale-[0.98] transition-all min-h-[44px]"
               >
                 <span>Deploy in {activeRegion.city}</span>
                 <ArrowUpRight className="h-3.5 w-3.5" />

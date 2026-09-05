@@ -8,6 +8,7 @@ import { ServicePillars } from '../components/ServicePillars';
 import { DatacenterLatencyMap } from '../components/DatacenterLatencyMap';
 import { TerminalSimulator } from '../components/TerminalSimulator';
 import { ConfiguratorModal } from '../components/ConfiguratorModal';
+import { MobileBottomBar } from '../components/MobileBottomBar';
 import { Footer } from '../components/Footer';
 import { CATALOG_SERVICES, ServiceCategory, ServiceTier } from '../lib/catalog';
 import { ArrowRight, Sparkles } from 'lucide-react';
@@ -34,7 +35,7 @@ export default function HomePage() {
         onToggleCurrency={toggleCurrency}
       />
 
-      <main className="flex-1">
+      <main className="flex-1 pb-16 md:pb-0">
         {/* Hero Section Recreating Poster 3D Server Blade Assembly */}
         <Hero
           onOpenConfigurator={() => {
@@ -154,6 +155,16 @@ export default function HomePage() {
 
       {/* Global Footer */}
       <Footer />
+
+      {/* Mobile Sticky Quick-Action Bar */}
+      <MobileBottomBar
+        currency={currency}
+        onToggleCurrency={toggleCurrency}
+        onOpenConfigurator={() => {
+          setActiveTier(CATALOG_SERVICES[0].tiers[1]);
+          setConfiguratorOpen(true);
+        }}
+      />
 
       {/* Interactive Server Provisioning Configurator Modal */}
       <ConfiguratorModal
