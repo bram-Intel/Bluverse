@@ -1,5 +1,13 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: '#FFFFFF',
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://bulverse.com'),
@@ -52,6 +60,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/brand/bulverse-icon-square.png" type="image/png" />
         <link rel="apple-touch-icon" href="/brand/bulverse-icon-square.png" />
@@ -62,7 +71,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen bg-[#F8FAFC] text-[#04052D] antialiased">
+      <body className="min-h-screen w-full max-w-full overflow-x-hidden bg-[#F8FAFC] text-[#04052D] antialiased">
         {children}
       </body>
     </html>

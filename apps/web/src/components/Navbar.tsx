@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Server, Shield, Globe, Terminal, Database, Network, ChevronDown, Menu, X, ArrowUpRight } from 'lucide-react';
+import { Server, Globe, Terminal, Database, Network, ChevronDown, Menu, X, ArrowUpRight } from 'lucide-react';
 
 interface NavbarProps {
   currency: 'NGN' | 'USD';
@@ -27,12 +27,12 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
   }, [mobileMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/95 backdrop-blur-md">
-      <div className="mx-auto flex h-16 sm:h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 w-full left-0 right-0 border-b border-slate-200/80 bg-white/95 backdrop-blur-md">
+      <div className="w-full max-w-7xl mx-auto flex h-16 sm:h-20 items-center justify-between px-3 sm:px-6 lg:px-8">
         
         {/* Brand Logo - Official Logo Mark & Wordmark */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="relative h-9 sm:h-11 w-36 sm:w-44">
+        <Link href="/" className="flex items-center group shrink-0">
+          <div className="relative h-8 sm:h-11 w-32 sm:w-44">
             <Image
               src="/brand/bulverse-logo.png"
               alt="Bulverse Digital Infrastructure"
@@ -155,21 +155,21 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
           </a>
         </div>
 
-        {/* Mobile Header Buttons (Right side on phones) */}
-        <div className="flex md:hidden items-center gap-2">
+        {/* Mobile Header Controls: End-to-end alignment */}
+        <div className="flex md:hidden items-center gap-2 shrink-0">
           {/* Quick Currency Toggle for Mobile Navbar */}
           <button
             onClick={onToggleCurrency}
-            className="px-2.5 py-1.5 rounded-lg border border-slate-200 text-xs font-mono font-bold text-bulverse-blue bg-blue-50/80 active:bg-blue-100 transition-colors"
+            className="px-2.5 py-1.5 rounded-lg border border-slate-200 text-xs font-mono font-bold text-bulverse-blue bg-blue-50/80 active:bg-blue-100 transition-colors min-h-[38px] flex items-center justify-center"
             title="Switch Currency"
           >
             {currency === 'NGN' ? '₦ NGN' : '$ USD'}
           </button>
 
-          {/* Hamburger Menu Toggle Button */}
+          {/* Hamburger Menu Toggle Button - 44x44 minimum touch target */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 rounded-xl border border-slate-200 text-slate-700 hover:text-bulverse-blue hover:bg-slate-50 active:bg-slate-100 transition-colors"
+            className="h-10 w-10 flex items-center justify-center rounded-xl border border-slate-200 text-slate-700 hover:text-bulverse-blue hover:bg-slate-50 active:bg-slate-100 transition-colors"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X className="h-6 w-6 text-bulverse-blue" /> : <Menu className="h-6 w-6" />}
@@ -185,12 +185,12 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
         />
       )}
 
-      {/* Mobile Drawer Sheet */}
+      {/* Mobile Drawer Sheet - Full End-to-End Width */}
       {mobileMenuOpen && (
-        <div className="fixed inset-x-0 top-16 max-h-[calc(100vh-4rem)] overflow-y-auto bg-white border-b border-slate-200 p-5 shadow-2xl z-50 md:hidden animate-in slide-in-from-top-4 duration-200 space-y-5">
+        <div className="fixed inset-x-0 top-16 w-full max-h-[calc(100vh-4rem)] overflow-y-auto bg-white border-b border-slate-200 p-4 sm:p-5 shadow-2xl z-50 md:hidden animate-in slide-in-from-top-4 duration-200 space-y-4">
           
           <div>
-            <div className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-400 mb-2">
+            <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 mb-2">
               Infrastructure Services
             </div>
             <div className="grid grid-cols-1 gap-2">
@@ -199,7 +199,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center gap-3 p-3 rounded-xl border border-slate-100 bg-slate-50/60 active:bg-blue-50 transition-colors"
               >
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100/70 text-bulverse-blue">
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100/70 text-bulverse-blue shrink-0">
                   <Server className="h-5 w-5" />
                 </div>
                 <div>
@@ -213,7 +213,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center gap-3 p-3 rounded-xl border border-slate-100 bg-slate-50/60 active:bg-blue-50 transition-colors"
               >
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100/70 text-bulverse-blue">
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100/70 text-bulverse-blue shrink-0">
                   <Globe className="h-5 w-5" />
                 </div>
                 <div>
@@ -227,7 +227,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center gap-3 p-3 rounded-xl border border-slate-100 bg-slate-50/60 active:bg-blue-50 transition-colors"
               >
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100/70 text-bulverse-blue">
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100/70 text-bulverse-blue shrink-0">
                   <Database className="h-5 w-5" />
                 </div>
                 <div>
@@ -241,7 +241,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center gap-3 p-3 rounded-xl border border-slate-100 bg-slate-50/60 active:bg-blue-50 transition-colors"
               >
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100/70 text-bulverse-blue">
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100/70 text-bulverse-blue shrink-0">
                   <Network className="h-5 w-5" />
                 </div>
                 <div>
@@ -255,7 +255,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center gap-3 p-3 rounded-xl border border-slate-100 bg-slate-50/60 active:bg-blue-50 transition-colors"
               >
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100/70 text-bulverse-blue">
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100/70 text-bulverse-blue shrink-0">
                   <Terminal className="h-5 w-5" />
                 </div>
                 <div>
@@ -271,14 +271,14 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
               <Link
                 href="#datacenters"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-sm font-bold text-slate-700 hover:text-bulverse-blue"
+                className="text-xs font-bold text-slate-700 hover:text-bulverse-blue"
               >
-                Global Fleet & Latency Map
+                Global Fleet & Latency
               </Link>
               <Link
                 href="#cli"
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-sm font-bold text-slate-700 hover:text-bulverse-blue"
+                className="text-xs font-bold text-slate-700 hover:text-bulverse-blue"
               >
                 CLI & API Documentation
               </Link>

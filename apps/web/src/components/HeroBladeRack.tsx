@@ -14,40 +14,40 @@ export const HeroBladeRack: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative w-full max-w-[340px] sm:max-w-[420px] md:max-w-[480px] h-[380px] sm:h-[460px] md:h-[520px] mx-auto flex items-center justify-center select-none">
+    <div className="relative w-full max-w-[280px] xs:max-w-[320px] sm:max-w-[420px] md:max-w-[480px] h-[340px] xs:h-[380px] sm:h-[460px] md:h-[520px] mx-auto flex items-center justify-center select-none">
       
       {/* Soft Ambient Blue Shadow on Floor */}
-      <div className="absolute bottom-4 sm:bottom-6 w-[280px] sm:w-[360px] h-16 sm:h-20 bg-blue-600/15 blur-2xl rounded-[100%] pointer-events-none" />
+      <div className="absolute bottom-4 sm:bottom-6 w-[220px] xs:w-[260px] sm:w-[360px] h-14 sm:h-20 bg-blue-600/15 blur-2xl rounded-[100%] pointer-events-none" />
 
       {/* Orbiting Satellite Node 1: Globe (Direct from Poster) */}
-      <div className="absolute top-10 sm:top-16 right-1 sm:right-6 z-30 animate-float">
-        <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border-2 border-dashed border-blue-400 bg-white shadow-md sm:shadow-lg shadow-blue-900/10 hover:scale-110 transition-transform">
-          <div className="flex h-7 w-7 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-blue-50 text-bulverse-blue">
-            <Globe className="h-4 w-4 sm:h-5 sm:w-5 stroke-[2.2]" />
+      <div className="absolute top-6 xs:top-10 sm:top-16 right-0 xs:right-1 sm:right-6 z-30 animate-float">
+        <div className="flex h-8 w-8 xs:h-10 xs:w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border-2 border-dashed border-blue-400 bg-white shadow-md sm:shadow-lg shadow-blue-900/10 hover:scale-110 transition-transform">
+          <div className="flex h-6 w-6 xs:h-7 xs:w-7 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-blue-50 text-bulverse-blue">
+            <Globe className="h-3.5 w-3.5 xs:h-4 xs:w-4 sm:h-5 sm:w-5 stroke-[2.2]" />
           </div>
         </div>
       </div>
 
       {/* Orbiting Satellite Node 2: Storage (Direct from Poster) */}
-      <div className="absolute top-40 sm:top-52 -right-1 sm:right-2 z-30 animate-float" style={{ animationDelay: '1.8s' }}>
-        <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border-2 border-dashed border-blue-400 bg-white shadow-md sm:shadow-lg shadow-blue-900/10 hover:scale-110 transition-transform">
-          <div className="flex h-7 w-7 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-blue-50 text-bulverse-blue">
-            <Folder className="h-4 w-4 sm:h-5 sm:w-5 stroke-[2.2]" />
+      <div className="absolute top-32 xs:top-40 sm:top-52 right-0 xs:right-0 sm:right-2 z-30 animate-float" style={{ animationDelay: '1.8s' }}>
+        <div className="flex h-8 w-8 xs:h-10 xs:w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border-2 border-dashed border-blue-400 bg-white shadow-md sm:shadow-lg shadow-blue-900/10 hover:scale-110 transition-transform">
+          <div className="flex h-6 w-6 xs:h-7 xs:w-7 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-blue-50 text-bulverse-blue">
+            <Folder className="h-3.5 w-3.5 xs:h-4 xs:w-4 sm:h-5 sm:w-5 stroke-[2.2]" />
           </div>
         </div>
       </div>
 
       {/* Orbiting Satellite Node 3: Security (Direct from Poster) */}
-      <div className="absolute bottom-16 sm:bottom-24 right-2 sm:right-8 z-30 animate-float" style={{ animationDelay: '3.6s' }}>
-        <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border-2 border-dashed border-blue-400 bg-white shadow-md sm:shadow-lg shadow-blue-900/10 hover:scale-110 transition-transform">
-          <div className="flex h-7 w-7 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-blue-50 text-bulverse-blue">
-            <ShieldCheck className="h-4 w-4 sm:h-5 sm:w-5 stroke-[2.2]" />
+      <div className="absolute bottom-12 xs:bottom-16 sm:bottom-24 right-1 xs:right-2 sm:right-8 z-30 animate-float" style={{ animationDelay: '3.6s' }}>
+        <div className="flex h-8 w-8 xs:h-10 xs:w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border-2 border-dashed border-blue-400 bg-white shadow-md sm:shadow-lg shadow-blue-900/10 hover:scale-110 transition-transform">
+          <div className="flex h-6 w-6 xs:h-7 xs:w-7 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-blue-50 text-bulverse-blue">
+            <ShieldCheck className="h-3.5 w-3.5 xs:h-4 xs:w-4 sm:h-5 sm:w-5 stroke-[2.2]" />
           </div>
         </div>
       </div>
 
       {/* Central Assembly Recreating Poster 3D Visual */}
-      <div className="relative z-20 flex flex-col items-center scale-90 sm:scale-100 origin-center">
+      <div className="relative z-20 flex flex-col items-center scale-[0.82] xs:scale-90 sm:scale-100 origin-center">
         
         {/* Top 3D Cloud */}
         <div className="relative mb-2.5 group">

@@ -26,7 +26,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConfigurator }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
           
           {/* Left Hero Column: Mobile-first Typography from Poster */}
-          <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left">
+          <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left min-w-0 max-w-full">
             
             {/* Live Operational Status Tag */}
             <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50/80 px-3 py-1 text-[11px] sm:text-xs font-mono text-bulverse-blue shadow-xs">
@@ -37,8 +37,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConfigurator }) => {
               <span className="font-bold tracking-wide uppercase">ENTERPRISE CLOUD • PROVISIONING READY</span>
             </div>
 
-            {/* Poster Headline - Perfectly Scaled for Mobile & Desktop */}
-            <h1 className="font-display text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight text-[#04052D] uppercase leading-[1.1]">
+            {/* Poster Headline - Fluid Scaled for Mobile down to 320px & Desktop */}
+            <h1 className="font-display text-fluid-hero font-black tracking-tight text-[#04052D] uppercase leading-[1.08] break-words">
               YOUR DIGITAL <br />
               <span className="text-bulverse-blue">
                 INFRASTRUCTURE,
@@ -66,45 +66,45 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConfigurator }) => {
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3 pt-1 max-w-xl mx-auto lg:mx-0 text-left">
               <div className="flex items-center gap-2 text-xs font-semibold text-slate-800">
                 <CheckCircle2 className="h-4 w-4 text-bulverse-blue shrink-0" />
-                <span>PCIe Gen4 NVMe</span>
+                <span className="truncate">PCIe Gen4 NVMe</span>
               </div>
               <div className="flex items-center gap-2 text-xs font-semibold text-slate-800">
                 <CheckCircle2 className="h-4 w-4 text-bulverse-blue shrink-0" />
-                <span>32TB Traffic</span>
+                <span className="truncate">32TB Traffic</span>
               </div>
               <div className="flex items-center gap-2 text-xs font-semibold text-slate-800">
                 <CheckCircle2 className="h-4 w-4 text-bulverse-blue shrink-0" />
-                <span>Full Root Access</span>
+                <span className="truncate">Full Root Access</span>
               </div>
               <div className="flex items-center gap-2 text-xs font-semibold text-slate-800">
                 <CheckCircle2 className="h-4 w-4 text-bulverse-blue shrink-0" />
-                <span>99.9% Uptime SLA</span>
+                <span className="truncate">99.9% Uptime SLA</span>
               </div>
               <div className="flex items-center gap-2 text-xs font-semibold text-slate-800">
                 <CheckCircle2 className="h-4 w-4 text-bulverse-blue shrink-0" />
-                <span>cPanel Included</span>
+                <span className="truncate">cPanel Included</span>
               </div>
               <div className="flex items-center gap-2 text-xs font-semibold text-slate-800">
                 <CheckCircle2 className="h-4 w-4 text-bulverse-blue shrink-0" />
-                <span>Trading VPS Ready</span>
+                <span className="truncate">Trading VPS Ready</span>
               </div>
             </div>
 
-            {/* Action Buttons - Full-width stacked on mobile for effortless thumb tapping */}
+            {/* Action Buttons - Full-width stacked on mobile with 48px touch-target */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 pt-2">
               <button
                 onClick={onOpenConfigurator}
-                className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-xl bg-bulverse-blue px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-bulverse-blue/25 hover:bg-bulverse-blue-hover active:scale-[0.98] transition-all"
+                className="group w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-xl bg-bulverse-blue px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-bulverse-blue/25 hover:bg-bulverse-blue-hover active:scale-[0.98] transition-all min-h-[48px]"
               >
                 <span>Deploy Cloud VPS Now</span>
-                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform shrink-0" />
               </button>
 
               <Link
                 href="#catalog"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-bold text-slate-800 hover:border-bulverse-blue hover:text-bulverse-blue active:bg-slate-50 shadow-xs transition-all"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-bold text-slate-800 hover:border-bulverse-blue hover:text-bulverse-blue active:bg-slate-50 shadow-xs transition-all min-h-[48px]"
               >
-                <Server className="h-4 w-4 text-bulverse-blue" />
+                <Server className="h-4 w-4 text-bulverse-blue shrink-0" />
                 <span>Explore 6 Services</span>
               </Link>
             </div>
@@ -117,7 +117,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConfigurator }) => {
           </div>
 
           {/* Right Hero Column: 3D Server Blade Visual */}
-          <div className="lg:col-span-5 flex justify-center pt-2 sm:pt-0">
+          <div className="lg:col-span-5 flex justify-center pt-2 sm:pt-0 min-w-0 max-w-full overflow-hidden">
             <HeroBladeRack />
           </div>
 

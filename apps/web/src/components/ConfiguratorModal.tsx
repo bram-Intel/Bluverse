@@ -194,12 +194,12 @@ export const ConfiguratorModal: React.FC<ConfiguratorModalProps> = ({
                 type="text"
                 value={hostname}
                 onChange={(e) => setHostname(e.target.value)}
-                className="w-full rounded-xl border border-slate-300 bg-slate-50 px-3 py-2 text-xs font-mono text-slate-900 focus:border-bulverse-blue focus:bg-white focus:outline-none min-h-[42px]"
+                className="w-full rounded-xl border border-slate-300 bg-slate-50 px-3.5 py-2.5 text-base sm:text-xs font-mono text-slate-900 focus:border-bulverse-blue focus:bg-white focus:outline-none min-h-[44px]"
               />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
-              <label className="flex items-center gap-3 p-2.5 sm:p-3 rounded-xl border border-slate-200 bg-slate-50/50 cursor-pointer active:bg-slate-100">
+              <label className="flex items-center gap-3 p-3 rounded-xl border border-slate-200 bg-slate-50/50 cursor-pointer active:bg-slate-100 min-h-[44px]">
                 <input
                   type="checkbox"
                   checked={addonBackups}
@@ -214,7 +214,7 @@ export const ConfiguratorModal: React.FC<ConfiguratorModalProps> = ({
                 </div>
               </label>
 
-              <label className="flex items-center gap-3 p-2.5 sm:p-3 rounded-xl border border-slate-200 bg-slate-50/50 cursor-pointer active:bg-slate-100">
+              <label className="flex items-center gap-3 p-3 rounded-xl border border-slate-200 bg-slate-50/50 cursor-pointer active:bg-slate-100 min-h-[44px]">
                 <input
                   type="checkbox"
                   checked={addonDedicatedIp}
@@ -244,7 +244,7 @@ export const ConfiguratorModal: React.FC<ConfiguratorModalProps> = ({
 
           <button
             onClick={handleDeploy}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-bulverse-blue px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-md shadow-bulverse-blue/25 hover:bg-bulverse-blue-hover active:scale-[0.98] transition-all min-h-[46px]"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-bulverse-blue px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-md shadow-bulverse-blue/25 hover:bg-bulverse-blue-hover active:scale-[0.98] transition-all min-h-[48px]"
           >
             <span>Proceed to Secure Checkout</span>
             <ArrowRight className="h-4 w-4" />

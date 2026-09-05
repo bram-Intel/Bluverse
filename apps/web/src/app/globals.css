@@ -8,11 +8,25 @@
   --font-mono: 'JetBrains Mono', monospace;
 }
 
+html {
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   background-color: #F8FAFC;
   color: #04052D;
   font-family: var(--font-sans);
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  position: relative;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 ::selection {
@@ -22,8 +36,8 @@ body {
 
 /* Custom Clean Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -45,3 +59,39 @@ body {
   background-size: 16px 16px;
   opacity: 0.18;
 }
+
+/* Prevent iOS auto-zoom on input focus by enforcing 16px base font on mobile */
+input, select, textarea {
+  font-size: 16px;
+}
+@media (min-width: 640px) {
+  input, select, textarea {
+    font-size: 0.875rem; /* 14px on tablet/desktop */
+  }
+}
+
+/* Fluid Typography Utilities using clamp() */
+.text-fluid-hero {
+  font-size: clamp(1.75rem, 5.5vw + 0.5rem, 4.25rem);
+  line-height: 1.08;
+  word-break: break-word;
+  hyphens: none;
+}
+
+.text-fluid-h2 {
+  font-size: clamp(1.5rem, 3.8vw + 0.25rem, 3rem);
+  line-height: 1.15;
+  word-break: break-word;
+}
+
+.text-fluid-h3 {
+  font-size: clamp(1.2rem, 2.5vw + 0.2rem, 1.75rem);
+  line-height: 1.25;
+}
+
+/* Mobile Touch Target minimum 44x44px compliance */
+.min-touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+

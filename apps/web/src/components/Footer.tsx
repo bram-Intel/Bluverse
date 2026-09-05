@@ -34,7 +34,7 @@ export const Footer: React.FC = () => {
                 href="https://facebook.com/bulverseofficial"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-3 py-2.5 rounded-xl bg-white border border-slate-200 shadow-xs active:bg-slate-50 transition-colors min-h-[42px]"
+                className="flex items-center gap-2 px-3 py-2.5 rounded-xl bg-white border border-slate-200 shadow-xs active:bg-slate-50 transition-colors min-h-[44px]"
               >
                 <div className="flex h-5 w-5 items-center justify-center rounded-full bg-blue-600 text-white shrink-0">
                   <Facebook className="h-3 w-3 fill-current" />
@@ -46,7 +46,7 @@ export const Footer: React.FC = () => {
                 href="https://instagram.com/bulverseofficial"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-3 py-2.5 rounded-xl bg-white border border-slate-200 shadow-xs active:bg-slate-50 transition-colors min-h-[42px]"
+                className="flex items-center gap-2 px-3 py-2.5 rounded-xl bg-white border border-slate-200 shadow-xs active:bg-slate-50 transition-colors min-h-[44px]"
               >
                 <div className="flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 text-white shrink-0">
                   <Instagram className="h-3 w-3" />
@@ -58,7 +58,7 @@ export const Footer: React.FC = () => {
                 href="https://t.me/bulverseofficial"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-3 py-2.5 rounded-xl bg-white border border-slate-200 shadow-xs active:bg-slate-50 transition-colors min-h-[42px]"
+                className="flex items-center gap-2 px-3 py-2.5 rounded-xl bg-white border border-slate-200 shadow-xs active:bg-slate-50 transition-colors min-h-[44px]"
               >
                 <div className="flex h-5 w-5 items-center justify-center rounded-full bg-cyan-500 text-white shrink-0">
                   <Send className="h-3 w-3" />
@@ -70,7 +70,7 @@ export const Footer: React.FC = () => {
                 href="https://x.com/bulverseofficial"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-3 py-2.5 rounded-xl bg-white border border-slate-200 shadow-xs active:bg-slate-50 transition-colors min-h-[42px]"
+                className="flex items-center gap-2 px-3 py-2.5 rounded-xl bg-white border border-slate-200 shadow-xs active:bg-slate-50 transition-colors min-h-[44px]"
               >
                 <div className="flex h-5 w-5 items-center justify-center rounded-full bg-slate-900 text-white shrink-0">
                   <Twitter className="h-3 w-3 fill-current" />

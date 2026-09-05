@@ -64,12 +64,12 @@ export const ServicePillars: React.FC<ServicePillarsProps> = ({ currency, onSele
               <div
                 key={service.id}
                 id={service.id}
-                className="group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-5 sm:p-7 shadow-poster-card hover:shadow-poster-card-hover hover:border-bulverse-blue/60 transition-all duration-300"
+                className="group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-4 sm:p-7 shadow-poster-card hover:shadow-poster-card-hover hover:border-bulverse-blue/60 transition-all duration-300 min-w-0 max-w-full"
               >
                 <div>
                   {/* Card Icon & Header */}
                   <div className="flex items-start justify-between mb-4 sm:mb-5">
-                    <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl sm:rounded-2xl bg-blue-50 border border-blue-100 group-hover:scale-105 transition-transform">
+                    <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl sm:rounded-2xl bg-blue-50 border border-blue-100 group-hover:scale-105 transition-transform shrink-0">
                       {iconMap[service.iconName] || <Server className="h-5 w-5 sm:h-6 sm:w-6 text-bulverse-blue" />}
                     </div>
 
@@ -81,7 +81,7 @@ export const ServicePillars: React.FC<ServicePillarsProps> = ({ currency, onSele
                   </div>
 
                   {/* Title & Tagline from Poster */}
-                  <h3 className="font-display text-xl sm:text-2xl font-black text-bulverse-blue uppercase tracking-tight mb-1.5">
+                  <h3 className="font-display text-xl sm:text-2xl font-black text-bulverse-blue uppercase tracking-tight mb-1.5 break-words">
                     {service.title}
                   </h3>
                   <p className="text-xs text-slate-500 leading-relaxed mb-5 font-medium">
@@ -95,7 +95,7 @@ export const ServicePillars: React.FC<ServicePillarsProps> = ({ currency, onSele
                         <div className="flex h-4 w-4 items-center justify-center rounded-full bg-blue-50 text-bulverse-blue shrink-0 font-bold text-xs">
                           ✓
                         </div>
-                        <span>{feature}</span>
+                        <span className="break-words">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -104,11 +104,11 @@ export const ServicePillars: React.FC<ServicePillarsProps> = ({ currency, onSele
                 <div>
                   {/* Poster Solid Deep Blue Bottom Pill Bar */}
                   <div className="mb-4 sm:mb-5">
-                    <div className="rounded-xl bg-[#0312B4] px-2.5 sm:px-3.5 py-2 sm:py-2.5 shadow-sm text-center">
-                      <div className="text-[10px] sm:text-[11px] font-mono font-bold tracking-wider text-white uppercase flex items-center justify-center gap-1 sm:gap-1.5 flex-wrap">
+                    <div className="rounded-xl bg-[#0312B4] px-2 sm:px-3.5 py-2 sm:py-2.5 shadow-sm text-center min-w-0 max-w-full">
+                      <div className="text-[9px] xs:text-[10px] sm:text-[11px] font-mono font-bold tracking-wider text-white uppercase flex items-center justify-center gap-1 sm:gap-1.5 flex-wrap">
                         {service.pills.map((pill, idx) => (
                           <React.Fragment key={idx}>
-                            <span>{pill}</span>
+                            <span className="whitespace-nowrap">{pill}</span>
                             {idx < service.pills.length - 1 && (
                               <span className="text-white/40">|</span>
                             )}
@@ -135,10 +135,10 @@ export const ServicePillars: React.FC<ServicePillarsProps> = ({ currency, onSele
                   {/* Action Button - Touch Optimized (min 48px height) */}
                   <button
                     onClick={() => onSelectTier(service, currentTier)}
-                    className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-slate-50 hover:bg-bulverse-blue px-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-800 hover:text-white border border-slate-200 hover:border-bulverse-blue shadow-xs active:scale-[0.98] transition-all duration-150 min-h-[46px]"
+                    className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-slate-50 hover:bg-bulverse-blue px-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-800 hover:text-white border border-slate-200 hover:border-bulverse-blue shadow-xs active:scale-[0.98] transition-all duration-150 min-h-[48px]"
                   >
                     <span>Configure {service.title.split(' ')[0]}</span>
-                    <ArrowRight className="h-4 w-4" />
+                    <ArrowRight className="h-4 w-4 shrink-0" />
                   </button>
                 </div>
 

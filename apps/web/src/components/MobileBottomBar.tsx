@@ -21,7 +21,7 @@ export const MobileBottomBar: React.FC<MobileBottomBarProps> = ({
         {/* Currency Switcher Pill for Mobile */}
         <button
           onClick={onToggleCurrency}
-          className="flex flex-col items-center justify-center px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 text-slate-700 active:bg-slate-100 shrink-0 min-w-[56px] transition-colors"
+          className="flex flex-col items-center justify-center px-3 py-1.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-700 active:bg-slate-100 shrink-0 min-w-[56px] min-h-[44px] transition-colors touch-manipulation"
           aria-label="Toggle currency"
         >
           <span className="text-[10px] font-mono text-slate-400 leading-none">CURRENCY</span>
@@ -35,7 +35,7 @@ export const MobileBottomBar: React.FC<MobileBottomBarProps> = ({
           href="https://portal.bulverse.com/clientarea.php"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-col items-center justify-center px-3 py-2 rounded-xl border border-slate-200 bg-slate-50 text-slate-700 active:bg-slate-100 shrink-0 transition-colors"
+          className="flex flex-col items-center justify-center px-3 py-1.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-700 active:bg-slate-100 shrink-0 min-w-[56px] min-h-[44px] transition-colors touch-manipulation"
         >
           <Server className="h-4 w-4 text-bulverse-blue mb-0.5" />
           <span className="text-[10px] font-bold text-slate-700 uppercase tracking-tight">Console</span>
@@ -44,7 +44,7 @@ export const MobileBottomBar: React.FC<MobileBottomBarProps> = ({
         {/* Primary Deploy Server Button */}
         <button
           onClick={onOpenConfigurator}
-          className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-bulverse-blue px-4 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-md shadow-bulverse-blue/30 active:scale-[0.98] transition-transform"
+          className="flex-1 flex items-center justify-center gap-2 rounded-xl bg-bulverse-blue px-4 py-3 text-xs font-bold uppercase tracking-wider text-white shadow-md shadow-bulverse-blue/30 active:scale-[0.98] transition-transform min-h-[44px] touch-manipulation"
         >
           <span>Deploy VPS</span>
           <ArrowRight className="h-3.5 w-3.5" />

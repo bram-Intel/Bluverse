@@ -40,8 +40,8 @@ export const DatacenterLatencyMap: React.FC = () => {
           </p>
         </div>
 
-        {/* Datacenter Nodes Grid - 2 columns on mobile, 6 on desktop */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+        {/* Datacenter Nodes Grid - 2 columns on mobile, 3 on tablet, 6 on desktop */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-4">
           {DATACENTERS.map((dc) => {
             const isSelected = activeRegion.id === dc.id;
             const currentPing = latencyJitter[dc.id] ?? dc.ping;
@@ -50,14 +50,14 @@ export const DatacenterLatencyMap: React.FC = () => {
               <button
                 key={dc.id}
                 onClick={() => setActiveRegion(dc)}
-                className={`relative flex flex-col justify-between p-3.5 sm:p-4 rounded-xl sm:rounded-2xl border text-left transition-all duration-150 active:scale-[0.98] ${
+                className={`relative flex flex-col justify-between p-3 sm:p-4 rounded-xl sm:rounded-2xl border text-left transition-all duration-150 active:scale-[0.98] min-w-0 max-w-full min-h-[72px] ${
                   isSelected
                     ? 'border-bulverse-blue bg-blue-50/90 shadow-sm ring-2 ring-bulverse-blue/30'
                     : 'border-slate-200 bg-white hover:border-blue-300 hover:bg-slate-50'
                 }`}
               >
                 <div className="flex items-center justify-between mb-2 sm:mb-3">
-                  <span className="text-xl sm:text-2xl">{dc.flag}</span>
+                  <span className="text-lg sm:text-2xl">{dc.flag}</span>
                   <div className="flex items-center gap-1 text-[10px] sm:text-[11px] font-mono font-bold text-emerald-600">
                     <span className="relative flex h-1.5 w-1.5 sm:h-2 sm:w-2">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -68,10 +68,10 @@ export const DatacenterLatencyMap: React.FC = () => {
                 </div>
 
                 <div>
-                  <div className="text-xs sm:text-sm font-bold text-slate-900 leading-tight">
+                  <div className="text-xs sm:text-sm font-bold text-slate-900 leading-tight truncate">
                     {dc.city}
                   </div>
-                  <div className="text-[9px] sm:text-[10px] font-mono text-slate-500 uppercase mt-0.5">
+                  <div className="text-[9px] sm:text-[10px] font-mono text-slate-500 uppercase mt-0.5 truncate">
                     {dc.region}
                   </div>
                 </div>
@@ -81,9 +81,9 @@ export const DatacenterLatencyMap: React.FC = () => {
         </div>
 
         {/* Selected Region Telemetry Diagnostic Card */}
-        <div className="mt-6 sm:mt-8 rounded-2xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm">
+        <div className="mt-6 sm:mt-8 rounded-2xl border border-slate-200 bg-white p-4 sm:p-6 shadow-sm min-w-0 max-w-full">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-5">
-            <div className="space-y-1">
+            <div className="space-y-1 min-w-0">
               <div className="text-[11px] sm:text-xs font-mono font-bold text-bulverse-blue uppercase tracking-wider">
                 Telemetry Diagnostics • {activeRegion.city} Node
               </div>
@@ -109,7 +109,7 @@ export const DatacenterLatencyMap: React.FC = () => {
                 href={`https://portal.bulverse.com/cart.php?datacenter=${activeRegion.id}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-bulverse-blue px-5 py-3 text-xs font-bold text-white shadow-sm hover:bg-bulverse-blue-hover active:scale-[0.98] transition-all min-h-[44px]"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-bulverse-blue px-5 py-3 text-xs font-bold text-white shadow-sm hover:bg-bulverse-blue-hover active:scale-[0.98] transition-all min-h-[46px]"
               >
                 <span>Deploy in {activeRegion.city}</span>
                 <ArrowUpRight className="h-3.5 w-3.5" />
