@@ -11,9 +11,24 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onOpenConfigurator }) => {
   return (
-    <section className="relative overflow-hidden pt-6 sm:pt-12 pb-12 sm:pb-20 bg-gradient-to-b from-[#FAFBFD] via-[#F5F8FE] to-[#FAFBFD] border-b border-slate-200/80">
+    <section className="relative overflow-hidden pt-8 sm:pt-16 pb-16 sm:pb-24 bg-ambient-mesh-hero border-b border-slate-200/80">
       
-      {/* Poster Signature Blue Dotted Grid (Top Right - hidden on mobile to avoid clutter) */}
+      {/* Google Antigravity Signature Dot Matrix Grid with Radial Vignette */}
+      <div className="absolute inset-0 bg-antigravity-dots mask-hero-glow pointer-events-none" />
+      
+      {/* Subtle Coordinate Blueprint Grid */}
+      <div className="absolute inset-0 bg-antigravity-grid mask-radial-faded pointer-events-none opacity-30" />
+
+      {/* Top Ambient Ethereal Glow Beam */}
+      <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[340px] sm:w-[650px] md:w-[900px] h-[300px] sm:h-[450px] bg-gradient-to-b from-blue-600/14 via-cyan-400/8 to-transparent blur-3xl pointer-events-none -z-0" />
+
+      {/* Engineering Precision Crosshairs */}
+      <span className="tech-crosshair top-3 left-4 hidden sm:block">+</span>
+      <span className="tech-crosshair top-3 right-4 hidden sm:block">+</span>
+      <span className="tech-crosshair bottom-3 left-4 hidden sm:block">+</span>
+      <span className="tech-crosshair bottom-3 right-4 hidden sm:block">+</span>
+
+      {/* Poster Signature Blue Dotted Matrix Cluster (Top Right) */}
       <div className="absolute top-8 right-8 sm:right-16 z-10 pointer-events-none hidden md:block">
         <div className="grid grid-cols-5 gap-3 opacity-60">
           {Array.from({ length: 25 }).map((_, i) => (
@@ -22,14 +37,14 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConfigurator }) => {
         </div>
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
           
           {/* Left Hero Column: Mobile-first Typography from Poster */}
           <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left min-w-0 max-w-full">
             
             {/* Live Operational Status Tag */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50/80 px-3 py-1 text-[11px] sm:text-xs font-mono text-bulverse-blue shadow-xs">
+            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200/90 bg-white/90 backdrop-blur-md px-3.5 py-1.5 text-[11px] sm:text-xs font-mono text-bulverse-blue shadow-xs">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-500 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
@@ -62,29 +77,29 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConfigurator }) => {
               </p>
             </div>
 
-            {/* Feature Checklist - Clean 2-column on mobile */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-3 pt-1 max-w-xl mx-auto lg:mx-0 text-left">
-              <div className="flex items-center gap-2 text-xs font-semibold text-slate-800">
+            {/* Feature Checklist - Clean 2-column on mobile with subtle glass surfaces */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-2.5 pt-1 max-w-xl mx-auto lg:mx-0 text-left">
+              <div className="flex items-center gap-2 px-2.5 py-2 rounded-xl bg-white/80 backdrop-blur-xs border border-slate-200/80 shadow-2xs text-xs font-semibold text-slate-800">
                 <CheckCircle2 className="h-4 w-4 text-bulverse-blue shrink-0" />
                 <span className="truncate">PCIe Gen4 NVMe</span>
               </div>
-              <div className="flex items-center gap-2 text-xs font-semibold text-slate-800">
+              <div className="flex items-center gap-2 px-2.5 py-2 rounded-xl bg-white/80 backdrop-blur-xs border border-slate-200/80 shadow-2xs text-xs font-semibold text-slate-800">
                 <CheckCircle2 className="h-4 w-4 text-bulverse-blue shrink-0" />
                 <span className="truncate">32TB Traffic</span>
               </div>
-              <div className="flex items-center gap-2 text-xs font-semibold text-slate-800">
+              <div className="flex items-center gap-2 px-2.5 py-2 rounded-xl bg-white/80 backdrop-blur-xs border border-slate-200/80 shadow-2xs text-xs font-semibold text-slate-800">
                 <CheckCircle2 className="h-4 w-4 text-bulverse-blue shrink-0" />
                 <span className="truncate">Full Root Access</span>
               </div>
-              <div className="flex items-center gap-2 text-xs font-semibold text-slate-800">
+              <div className="flex items-center gap-2 px-2.5 py-2 rounded-xl bg-white/80 backdrop-blur-xs border border-slate-200/80 shadow-2xs text-xs font-semibold text-slate-800">
                 <CheckCircle2 className="h-4 w-4 text-bulverse-blue shrink-0" />
                 <span className="truncate">99.9% Uptime SLA</span>
               </div>
-              <div className="flex items-center gap-2 text-xs font-semibold text-slate-800">
+              <div className="flex items-center gap-2 px-2.5 py-2 rounded-xl bg-white/80 backdrop-blur-xs border border-slate-200/80 shadow-2xs text-xs font-semibold text-slate-800">
                 <CheckCircle2 className="h-4 w-4 text-bulverse-blue shrink-0" />
                 <span className="truncate">cPanel Included</span>
               </div>
-              <div className="flex items-center gap-2 text-xs font-semibold text-slate-800">
+              <div className="flex items-center gap-2 px-2.5 py-2 rounded-xl bg-white/80 backdrop-blur-xs border border-slate-200/80 shadow-2xs text-xs font-semibold text-slate-800">
                 <CheckCircle2 className="h-4 w-4 text-bulverse-blue shrink-0" />
                 <span className="truncate">Trading VPS Ready</span>
               </div>

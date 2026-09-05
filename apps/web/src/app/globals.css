@@ -53,12 +53,87 @@ body {
   background: #0416C0;
 }
 
-/* Poster Subtle Dotted Pattern */
-.poster-dots {
-  background-image: radial-gradient(#0416C0 1.5px, transparent 1.5px);
-  background-size: 16px 16px;
-  opacity: 0.18;
+/* ==========================================================================
+   Google Antigravity & DeepMind Visual System
+   ========================================================================== */
+
+/* Antigravity Precision Dotted Grid Matrix */
+.bg-antigravity-dots {
+  background-image: radial-gradient(rgba(4, 22, 192, 0.16) 1.25px, transparent 1.25px);
+  background-size: 24px 24px;
 }
+
+.bg-antigravity-dots-dense {
+  background-image: radial-gradient(rgba(4, 22, 192, 0.22) 1.2px, transparent 1.2px);
+  background-size: 16px 16px;
+}
+
+/* Subtle Technical Coordinate Blueprint Grid */
+.bg-antigravity-grid {
+  background-image: 
+    linear-gradient(to right, rgba(4, 22, 192, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(4, 22, 192, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Vignette Masks: Soft fade out towards edges for organic focus */
+.mask-hero-glow {
+  mask-image: radial-gradient(ellipse 85% 70% at 50% 25%, black 25%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse 85% 70% at 50% 25%, black 25%, transparent 85%);
+}
+
+.mask-radial-faded {
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 35%, transparent 95%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 35%, transparent 95%);
+}
+
+/* Google Product Atmospheric Ambient Mesh Gradients */
+.bg-ambient-mesh-hero {
+  background: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(4, 22, 192, 0.13), transparent 70%),
+    radial-gradient(circle at 10% 20%, rgba(0, 210, 255, 0.08), transparent 45%),
+    radial-gradient(circle at 90% 15%, rgba(4, 22, 192, 0.10), transparent 50%),
+    radial-gradient(circle at 50% 85%, rgba(4, 22, 192, 0.04), transparent 60%),
+    linear-gradient(180deg, #FAFBFD 0%, #F5F8FE 50%, #FAFBFD 100%);
+}
+
+.bg-ambient-mesh-section {
+  background: 
+    radial-gradient(circle at 50% 0%, rgba(4, 22, 192, 0.07), transparent 60%),
+    radial-gradient(circle at 85% 50%, rgba(0, 210, 255, 0.04), transparent 40%),
+    linear-gradient(180deg, #FFFFFF 0%, #F8FAFD 50%, #FFFFFF 100%);
+}
+
+/* Glassmorphism Surface with Subtle Border Gradient */
+.glass-surface {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 4px 24px -2px rgba(4, 22, 192, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.glass-surface-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-surface-hover:hover {
+  background: rgba(255, 255, 255, 0.98);
+  border-color: rgba(4, 22, 192, 0.45);
+  box-shadow: 0 16px 40px -6px rgba(4, 22, 192, 0.14), 0 6px 14px -2px rgba(0, 0, 0, 0.04);
+  transform: translateY(-2px);
+}
+
+/* Engineering Crosshairs */
+.tech-crosshair {
+  position: absolute;
+  color: rgba(4, 22, 192, 0.3);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  pointer-events: none;
+  user-select: none;
+}
+
 
 /* Prevent iOS auto-zoom on input focus by enforcing 16px base font on mobile */
 input, select, textarea {

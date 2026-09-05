@@ -36,12 +36,21 @@ export const ServicePillars: React.FC<ServicePillarsProps> = ({ currency, onSele
   };
 
   return (
-    <section id="catalog" className="py-12 sm:py-20 bg-white border-b border-slate-200/80 relative">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="catalog" className="py-16 sm:py-24 bg-ambient-mesh-section border-b border-slate-200/80 relative overflow-hidden">
+      
+      {/* Antigravity Dotted Grid & Ambient Bloom */}
+      <div className="absolute inset-0 bg-antigravity-dots mask-radial-faded pointer-events-none opacity-40" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[340px] sm:w-[700px] h-[300px] bg-gradient-to-b from-blue-500/10 via-cyan-400/5 to-transparent blur-3xl pointer-events-none" />
+
+      {/* Precision Engineering Crosshairs */}
+      <span className="tech-crosshair top-3 left-4 hidden sm:block">+</span>
+      <span className="tech-crosshair top-3 right-4 hidden sm:block">+</span>
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-2.5 sm:space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-blue-200 bg-blue-50 text-[11px] sm:text-xs font-mono font-bold text-bulverse-blue uppercase tracking-wider">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-blue-200/90 bg-white/90 backdrop-blur-md text-[11px] sm:text-xs font-mono font-bold text-bulverse-blue uppercase tracking-wider shadow-xs">
             <span>OFFICIAL PRODUCT CATALOGUE</span>
           </div>
 
@@ -56,7 +65,7 @@ export const ServicePillars: React.FC<ServicePillarsProps> = ({ currency, onSele
 
         {/* 6-Card Poster Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7">
-          {CATALOG_SERVICES.map((service) => {
+          {CATALOG_SERVICES.map((service, sIdx) => {
             const currentTierIndex = activeTierMap[service.id] ?? 0;
             const currentTier = service.tiers[Math.min(currentTierIndex, service.tiers.length - 1)];
 
@@ -64,17 +73,25 @@ export const ServicePillars: React.FC<ServicePillarsProps> = ({ currency, onSele
               <div
                 key={service.id}
                 id={service.id}
-                className="group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-4 sm:p-7 shadow-poster-card hover:shadow-poster-card-hover hover:border-bulverse-blue/60 transition-all duration-300 min-w-0 max-w-full"
+                className="group relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white/95 backdrop-blur-xl p-4 sm:p-7 shadow-poster-card hover:shadow-antigravity-hover hover:border-bulverse-blue/50 transition-all duration-300 min-w-0 max-w-full overflow-hidden hover:-translate-y-1"
               >
+                {/* Top Subtle Shimmer Border on Hover */}
+                <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-transparent group-hover:via-bulverse-blue/70 to-transparent transition-all duration-300" />
+                
+                {/* Engineering Service Index Stamp */}
+                <div className="absolute top-4 right-4 text-[10px] font-mono font-bold text-slate-300 group-hover:text-bulverse-blue/50 transition-colors">
+                  0{sIdx + 1} //
+                </div>
+
                 <div>
                   {/* Card Icon & Header */}
                   <div className="flex items-start justify-between mb-4 sm:mb-5">
-                    <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl sm:rounded-2xl bg-blue-50 border border-blue-100 group-hover:scale-105 transition-transform shrink-0">
+                    <div className="flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl sm:rounded-2xl bg-gradient-to-b from-blue-50 to-blue-100/60 border border-blue-200/70 group-hover:scale-105 transition-transform shrink-0 shadow-xs">
                       {iconMap[service.iconName] || <Server className="h-5 w-5 sm:h-6 sm:w-6 text-bulverse-blue" />}
                     </div>
 
                     {currentTier?.badge && (
-                      <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-blue-50 text-bulverse-blue border border-blue-200 font-mono">
+                      <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-blue-50 text-bulverse-blue border border-blue-200 font-mono mr-8">
                         {currentTier.badge}
                       </span>
                     )}

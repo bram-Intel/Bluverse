@@ -16,8 +16,15 @@ export const HeroBladeRack: React.FC = () => {
   return (
     <div className="relative w-full max-w-[280px] xs:max-w-[320px] sm:max-w-[420px] md:max-w-[480px] h-[340px] xs:h-[380px] sm:h-[460px] md:h-[520px] mx-auto flex items-center justify-center select-none">
       
+      {/* Concentric Technical Orbital Radar Rings (Google Antigravity Style) */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-0">
+        <div className="w-[280px] xs:w-[320px] sm:w-[410px] md:w-[460px] h-[280px] xs:h-[320px] sm:h-[410px] md:h-[460px] rounded-full border border-dashed border-blue-400/25 animate-spin-slow" />
+        <div className="absolute w-[220px] xs:w-[250px] sm:w-[320px] md:w-[360px] h-[220px] xs:h-[250px] sm:h-[320px] md:h-[360px] rounded-full border border-blue-300/30" />
+        <div className="absolute w-[160px] xs:w-[190px] sm:w-[240px] h-[160px] xs:h-[190px] sm:h-[240px] rounded-full bg-gradient-to-tr from-blue-600/15 via-cyan-400/15 to-transparent blur-2xl animate-pulse-slow" />
+      </div>
+
       {/* Soft Ambient Blue Shadow on Floor */}
-      <div className="absolute bottom-4 sm:bottom-6 w-[220px] xs:w-[260px] sm:w-[360px] h-14 sm:h-20 bg-blue-600/15 blur-2xl rounded-[100%] pointer-events-none" />
+      <div className="absolute bottom-4 sm:bottom-6 w-[220px] xs:w-[260px] sm:w-[360px] h-14 sm:h-20 bg-blue-600/20 blur-2xl rounded-[100%] pointer-events-none" />
 
       {/* Orbiting Satellite Node 1: Globe (Direct from Poster) */}
       <div className="absolute top-6 xs:top-10 sm:top-16 right-0 xs:right-1 sm:right-6 z-30 animate-float">

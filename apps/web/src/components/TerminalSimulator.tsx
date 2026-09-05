@@ -71,14 +71,23 @@ root@api-gateway-prod:~# docker ps`,
   };
 
   return (
-    <section id="cli" className="py-12 sm:py-20 bg-white border-b border-slate-200 relative overflow-hidden">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="cli" className="py-16 sm:py-24 bg-ambient-mesh-section border-b border-slate-200/80 relative overflow-hidden">
+      
+      {/* Antigravity Dotted Grid & Ambient Terminal Bloom */}
+      <div className="absolute inset-0 bg-antigravity-dots mask-radial-faded pointer-events-none opacity-40" />
+      <div className="absolute top-1/2 -translate-y-1/2 right-4 w-[320px] sm:w-[550px] h-[550px] bg-gradient-to-tr from-blue-600/14 via-cyan-400/8 to-transparent blur-3xl pointer-events-none" />
+
+      {/* Precision Engineering Crosshairs */}
+      <span className="tech-crosshair top-3 left-4 hidden sm:block">+</span>
+      <span className="tech-crosshair top-3 right-4 hidden sm:block">+</span>
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
           {/* Left Description Column */}
           <div className="lg:col-span-5 space-y-4 sm:space-y-5 min-w-0 max-w-full">
-            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-[11px] sm:text-xs font-mono font-bold text-bulverse-blue">
+            <div className="inline-flex items-center gap-2 rounded-full border border-blue-200/90 bg-white/90 backdrop-blur-md px-3.5 py-1.5 text-[11px] sm:text-xs font-mono font-bold text-bulverse-blue shadow-xs">
               <Terminal className="h-3.5 w-3.5" />
               <span>DEVELOPER ORCHESTRATION</span>
             </div>
@@ -110,9 +119,9 @@ root@api-gateway-prod:~# docker ps`,
             </div>
           </div>
 
-          {/* Right Dark Terminal Frame */}
+          {/* Right Dark Terminal Frame with High Contrast Elevation */}
           <div className="lg:col-span-7 min-w-0 max-w-full">
-            <div className="rounded-xl sm:rounded-2xl border border-slate-800 bg-[#080E24] shadow-xl overflow-hidden max-w-full">
+            <div className="rounded-xl sm:rounded-2xl border border-slate-800 bg-[#080E24] shadow-2xl shadow-blue-950/25 overflow-hidden max-w-full ring-1 ring-white/10 relative">
               
               {/* Terminal Window Header */}
               <div className="flex items-center justify-between px-3 sm:px-4 py-2 sm:py-3 bg-[#050A1A] border-b border-slate-800 gap-2">

@@ -60,13 +60,26 @@ export default function HomePage() {
         <TerminalSimulator />
 
         {/* Enterprise Callout / Brand Identity Showcase */}
-        <section className="py-12 sm:py-20 bg-[#F5F8FE] border-b border-slate-200 relative overflow-hidden">
-          <div className="mx-auto max-w-7xl px-3.5 sm:px-6 lg:px-8">
-            <div className="rounded-2xl sm:rounded-3xl border border-blue-200 bg-white p-4.5 sm:p-8 lg:p-12 shadow-poster-card relative min-w-0 max-w-full">
+        <section className="py-16 sm:py-24 bg-ambient-mesh-hero border-b border-slate-200/80 relative overflow-hidden">
+          
+          {/* Antigravity Dotted Grid & Ambient Bloom */}
+          <div className="absolute inset-0 bg-antigravity-dots mask-radial-faded pointer-events-none opacity-40" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] sm:w-[800px] h-[400px] bg-gradient-to-r from-blue-600/10 via-cyan-400/8 to-transparent blur-3xl pointer-events-none" />
+
+          {/* Precision Engineering Crosshairs */}
+          <span className="tech-crosshair top-3 left-4 hidden sm:block">+</span>
+          <span className="tech-crosshair top-3 right-4 hidden sm:block">+</span>
+
+          <div className="relative mx-auto max-w-7xl px-3.5 sm:px-6 lg:px-8 z-10">
+            <div className="rounded-2xl sm:rounded-3xl glass-surface p-5 sm:p-8 lg:p-12 shadow-antigravity relative min-w-0 max-w-full overflow-hidden">
+              
+              {/* Top Shimmer Beam */}
+              <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-bulverse-blue/50 to-transparent" />
+              
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 
                 <div className="lg:col-span-8 space-y-4 min-w-0 max-w-full">
-                  <div className="inline-flex items-center gap-2 text-[10px] sm:text-xs font-mono font-bold text-bulverse-blue uppercase tracking-widest bg-blue-50 px-3 py-1 rounded-full border border-blue-200">
+                  <div className="inline-flex items-center gap-2 text-[10px] sm:text-xs font-mono font-bold text-bulverse-blue uppercase tracking-widest bg-white/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-blue-200/90 shadow-2xs">
                     <Sparkles className="h-3.5 w-3.5 shrink-0" />
                     <span>BUILT FOR SCALE WITHOUT ARCHITECTURAL REPLACEMENT</span>
                   </div>
@@ -84,7 +97,7 @@ export default function HomePage() {
                       href="https://portal.bulverse.com/cart.php"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-bulverse-blue px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-md shadow-bulverse-blue/20 hover:bg-bulverse-blue-hover transition-all min-h-[46px]"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-bulverse-blue px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-md shadow-bulverse-blue/25 hover:bg-bulverse-blue-hover active:scale-[0.98] transition-all min-h-[46px]"
                     >
                       <span>Deploy Server Instance</span>
                       <ArrowRight className="h-4 w-4" />
@@ -94,16 +107,16 @@ export default function HomePage() {
                       href="https://portal.bulverse.com/contact.php"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-slate-50 px-6 py-3.5 text-xs font-bold text-slate-800 hover:border-bulverse-blue hover:text-bulverse-blue transition-colors min-h-[46px]"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white/90 px-6 py-3.5 text-xs font-bold text-slate-800 hover:border-bulverse-blue hover:text-bulverse-blue transition-colors min-h-[46px]"
                     >
                       <span>Contact Solutions Engineer</span>
                     </a>
                   </div>
                 </div>
 
-                {/* Clean Enterprise Infrastructure Diagnostic Card (Replaces the poster image) */}
+                {/* Clean Enterprise Infrastructure Diagnostic Card */}
                 <div className="lg:col-span-4 flex justify-center min-w-0 max-w-full">
-                  <div className="w-full max-w-sm rounded-2xl border border-slate-200 bg-slate-50/90 p-4 sm:p-6 shadow-sm space-y-3 sm:space-y-4 min-w-0">
+                  <div className="w-full max-w-sm rounded-2xl border border-slate-200/90 bg-white/95 backdrop-blur-xl p-4 sm:p-6 shadow-sm space-y-3 sm:space-y-4 min-w-0 relative">
                     <div className="flex items-center justify-between pb-3 border-b border-slate-200">
                       <div className="flex items-center gap-2">
                         <span className="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -113,7 +126,7 @@ export default function HomePage() {
                     </div>
 
                     <div className="space-y-2.5 sm:space-y-3">
-                      <div className="p-3 sm:p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-between min-w-0">
+                      <div className="p-3 sm:p-3.5 rounded-xl bg-slate-50/80 border border-slate-200/80 shadow-2xs flex items-center justify-between min-w-0">
                         <div>
                           <div className="text-[10px] sm:text-[11px] font-mono text-slate-500 uppercase">Primary Uplink</div>
                           <div className="text-xs font-bold text-[#04052D]">10 Gbps Redundant Fiber</div>
@@ -121,7 +134,7 @@ export default function HomePage() {
                         <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-50 text-bulverse-blue border border-blue-200 shrink-0">ACTIVE</span>
                       </div>
 
-                      <div className="p-3 sm:p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-between min-w-0">
+                      <div className="p-3 sm:p-3.5 rounded-xl bg-slate-50/80 border border-slate-200/80 shadow-2xs flex items-center justify-between min-w-0">
                         <div>
                           <div className="text-[10px] sm:text-[11px] font-mono text-slate-500 uppercase">Storage Architecture</div>
                           <div className="text-xs font-bold text-[#04052D]">PCIe Gen4 NVMe RAID 10</div>
@@ -129,7 +142,7 @@ export default function HomePage() {
                         <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-emerald-50 text-emerald-600 border border-emerald-200 shrink-0">HEALTHY</span>
                       </div>
 
-                      <div className="p-3 sm:p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm flex items-center justify-between min-w-0">
+                      <div className="p-3 sm:p-3.5 rounded-xl bg-slate-50/80 border border-slate-200/80 shadow-2xs flex items-center justify-between min-w-0">
                         <div>
                           <div className="text-[10px] sm:text-[11px] font-mono text-slate-500 uppercase">DDoS Mitigation</div>
                           <div className="text-xs font-bold text-[#04052D]">Layer 3/4 & Layer 7 Shield</div>

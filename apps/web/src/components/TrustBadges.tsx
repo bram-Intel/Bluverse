@@ -14,22 +14,30 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export const TrustBadges: React.FC = () => {
   return (
-    <section className="py-6 sm:py-12 bg-[#F8FAFC]">
+    <section className="py-6 sm:py-10 bg-[#F8FAFC]/80 relative">
       <div className="mx-auto max-w-7xl px-3.5 sm:px-6 lg:px-8">
         
-        {/* Poster Trust Banner Bar - Balanced for Mobile & Desktop */}
-        <div className="rounded-2xl border border-slate-200 bg-white p-3.5 sm:p-6 shadow-sm">
+        {/* Antigravity Glass Trust Banner Bar */}
+        <div className="glass-surface rounded-2xl p-3.5 sm:p-6 shadow-poster-card relative overflow-hidden">
+          
+          {/* Top Gradient Shimmer Beam */}
+          <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-bulverse-blue/40 to-transparent" />
+          
+          {/* Precision Engineering Crosshairs */}
+          <span className="tech-crosshair top-2 left-3 hidden sm:block">+</span>
+          <span className="tech-crosshair top-2 right-3 hidden sm:block">+</span>
+
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2.5 sm:gap-4 md:gap-6">
             {TRUST_BADGES.map((badge, idx) => {
               const isLastOddItem = idx === TRUST_BADGES.length - 1;
               return (
                 <div
                   key={idx}
-                  className={`flex flex-col items-center text-center p-2.5 sm:p-2 rounded-xl bg-slate-50/60 md:bg-transparent border md:border-0 border-slate-100 min-w-0 ${
+                  className={`flex flex-col items-center text-center p-3 sm:p-3 rounded-xl bg-white/70 hover:bg-white border border-slate-200/80 hover:border-blue-300 shadow-2xs hover:shadow-sm transition-all duration-200 min-w-0 ${
                     isLastOddItem ? 'col-span-2 sm:col-span-1' : ''
                   }`}
                 >
-                  <div className="mb-1.5 sm:mb-2 shrink-0">
+                  <div className="mb-1.5 sm:mb-2 shrink-0 group-hover:scale-105 transition-transform">
                     {iconMap[badge.icon]}
                   </div>
                   <h3 className="font-display text-xs sm:text-sm font-black tracking-wider text-[#04052D] uppercase truncate max-w-full">

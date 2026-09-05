@@ -27,7 +27,10 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
   }, [mobileMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 w-full left-0 right-0 border-b border-slate-200/80 bg-white/95 backdrop-blur-md">
+    <header className="sticky top-0 z-50 w-full left-0 right-0 border-b border-slate-200/80 bg-white/85 backdrop-blur-xl shadow-2xs relative">
+      {/* Google Antigravity Luminous Bottom Shimmer Line */}
+      <div className="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-bulverse-blue/35 to-transparent pointer-events-none" />
+
       <div className="w-full max-w-7xl mx-auto flex h-16 sm:h-20 items-center justify-between px-3 sm:px-6 lg:px-8">
         
         {/* Brand Logo - Official Logo Mark & Wordmark */}

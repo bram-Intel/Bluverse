@@ -7,8 +7,17 @@ import { Send, Twitter, Facebook, Instagram, ArrowUpRight } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="border-t border-slate-200 bg-[#FAFBFD] pt-12 sm:pt-16 pb-24 sm:pb-12 text-slate-600 text-xs">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <footer className="border-t border-slate-200/80 bg-ambient-mesh-section pt-14 sm:pt-20 pb-28 sm:pb-14 text-slate-600 text-xs relative overflow-hidden">
+      
+      {/* Antigravity Dotted Grid & Ambient Top Shimmer */}
+      <div className="absolute inset-0 bg-antigravity-dots mask-radial-faded pointer-events-none opacity-25" />
+      <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-bulverse-blue/30 to-transparent" />
+
+      {/* Precision Engineering Crosshairs */}
+      <span className="tech-crosshair top-3 left-4 hidden sm:block">+</span>
+      <span className="tech-crosshair top-3 right-4 hidden sm:block">+</span>
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10">
         
         {/* Top Poster Mantra & Social Row */}
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 sm:gap-8 pb-10 sm:pb-12 border-b border-slate-200">
