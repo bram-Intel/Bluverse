@@ -23,146 +23,173 @@ const getServiceIcon = (iconName: string, className = "h-5 w-5 sm:h-6 sm:w-6 tex
 
 /* Domain-Specific Watermark SVGs */
 const VpsWatermark = () => (
-  <svg className="absolute -right-10 -bottom-10 w-64 h-64 text-blue-600/10 group-hover:text-blue-600/20 transition-all duration-500 pointer-events-none select-none -rotate-6" viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="1.2">
-    <rect x="40" y="40" width="120" height="120" rx="12" strokeDasharray="4 2" />
-    <rect x="52" y="52" width="96" height="96" rx="6" />
-    <rect x="58" y="58" width="40" height="40" rx="3" fill="currentColor" fillOpacity="0.08" />
-    <rect x="102" y="58" width="40" height="40" rx="3" fill="currentColor" fillOpacity="0.08" />
-    <rect x="58" y="102" width="40" height="40" rx="3" fill="currentColor" fillOpacity="0.08" />
-    <rect x="102" y="102" width="40" height="40" rx="3" fill="currentColor" fillOpacity="0.08" />
-    <text x="63" y="82" fontSize="7" fontFamily="monospace" fill="currentColor" stroke="none" fontWeight="bold">EPYC_01</text>
-    <text x="107" y="82" fontSize="7" fontFamily="monospace" fill="currentColor" stroke="none" fontWeight="bold">EPYC_02</text>
-    <text x="63" y="126" fontSize="7" fontFamily="monospace" fill="currentColor" stroke="none" fontWeight="bold">EPYC_03</text>
-    <text x="107" y="126" fontSize="7" fontFamily="monospace" fill="currentColor" stroke="none" fontWeight="bold">EPYC_04</text>
-    <path d="M60 40 V20 M80 40 V15 M100 40 V12 M120 40 V15 M140 40 V20" />
-    <circle cx="60" cy="18" r="2" fill="currentColor" />
-    <circle cx="80" cy="13" r="2" fill="currentColor" />
-    <circle cx="100" cy="10" r="2" fill="currentColor" />
-    <circle cx="120" cy="13" r="2" fill="currentColor" />
-    <circle cx="140" cy="18" r="2" fill="currentColor" />
-    <path d="M60 160 V180 M80 160 V185 M100 160 V188 M120 160 V185 M140 160 V180" />
-    <circle cx="60" cy="182" r="2" fill="currentColor" />
-    <circle cx="80" cy="187" r="2" fill="currentColor" />
-    <circle cx="100" cy="190" r="2" fill="currentColor" />
-    <circle cx="120" cy="187" r="2" fill="currentColor" />
-    <circle cx="140" cy="182" r="2" fill="currentColor" />
-    <path d="M40 60 H20 M40 80 H15 M40 100 H12 M40 120 H15 M40 140 H20" />
-    <circle cx="18" cy="60" r="2" fill="currentColor" />
-    <circle cx="13" cy="80" r="2" fill="currentColor" />
-    <circle cx="10" cy="100" r="2" fill="currentColor" />
-    <circle cx="13" cy="120" r="2" fill="currentColor" />
-    <circle cx="18" cy="140" r="2" fill="currentColor" />
-    <path d="M160 60 H180 M160 80 H185 M160 100 H188 M160 120 H185 M160 140 H180" />
-    <circle cx="182" cy="60" r="2" fill="currentColor" />
-    <circle cx="187" cy="80" r="2" fill="currentColor" />
-    <circle cx="190" cy="100" r="2" fill="currentColor" />
-    <circle cx="187" cy="120" r="2" fill="currentColor" />
-    <circle cx="182" cy="140" r="2" fill="currentColor" />
+  <svg
+    className="absolute -right-8 top-24 w-48 h-48 pointer-events-none select-none transition-all duration-500 opacity-15 group-hover:opacity-30 -rotate-6"
+    viewBox="0 0 200 200"
+    fill="none"
+    stroke="#0416C0"
+    strokeWidth="1.2"
+  >
+    <rect x="40" y="40" width="120" height="120" rx="12" strokeDasharray="4 2" strokeOpacity="0.4" />
+    <rect x="52" y="52" width="96" height="96" rx="6" strokeOpacity="0.6" />
+    <rect x="58" y="58" width="40" height="40" rx="3" fill="#0416C0" fillOpacity="0.06" strokeOpacity="0.4" />
+    <rect x="102" y="58" width="40" height="40" rx="3" fill="#0416C0" fillOpacity="0.06" strokeOpacity="0.4" />
+    <rect x="58" y="102" width="40" height="40" rx="3" fill="#0416C0" fillOpacity="0.06" strokeOpacity="0.4" />
+    <rect x="102" y="102" width="40" height="40" rx="3" fill="#0416C0" fillOpacity="0.06" strokeOpacity="0.4" />
+    <path d="M60 40 V20 M80 40 V15 M100 40 V12 M120 40 V15 M140 40 V20" strokeOpacity="0.5" />
+    <circle cx="60" cy="18" r="2" fill="#0416C0" fillOpacity="0.5" />
+    <circle cx="80" cy="13" r="2" fill="#0416C0" fillOpacity="0.5" />
+    <circle cx="100" cy="10" r="2" fill="#0416C0" fillOpacity="0.5" />
+    <circle cx="120" cy="13" r="2" fill="#0416C0" fillOpacity="0.5" />
+    <circle cx="140" cy="18" r="2" fill="#0416C0" fillOpacity="0.5" />
+    <path d="M60 160 V180 M80 160 V185 M100 160 V188 M120 160 V185 M140 160 V180" strokeOpacity="0.5" />
+    <circle cx="60" cy="182" r="2" fill="#0416C0" fillOpacity="0.5" />
+    <circle cx="80" cy="187" r="2" fill="#0416C0" fillOpacity="0.5" />
+    <circle cx="100" cy="190" r="2" fill="#0416C0" fillOpacity="0.5" />
+    <circle cx="120" cy="187" r="2" fill="#0416C0" fillOpacity="0.5" />
+    <circle cx="140" cy="182" r="2" fill="#0416C0" fillOpacity="0.5" />
+    <path d="M40 60 H20 M40 80 H15 M40 100 H12 M40 120 H15 M40 140 H20" strokeOpacity="0.5" />
+    <circle cx="18" cy="60" r="2" fill="#0416C0" fillOpacity="0.5" />
+    <circle cx="13" cy="80" r="2" fill="#0416C0" fillOpacity="0.5" />
+    <circle cx="10" cy="100" r="2" fill="#0416C0" fillOpacity="0.5" />
+    <circle cx="13" cy="120" r="2" fill="#0416C0" fillOpacity="0.5" />
+    <circle cx="18" cy="140" r="2" fill="#0416C0" fillOpacity="0.5" />
+    <path d="M160 60 H180 M160 80 H185 M160 100 H188 M160 120 H185 M160 140 H180" strokeOpacity="0.5" />
+    <circle cx="182" cy="60" r="2" fill="#0416C0" fillOpacity="0.5" />
+    <circle cx="187" cy="80" r="2" fill="#0416C0" fillOpacity="0.5" />
+    <circle cx="190" cy="100" r="2" fill="#0416C0" fillOpacity="0.5" />
+    <circle cx="187" cy="120" r="2" fill="#0416C0" fillOpacity="0.5" />
+    <circle cx="182" cy="140" r="2" fill="#0416C0" fillOpacity="0.5" />
   </svg>
 );
 
 const HostingWatermark = () => (
-  <svg className="absolute -right-10 -bottom-10 w-64 h-64 text-cyan-600/12 group-hover:text-cyan-500/22 transition-all duration-500 pointer-events-none select-none" viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="1.2">
-    <circle cx="100" cy="100" r="70" />
-    <ellipse cx="100" cy="100" rx="70" ry="26" />
-    <ellipse cx="100" cy="100" rx="35" ry="70" />
-    <line x1="100" y1="30" x2="100" y2="170" />
-    <line x1="30" y1="100" x2="170" y2="100" />
-    <ellipse cx="100" cy="100" rx="88" ry="42" strokeDasharray="3 3" transform="rotate(-25 100 100)" />
-    <circle cx="165" cy="65" r="4" fill="currentColor" />
-    <circle cx="35" cy="135" r="3" fill="currentColor" />
-    <path d="M165 65 L180 50 M165 65 L175 75" />
-    <circle cx="100" cy="100" r="5" fill="currentColor" fillOpacity="0.2" />
-    <text x="68" y="118" fontSize="8" fontFamily="monospace" fill="currentColor" stroke="none" fontWeight="bold">HTTP/3_EDGE</text>
+  <svg
+    className="absolute -right-8 top-24 w-48 h-48 pointer-events-none select-none transition-all duration-500 opacity-15 group-hover:opacity-30"
+    viewBox="0 0 200 200"
+    fill="none"
+    stroke="#00D2FF"
+    strokeWidth="1.2"
+  >
+    <circle cx="100" cy="100" r="66" strokeOpacity="0.4" />
+    <ellipse cx="100" cy="100" rx="66" ry="24" strokeOpacity="0.35" />
+    <ellipse cx="100" cy="100" rx="30" ry="66" strokeOpacity="0.35" />
+    <line x1="100" y1="34" x2="100" y2="166" strokeOpacity="0.3" />
+    <line x1="34" y1="100" x2="166" y2="100" strokeOpacity="0.3" />
+    <ellipse cx="100" cy="100" rx="82" ry="36" strokeDasharray="3 3" transform="rotate(-25 100 100)" strokeOpacity="0.5" />
+    <circle cx="160" cy="68" r="3.5" fill="#00D2FF" fillOpacity="0.7" />
+    <circle cx="40" cy="132" r="2.5" fill="#00D2FF" fillOpacity="0.5" />
+    <path d="M160 68 L172 58 M160 68 L169 75" strokeOpacity="0.5" />
+    <circle cx="100" cy="100" r="4.5" fill="#00D2FF" fillOpacity="0.2" />
   </svg>
 );
 
 const StorageWatermark = () => (
-  <svg className="absolute -right-10 -bottom-10 w-64 h-64 text-indigo-600/10 group-hover:text-indigo-600/20 transition-all duration-500 pointer-events-none select-none" viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="1.2">
-    <ellipse cx="100" cy="55" rx="65" ry="18" fill="currentColor" fillOpacity="0.05" />
-    <path d="M35 55 v22 c0 10 29 18 65 18 s65 -8 65 -18 V55" />
-    <ellipse cx="100" cy="77" rx="65" ry="18" fill="currentColor" fillOpacity="0.04" />
-    <path d="M35 77 v22 c0 10 29 18 65 18 s65 -8 65 -18 V77" />
-    <ellipse cx="100" cy="99" rx="65" ry="18" fill="currentColor" fillOpacity="0.04" />
-    <path d="M35 99 v22 c0 10 29 18 65 18 s65 -8 65 -18 V99" />
-    <ellipse cx="100" cy="121" rx="65" ry="18" fill="currentColor" fillOpacity="0.04" />
-    <path d="M35 121 v22 c0 10 29 18 65 18 s65 -8 65 -18 V121" />
-    <line x1="100" y1="42" x2="100" y2="148" strokeDasharray="3 3" />
-    <circle cx="100" cy="55" r="8" fill="currentColor" fillOpacity="0.1" />
-    <rect x="92" y="146" width="16" height="14" rx="2" stroke="currentColor" />
-    <path d="M96 146 v-4 a4 4 0 0 1 8 0 v4" />
-    <text x="64" y="96" fontSize="7.5" fontFamily="monospace" fill="currentColor" stroke="none" fontWeight="bold">S3_VAULT_99.999%</text>
+  <svg
+    className="absolute -right-8 top-24 w-48 h-48 pointer-events-none select-none transition-all duration-500 opacity-15 group-hover:opacity-30"
+    viewBox="0 0 200 200"
+    fill="none"
+    stroke="#6366F1"
+    strokeWidth="1.2"
+  >
+    <ellipse cx="100" cy="55" rx="65" ry="18" fill="#6366F1" fillOpacity="0.05" strokeOpacity="0.4" />
+    <path d="M35 55 v22 c0 10 29 18 65 18 s65 -8 65 -18 V55" strokeOpacity="0.35" />
+    <ellipse cx="100" cy="77" rx="65" ry="18" fill="#6366F1" fillOpacity="0.04" strokeOpacity="0.35" />
+    <path d="M35 77 v22 c0 10 29 18 65 18 s65 -8 65 -18 V77" strokeOpacity="0.35" />
+    <ellipse cx="100" cy="99" rx="65" ry="18" fill="#6366F1" fillOpacity="0.04" strokeOpacity="0.35" />
+    <path d="M35 99 v22 c0 10 29 18 65 18 s65 -8 65 -18 V99" strokeOpacity="0.35" />
+    <ellipse cx="100" cy="121" rx="65" ry="18" fill="#6366F1" fillOpacity="0.04" strokeOpacity="0.35" />
+    <path d="M35 121 v22 c0 10 29 18 65 18 s65 -8 65 -18 V121" strokeOpacity="0.4" />
+    <line x1="100" y1="42" x2="100" y2="148" strokeDasharray="3 3" strokeOpacity="0.3" />
+    <circle cx="100" cy="55" r="8" fill="#6366F1" fillOpacity="0.1" strokeOpacity="0.35" />
+    <rect x="92" y="146" width="16" height="14" rx="2" strokeOpacity="0.45" />
+    <path d="M96 146 v-4 a4 4 0 0 1 8 0 v4" strokeOpacity="0.45" />
   </svg>
 );
 
 const NetworkingWatermark = () => (
-  <svg className="absolute -right-10 -bottom-10 w-64 h-64 text-teal-600/10 group-hover:text-teal-600/20 transition-all duration-500 pointer-events-none select-none" viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="1.2">
-    <line x1="45" y1="55" x2="100" y2="35" strokeDasharray="3 2" />
-    <line x1="100" y1="35" x2="155" y2="60" />
-    <line x1="45" y1="55" x2="70" y2="110" />
-    <line x1="100" y1="35" x2="105" y2="105" strokeWidth="1.8" />
-    <line x1="155" y1="60" x2="160" y2="120" />
-    <line x1="70" y1="110" x2="105" y2="105" />
-    <line x1="105" y1="105" x2="160" y2="120" />
-    <line x1="70" y1="110" x2="50" y2="165" />
-    <line x1="105" y1="105" x2="115" y2="165" />
-    <line x1="160" y1="120" x2="150" y2="165" />
-    <line x1="50" y1="165" x2="115" y2="165" />
-    <line x1="115" y1="165" x2="150" y2="165" strokeDasharray="2 2" />
-    <circle cx="45" cy="55" r="4" fill="currentColor" />
-    <circle cx="100" cy="35" r="6" fill="currentColor" fillOpacity="0.2" />
-    <circle cx="100" cy="35" r="3" fill="currentColor" />
-    <circle cx="155" cy="60" r="5" fill="currentColor" />
-    <circle cx="70" cy="110" r="5" fill="currentColor" />
-    <circle cx="105" cy="105" r="10" strokeDasharray="2 2" />
-    <circle cx="105" cy="105" r="5" fill="currentColor" />
-    <circle cx="160" cy="120" r="4" fill="currentColor" />
-    <circle cx="50" cy="165" r="4" fill="currentColor" />
-    <circle cx="115" cy="165" r="5" fill="currentColor" />
-    <circle cx="150" cy="165" r="4" fill="currentColor" />
-    <text x="68" y="98" fontSize="7.5" fontFamily="monospace" fill="currentColor" stroke="none" fontWeight="bold">BGP_FABRIC_400G</text>
+  <svg
+    className="absolute -right-8 top-24 w-48 h-48 pointer-events-none select-none transition-all duration-500 opacity-15 group-hover:opacity-30"
+    viewBox="0 0 200 200"
+    fill="none"
+    stroke="#0D9488"
+    strokeWidth="1.2"
+  >
+    <line x1="45" y1="55" x2="100" y2="35" strokeDasharray="3 2" strokeOpacity="0.3" />
+    <line x1="100" y1="35" x2="155" y2="60" strokeOpacity="0.35" />
+    <line x1="45" y1="55" x2="70" y2="110" strokeOpacity="0.35" />
+    <line x1="100" y1="35" x2="105" y2="105" strokeWidth="1.8" strokeOpacity="0.45" />
+    <line x1="155" y1="60" x2="160" y2="120" strokeOpacity="0.35" />
+    <line x1="70" y1="110" x2="105" y2="105" strokeOpacity="0.35" />
+    <line x1="105" y1="105" x2="160" y2="120" strokeOpacity="0.35" />
+    <line x1="70" y1="110" x2="50" y2="165" strokeOpacity="0.3" />
+    <line x1="105" y1="105" x2="115" y2="165" strokeOpacity="0.35" />
+    <line x1="160" y1="120" x2="150" y2="165" strokeOpacity="0.3" />
+    <line x1="50" y1="165" x2="115" y2="165" strokeOpacity="0.35" />
+    <line x1="115" y1="165" x2="150" y2="165" strokeDasharray="2 2" strokeOpacity="0.3" />
+    <circle cx="45" cy="55" r="3.5" fill="#0D9488" fillOpacity="0.5" />
+    <circle cx="100" cy="35" r="5" fill="#0D9488" fillOpacity="0.15" strokeOpacity="0.4" />
+    <circle cx="100" cy="35" r="2.5" fill="#0D9488" fillOpacity="0.6" />
+    <circle cx="155" cy="60" r="4" fill="#0D9488" fillOpacity="0.5" />
+    <circle cx="70" cy="110" r="4" fill="#0D9488" fillOpacity="0.5" />
+    <circle cx="105" cy="105" r="8" strokeDasharray="2 2" strokeOpacity="0.4" />
+    <circle cx="105" cy="105" r="4" fill="#0D9488" fillOpacity="0.7" />
+    <circle cx="160" cy="120" r="3.5" fill="#0D9488" fillOpacity="0.5" />
+    <circle cx="50" cy="165" r="3.5" fill="#0D9488" fillOpacity="0.4" />
+    <circle cx="115" cy="165" r="4" fill="#0D9488" fillOpacity="0.5" />
+    <circle cx="150" cy="165" r="3.5" fill="#0D9488" fillOpacity="0.4" />
   </svg>
 );
 
 const TradingWatermark = () => (
-  <svg className="absolute -right-10 -bottom-10 w-64 h-64 text-emerald-600/10 group-hover:text-emerald-600/22 transition-all duration-500 pointer-events-none select-none" viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="1.2">
-    <line x1="30" y1="160" x2="175" y2="160" strokeDasharray="2 2" />
-    <line x1="30" y1="120" x2="175" y2="120" strokeDasharray="2 2" />
-    <line x1="30" y1="80" x2="175" y2="80" strokeDasharray="2 2" />
-    <line x1="30" y1="40" x2="175" y2="40" strokeDasharray="2 2" />
-    <line x1="45" y1="110" x2="45" y2="150" />
-    <rect x="40" y="120" width="10" height="20" fill="currentColor" fillOpacity="0.2" />
-    <line x1="68" y1="100" x2="68" y2="140" />
-    <rect x="63" y="105" width="10" height="25" fill="currentColor" fillOpacity="0.4" />
-    <line x1="91" y1="80" x2="91" y2="125" />
-    <rect x="86" y="88" width="10" height="30" fill="currentColor" fillOpacity="0.4" />
-    <line x1="114" y1="58" x2="114" y2="105" />
-    <rect x="109" y="66" width="10" height="28" fill="currentColor" fillOpacity="0.5" />
-    <line x1="137" y1="42" x2="137" y2="88" />
-    <rect x="132" y="48" width="10" height="24" fill="currentColor" fillOpacity="0.6" />
-    <line x1="160" y1="30" x2="160" y2="70" />
-    <rect x="155" y="34" width="10" height="20" fill="currentColor" fillOpacity="0.7" />
-    <path d="M40 145 C 70 135, 90 100, 115 80 S 145 45, 170 32" stroke="currentColor" strokeWidth="1.8" />
-    <circle cx="170" cy="32" r="3" fill="currentColor" />
-    <text x="50" y="60" fontSize="7.5" fontFamily="monospace" fill="currentColor" stroke="none" fontWeight="bold">TICK_LD4_0.78ms</text>
+  <svg
+    className="absolute -right-8 top-24 w-48 h-48 pointer-events-none select-none transition-all duration-500 opacity-15 group-hover:opacity-30"
+    viewBox="0 0 200 200"
+    fill="none"
+    stroke="#10B981"
+    strokeWidth="1.2"
+  >
+    <line x1="30" y1="160" x2="175" y2="160" strokeDasharray="2 2" strokeOpacity="0.25" />
+    <line x1="30" y1="120" x2="175" y2="120" strokeDasharray="2 2" strokeOpacity="0.25" />
+    <line x1="30" y1="80" x2="175" y2="80" strokeDasharray="2 2" strokeOpacity="0.25" />
+    <line x1="30" y1="40" x2="175" y2="40" strokeDasharray="2 2" strokeOpacity="0.25" />
+    <line x1="45" y1="110" x2="45" y2="150" strokeOpacity="0.35" />
+    <rect x="40" y="120" width="10" height="20" fill="#10B981" fillOpacity="0.12" strokeOpacity="0.35" />
+    <line x1="68" y1="100" x2="68" y2="140" strokeOpacity="0.35" />
+    <rect x="63" y="105" width="10" height="25" fill="#10B981" fillOpacity="0.16" strokeOpacity="0.35" />
+    <line x1="91" y1="80" x2="91" y2="125" strokeOpacity="0.35" />
+    <rect x="86" y="88" width="10" height="30" fill="#10B981" fillOpacity="0.2" strokeOpacity="0.4" />
+    <line x1="114" y1="58" x2="114" y2="105" strokeOpacity="0.4" />
+    <rect x="109" y="66" width="10" height="28" fill="#10B981" fillOpacity="0.25" strokeOpacity="0.4" />
+    <line x1="137" y1="42" x2="137" y2="88" strokeOpacity="0.4" />
+    <rect x="132" y="48" width="10" height="24" fill="#10B981" fillOpacity="0.3" strokeOpacity="0.5" />
+    <line x1="160" y1="30" x2="160" y2="70" strokeOpacity="0.5" />
+    <rect x="155" y="34" width="10" height="20" fill="#10B981" fillOpacity="0.35" strokeOpacity="0.5" />
+    <path d="M40 145 C 70 135, 90 100, 115 80 S 145 45, 170 32" stroke="#10B981" strokeWidth="1.8" strokeOpacity="0.55" />
+    <circle cx="170" cy="32" r="3" fill="#10B981" fillOpacity="0.7" />
   </svg>
 );
 
 const CustomWatermark = () => (
-  <svg className="absolute -right-10 -bottom-10 w-64 h-64 text-[#04052D]/10 group-hover:text-blue-900/20 transition-all duration-500 pointer-events-none select-none" viewBox="0 0 200 200" fill="none" stroke="currentColor" strokeWidth="1.2">
-    <line x1="100" y1="20" x2="100" y2="180" strokeDasharray="4 2" />
-    <line x1="20" y1="100" x2="180" y2="100" strokeDasharray="4 2" />
-    <path d="M100 40 L145 65 L100 90 L55 65 Z" fill="currentColor" fillOpacity="0.08" />
-    <path d="M55 65 L55 85 L100 110 L100 90 Z" fill="currentColor" fillOpacity="0.12" />
-    <path d="M145 65 L145 85 L100 110 L100 90 Z" fill="currentColor" fillOpacity="0.05" />
-    <path d="M100 90 L145 115 L100 140 L55 115 Z" fill="currentColor" fillOpacity="0.06" />
-    <path d="M55 115 L55 135 L100 160 L100 140 Z" fill="currentColor" fillOpacity="0.10" />
-    <path d="M145 115 L145 135 L100 160 L100 140 Z" fill="currentColor" fillOpacity="0.04" />
-    <path d="M100 140 L145 165 L100 190 L55 165 Z" fill="currentColor" fillOpacity="0.04" />
-    <circle cx="100" cy="40" r="3" fill="currentColor" />
-    <circle cx="145" cy="65" r="3" fill="currentColor" />
-    <circle cx="55" cy="65" r="3" fill="currentColor" />
-    <text x="64" y="178" fontSize="7" fontFamily="monospace" fill="currentColor" stroke="none" fontWeight="bold">BESPOKE_ENTERPRISE_ARCH</text>
+  <svg
+    className="absolute -right-8 top-24 w-48 h-48 pointer-events-none select-none transition-all duration-500 opacity-15 group-hover:opacity-30"
+    viewBox="0 0 200 200"
+    fill="none"
+    stroke="#0416C0"
+    strokeWidth="1.2"
+  >
+    <line x1="100" y1="20" x2="100" y2="180" strokeDasharray="4 2" strokeOpacity="0.25" />
+    <line x1="20" y1="100" x2="180" y2="100" strokeDasharray="4 2" strokeOpacity="0.25" />
+    <path d="M100 40 L145 65 L100 90 L55 65 Z" fill="#0416C0" fillOpacity="0.04" strokeOpacity="0.35" />
+    <path d="M55 65 L55 85 L100 110 L100 90 Z" fill="#0416C0" fillOpacity="0.06" strokeOpacity="0.35" />
+    <path d="M145 65 L145 85 L100 110 L100 90 Z" fill="#0416C0" fillOpacity="0.03" strokeOpacity="0.35" />
+    <path d="M100 90 L145 115 L100 140 L55 115 Z" fill="#0416C0" fillOpacity="0.04" strokeOpacity="0.35" />
+    <path d="M55 115 L55 135 L100 160 L100 140 Z" fill="#0416C0" fillOpacity="0.05" strokeOpacity="0.35" />
+    <path d="M145 115 L145 135 L100 160 L100 140 Z" fill="#0416C0" fillOpacity="0.02" strokeOpacity="0.35" />
+    <path d="M100 140 L145 165 L100 190 L55 165 Z" fill="#0416C0" fillOpacity="0.03" strokeOpacity="0.25" />
+    <circle cx="100" cy="40" r="2.5" fill="#0416C0" fillOpacity="0.4" />
+    <circle cx="145" cy="65" r="2.5" fill="#0416C0" fillOpacity="0.4" />
+    <circle cx="55" cy="65" r="2.5" fill="#0416C0" fillOpacity="0.4" />
   </svg>
 );
 
@@ -392,7 +419,7 @@ export const ServicePillars: React.FC<ServicePillarsProps> = ({ currency, onSele
                 </div>
 
                 {/* Bottom Pricing & Action Section */}
-                <div className="relative z-10">
+                <div className="relative z-20 mt-2">
                   {/* Poster Solid Deep Blue Bottom Pill Bar */}
                   <div className="mb-4 sm:mb-5">
                     <div className="rounded-xl bg-[#0312B4] px-2 sm:px-3.5 py-2 sm:py-2.5 shadow-sm text-center min-w-0 max-w-full">
@@ -410,15 +437,15 @@ export const ServicePillars: React.FC<ServicePillarsProps> = ({ currency, onSele
                   </div>
 
                   {/* Price Row */}
-                  <div className="flex items-baseline justify-between mb-4 pt-1 border-t border-slate-100/90">
+                  <div className="flex items-baseline justify-between mb-4 pt-2 pb-1 border-t border-slate-100/90 bg-white/80 backdrop-blur-[2px] rounded-xl px-2.5 -mx-2.5">
                     <div>
                       <span className="text-2xl sm:text-3xl font-black font-display text-[#04052D]">
                         {currentTier ? formatPrice(currentTier.priceNgn, currentTier.priceUsd) : 'Custom'}
                       </span>
                       <span className="text-xs text-slate-500 font-mono"> / {currentTier?.billingPeriod || 'mo'}</span>
                     </div>
-                    <div className="text-[11px] font-mono font-bold text-emerald-600 flex items-center gap-1">
-                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                    <div className="text-[11px] font-mono font-bold text-emerald-600 flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-50/90 border border-emerald-200/80">
+                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                       Instant Setup
                     </div>
                   </div>
@@ -426,7 +453,7 @@ export const ServicePillars: React.FC<ServicePillarsProps> = ({ currency, onSele
                   {/* Action Button - Touch Optimized (min 48px height) */}
                   <button
                     onClick={() => onSelectTier(service, currentTier)}
-                    className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-white/90 hover:bg-bulverse-blue px-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-800 hover:text-white border border-slate-200/90 hover:border-bulverse-blue shadow-xs active:scale-[0.98] transition-all duration-150 min-h-[48px]"
+                    className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-white hover:bg-bulverse-blue px-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-800 hover:text-white border border-slate-200 hover:border-bulverse-blue shadow-xs active:scale-[0.98] transition-all duration-150 min-h-[48px]"
                   >
                     <span>Configure {service.title.split(' ')[0]}</span>
                     <ArrowRight className="h-4 w-4 shrink-0" />
