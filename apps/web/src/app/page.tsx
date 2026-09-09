@@ -94,7 +94,7 @@ export default function HomePage() {
                   
                   <div className="pt-2 flex flex-col sm:flex-row gap-3">
                     <a
-                      href="https://portal.bulverse.com/cart.php"
+                      href="https://portal.bulverse.cloud/cart.php"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-bulverse-blue px-6 py-3.5 text-xs font-bold uppercase tracking-wider text-white shadow-md shadow-bulverse-blue/25 hover:bg-bulverse-blue-hover active:scale-[0.98] transition-all min-h-[46px]"
@@ -104,7 +104,7 @@ export default function HomePage() {
                     </a>
 
                     <a
-                      href="https://portal.bulverse.com/contact.php"
+                      href="https://portal.bulverse.cloud/contact.php"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white/90 px-6 py-3.5 text-xs font-bold text-slate-800 hover:border-bulverse-blue hover:text-bulverse-blue transition-colors min-h-[46px]"

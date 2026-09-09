@@ -138,7 +138,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
 
           {/* Client Area Portal Link */}
           <a
-            href="https://portal.bulverse.com/clientarea.php"
+            href="https://portal.bulverse.cloud/clientarea.php"
             target="_blank"
             rel="noopener noreferrer"
             className="text-xs font-bold text-slate-700 hover:text-bulverse-blue px-3.5 py-2 rounded-lg hover:bg-slate-100 transition-colors"
@@ -148,7 +148,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
 
           {/* Primary CTA */}
           <a
-            href="https://portal.bulverse.com/cart.php"
+            href="https://portal.bulverse.cloud/cart.php"
             target="_blank"
             rel="noopener noreferrer"
             className="relative inline-flex items-center gap-2 rounded-xl bg-bulverse-blue px-5 py-2.5 text-xs font-bold text-white shadow-md shadow-bulverse-blue/20 hover:bg-bulverse-blue-hover transition-all active:scale-[0.98]"
@@ -291,7 +291,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
           {/* Quick Actions in Mobile Drawer */}
           <div className="pt-2 border-t border-slate-200 flex flex-col gap-2.5">
             <a
-              href="https://portal.bulverse.com/clientarea.php"
+              href="https://portal.bulverse.cloud/clientarea.php"
               target="_blank"
               rel="noopener noreferrer"
               className="text-center py-3 text-xs font-bold uppercase tracking-wider text-slate-800 bg-slate-100 rounded-xl active:bg-slate-200 transition-colors"
@@ -299,7 +299,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
               Client Area Console Login
             </a>
             <a
-              href="https://portal.bulverse.com/cart.php"
+              href="https://portal.bulverse.cloud/cart.php"
               target="_blank"
               rel="noopener noreferrer"
               className="text-center py-3.5 text-xs font-bold uppercase tracking-wider text-white bg-bulverse-blue rounded-xl shadow-md shadow-bulverse-blue/30 active:scale-[0.98] transition-transform"

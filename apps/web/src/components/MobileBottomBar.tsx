@@ -32,7 +32,7 @@ export const MobileBottomBar: React.FC<MobileBottomBarProps> = ({
 
         {/* Client Portal Quick Link */}
         <a
-          href="https://portal.bulverse.com/clientarea.php"
+          href="https://portal.bulverse.cloud/clientarea.php"
           target="_blank"
           rel="noopener noreferrer"
           className="flex flex-col items-center justify-center px-3 py-1.5 rounded-xl border border-slate-200 bg-slate-50 text-slate-700 active:bg-slate-100 shrink-0 min-w-[56px] min-h-[44px] transition-colors touch-manipulation"

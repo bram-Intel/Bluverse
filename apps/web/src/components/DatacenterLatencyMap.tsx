@@ -123,7 +123,7 @@ export const DatacenterLatencyMap: React.FC = () => {
                 </div>
               </div>
               <a
-                href={`https://portal.bulverse.com/cart.php?datacenter=${activeRegion.id}`}
+                href={`https://portal.bulverse.cloud/cart.php?datacenter=${activeRegion.id}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-bulverse-blue px-5 py-3 text-xs font-bold text-white shadow-sm hover:bg-bulverse-blue-hover active:scale-[0.98] transition-all min-h-[46px]"

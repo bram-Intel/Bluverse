@@ -62,7 +62,7 @@ export const ConfiguratorModal: React.FC<ConfiguratorModalProps> = ({
   ];
 
   const handleDeploy = () => {
-    const whmcsUrl = `https://portal.bulverse.com/cart.php?a=add&pid=${selectedTier.whmcsPid}&billingcycle=monthly&os=${selectedOs}&datacenter=${selectedRegion}&hostname=${encodeURIComponent(hostname)}&backups=${addonBackups ? 1 : 0}&ip=${addonDedicatedIp ? 1 : 0}`;
+    const whmcsUrl = `https://portal.bulverse.cloud/cart.php?a=add&pid=${selectedTier.whmcsPid}&billingcycle=monthly&os=${selectedOs}&datacenter=${selectedRegion}&hostname=${encodeURIComponent(hostname)}&backups=${addonBackups ? 1 : 0}&ip=${addonDedicatedIp ? 1 : 0}`;
     window.open(whmcsUrl, '_blank');
   };
 

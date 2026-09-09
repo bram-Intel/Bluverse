@@ -46,7 +46,7 @@ export const CATALOG_SERVICES: ServiceCategory[] = [
     ],
     pills: ['1-2GB', '4-6GB', '8GB+', 'CUSTOM'],
     actionText: 'Deploy VPS',
-    actionHref: 'https://portal.bulverse.com/cart.php?gid=1',
+    actionHref: 'https://portal.bulverse.cloud/cart.php?gid=1',
     tiers: [
       {
         id: 'vps-1',
@@ -119,7 +119,7 @@ export const CATALOG_SERVICES: ServiceCategory[] = [
     ],
     pills: ['STARTER', 'BUSINESS', 'PREMIUM'],
     actionText: 'Choose Hosting',
-    actionHref: 'https://portal.bulverse.com/cart.php?gid=2',
+    actionHref: 'https://portal.bulverse.cloud/cart.php?gid=2',
     tiers: [
       {
         id: 'host-starter',
@@ -192,7 +192,7 @@ export const CATALOG_SERVICES: ServiceCategory[] = [
     ],
     pills: ['100GB', '250GB', '500GB', '1TB+'],
     actionText: 'Provision Storage',
-    actionHref: 'https://portal.bulverse.com/cart.php?gid=3',
+    actionHref: 'https://portal.bulverse.cloud/cart.php?gid=3',
     tiers: [
       {
         id: 'store-100',
@@ -256,7 +256,7 @@ export const CATALOG_SERVICES: ServiceCategory[] = [
     ],
     pills: ['IPS', 'DNS', 'FIREWALLS', 'VPN'],
     actionText: 'Configure Network',
-    actionHref: 'https://portal.bulverse.com/cart.php?gid=4',
+    actionHref: 'https://portal.bulverse.cloud/cart.php?gid=4',
     tiers: [
       {
         id: 'net-ip',
@@ -311,7 +311,7 @@ export const CATALOG_SERVICES: ServiceCategory[] = [
     ],
     pills: ['TRADING VPS', 'STABLE', '24/7 ACCESS'],
     actionText: 'Launch Trading VPS',
-    actionHref: 'https://portal.bulverse.com/cart.php?gid=5',
+    actionHref: 'https://portal.bulverse.cloud/cart.php?gid=5',
     tiers: [
       {
         id: 'trade-std',
