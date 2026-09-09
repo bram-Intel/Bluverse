@@ -14,53 +14,53 @@ export const HeroBladeRack: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative w-full max-w-[280px] xs:max-w-[320px] sm:max-w-[420px] md:max-w-[480px] h-[340px] xs:h-[380px] sm:h-[460px] md:h-[520px] mx-auto flex items-center justify-center select-none">
+    <div className="relative w-full max-w-[280px] xs:max-w-[320px] sm:max-w-[380px] lg:max-w-[420px] xl:max-w-[450px] h-[310px] xs:h-[350px] sm:h-[390px] lg:h-[420px] xl:h-[450px] mx-auto flex items-center justify-center select-none">
       
       {/* Concentric Technical Orbital Radar Rings (Google Antigravity Style) */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none -z-0">
-        <div className="w-[280px] xs:w-[320px] sm:w-[410px] md:w-[460px] h-[280px] xs:h-[320px] sm:h-[410px] md:h-[460px] rounded-full border border-dashed border-blue-400/25 animate-spin-slow" />
-        <div className="absolute w-[220px] xs:w-[250px] sm:w-[320px] md:w-[360px] h-[220px] xs:h-[250px] sm:h-[320px] md:h-[360px] rounded-full border border-blue-300/30" />
-        <div className="absolute w-[160px] xs:w-[190px] sm:w-[240px] h-[160px] xs:h-[190px] sm:h-[240px] rounded-full bg-gradient-to-tr from-blue-600/15 via-cyan-400/15 to-transparent blur-2xl animate-pulse-slow" />
+        <div className="w-[260px] xs:w-[300px] sm:w-[350px] lg:w-[380px] xl:w-[410px] h-[260px] xs:h-[300px] sm:h-[350px] lg:h-[380px] xl:h-[410px] rounded-full border border-dashed border-blue-400/25 animate-spin-slow" />
+        <div className="absolute w-[200px] xs:w-[230px] sm:w-[270px] lg:w-[300px] xl:w-[330px] h-[200px] xs:h-[230px] sm:h-[270px] lg:h-[300px] xl:h-[330px] rounded-full border border-blue-300/30" />
+        <div className="absolute w-[150px] xs:w-[170px] sm:w-[210px] h-[150px] xs:h-[170px] sm:h-[210px] rounded-full bg-gradient-to-tr from-blue-600/15 via-cyan-400/15 to-transparent blur-2xl animate-pulse-slow" />
       </div>
 
       {/* Soft Ambient Blue Shadow on Floor */}
-      <div className="absolute bottom-4 sm:bottom-6 w-[220px] xs:w-[260px] sm:w-[360px] h-14 sm:h-20 bg-blue-600/20 blur-2xl rounded-[100%] pointer-events-none" />
+      <div className="absolute bottom-1.5 sm:bottom-2 w-[220px] xs:w-[260px] sm:w-[310px] lg:w-[340px] h-8 sm:h-12 bg-blue-600/20 blur-xl rounded-[100%] pointer-events-none" />
 
       {/* Orbiting Satellite Node 1: Globe (Direct from Poster) */}
-      <div className="absolute top-6 xs:top-10 sm:top-16 right-0 xs:right-1 sm:right-6 z-30 animate-float">
-        <div className="flex h-8 w-8 xs:h-10 xs:w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border-2 border-dashed border-blue-400 bg-white shadow-md sm:shadow-lg shadow-blue-900/10 hover:scale-110 transition-transform">
-          <div className="flex h-6 w-6 xs:h-7 xs:w-7 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-blue-50 text-bulverse-blue">
-            <Globe className="h-3.5 w-3.5 xs:h-4 xs:w-4 sm:h-5 sm:w-5 stroke-[2.2]" />
+      <div className="absolute top-3 xs:top-5 sm:top-7 lg:top-8 right-0 xs:right-1 sm:right-3 z-30 animate-float">
+        <div className="flex h-7 w-7 xs:h-9 xs:w-9 sm:h-11 sm:w-11 items-center justify-center rounded-full border-2 border-dashed border-blue-400 bg-white shadow-md sm:shadow-lg shadow-blue-900/10 hover:scale-110 transition-transform">
+          <div className="flex h-5 w-5 xs:h-6 xs:w-6 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-blue-50 text-bulverse-blue">
+            <Globe className="h-3 w-3 xs:h-3.5 xs:w-3.5 sm:h-4 sm:w-4 stroke-[2.2]" />
           </div>
         </div>
       </div>
 
       {/* Orbiting Satellite Node 2: Storage (Direct from Poster) */}
-      <div className="absolute top-32 xs:top-40 sm:top-52 right-0 xs:right-0 sm:right-2 z-30 animate-float" style={{ animationDelay: '1.8s' }}>
-        <div className="flex h-8 w-8 xs:h-10 xs:w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border-2 border-dashed border-blue-400 bg-white shadow-md sm:shadow-lg shadow-blue-900/10 hover:scale-110 transition-transform">
-          <div className="flex h-6 w-6 xs:h-7 xs:w-7 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-blue-50 text-bulverse-blue">
-            <Folder className="h-3.5 w-3.5 xs:h-4 xs:w-4 sm:h-5 sm:w-5 stroke-[2.2]" />
+      <div className="absolute top-26 xs:top-32 sm:top-38 lg:top-42 right-0 xs:right-0 sm:right-1 z-30 animate-float" style={{ animationDelay: '1.8s' }}>
+        <div className="flex h-7 w-7 xs:h-9 xs:w-9 sm:h-11 sm:w-11 items-center justify-center rounded-full border-2 border-dashed border-blue-400 bg-white shadow-md sm:shadow-lg shadow-blue-900/10 hover:scale-110 transition-transform">
+          <div className="flex h-5 w-5 xs:h-6 xs:w-6 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-blue-50 text-bulverse-blue">
+            <Folder className="h-3 w-3 xs:h-3.5 xs:w-3.5 sm:h-4 sm:w-4 stroke-[2.2]" />
           </div>
         </div>
       </div>
 
       {/* Orbiting Satellite Node 3: Security (Direct from Poster) */}
-      <div className="absolute bottom-12 xs:bottom-16 sm:bottom-24 right-1 xs:right-2 sm:right-8 z-30 animate-float" style={{ animationDelay: '3.6s' }}>
-        <div className="flex h-8 w-8 xs:h-10 xs:w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full border-2 border-dashed border-blue-400 bg-white shadow-md sm:shadow-lg shadow-blue-900/10 hover:scale-110 transition-transform">
-          <div className="flex h-6 w-6 xs:h-7 xs:w-7 sm:h-9 sm:w-9 items-center justify-center rounded-full bg-blue-50 text-bulverse-blue">
-            <ShieldCheck className="h-3.5 w-3.5 xs:h-4 xs:w-4 sm:h-5 sm:w-5 stroke-[2.2]" />
+      <div className="absolute bottom-7 xs:bottom-9 sm:bottom-12 lg:bottom-14 right-1 xs:right-2 sm:right-4 z-30 animate-float" style={{ animationDelay: '3.6s' }}>
+        <div className="flex h-7 w-7 xs:h-9 xs:w-9 sm:h-11 sm:w-11 items-center justify-center rounded-full border-2 border-dashed border-blue-400 bg-white shadow-md sm:shadow-lg shadow-blue-900/10 hover:scale-110 transition-transform">
+          <div className="flex h-5 w-5 xs:h-6 xs:w-6 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-blue-50 text-bulverse-blue">
+            <ShieldCheck className="h-3 w-3 xs:h-3.5 xs:w-3.5 sm:h-4 sm:w-4 stroke-[2.2]" />
           </div>
         </div>
       </div>
 
       {/* Central Assembly Recreating Poster 3D Visual */}
-      <div className="relative z-20 flex flex-col items-center scale-[0.82] xs:scale-90 sm:scale-100 origin-center">
+      <div className="relative z-20 flex flex-col items-center scale-[0.80] xs:scale-[0.86] sm:scale-90 lg:scale-[0.92] xl:scale-100 origin-center">
         
         {/* Top 3D Cloud */}
-        <div className="relative mb-2.5 group">
-          <div className="relative flex items-center justify-center w-28 h-20 sm:w-36 sm:h-24 rounded-[26px] sm:rounded-[32px] bg-gradient-to-b from-blue-700 to-bulverse-blue p-1.5 sm:p-2 shadow-xl shadow-blue-900/25">
-            <div className="w-full h-full rounded-[22px] sm:rounded-[26px] bg-white flex items-center justify-center border-2 border-blue-100 shadow-inner">
-              <svg width="54" height="36" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="sm:w-[68px] sm:h-[46px]">
+        <div className="relative mb-2 group">
+          <div className="relative flex items-center justify-center w-24 h-16 sm:w-30 sm:h-20 rounded-[22px] sm:rounded-[28px] bg-gradient-to-b from-blue-700 to-bulverse-blue p-1.5 sm:p-2 shadow-lg shadow-blue-900/25">
+            <div className="w-full h-full rounded-[18px] sm:rounded-[24px] bg-white flex items-center justify-center border-2 border-blue-100 shadow-inner">
+              <svg width="48" height="32" viewBox="0 0 48 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="sm:w-[58px] sm:h-[40px]">
                 <path
                   d="M12 28C8.68629 28 6 25.3137 6 22C6 19.043 8.14112 16.5878 11.0028 16.082C11.8596 10.3607 16.7828 6 22.75 6C29.3774 6 34.75 11.3726 34.75 18C38.1963 18.0645 41 20.8856 41 24.3333C41 27.8188 38.1855 30.6406 34.7 30.6406"
                   fill="#EEF2FF"
@@ -75,18 +75,18 @@ export const HeroBladeRack: React.FC = () => {
         </div>
 
         {/* 3-Tier Rack-Mounted Blade Chassis */}
-        <div className="w-[240px] sm:w-[280px] md:w-[320px] space-y-2.5 sm:space-y-3">
+        <div className="w-[220px] sm:w-[260px] lg:w-[280px] xl:w-[300px] space-y-2 sm:space-y-2.5">
           
           {/* Blade 1 */}
-          <div className="relative rounded-xl sm:rounded-2xl bg-[#0416C0] border-2 border-[#1E3A8A] p-3 sm:p-4 shadow-xl shadow-blue-950/20">
+          <div className="relative rounded-xl sm:rounded-2xl bg-[#0416C0] border-2 border-[#1E3A8A] p-2.5 sm:p-3 shadow-lg shadow-blue-950/20">
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2 sm:gap-3">
-                <div className="space-y-0.5 sm:space-y-1">
-                  <div className="w-6 sm:w-8 h-1 bg-white/40 rounded-full" />
-                  <div className="w-6 sm:w-8 h-1 bg-white/40 rounded-full" />
-                  <div className="w-6 sm:w-8 h-1 bg-white/40 rounded-full" />
+              <div className="flex items-center gap-2 sm:gap-2.5">
+                <div className="space-y-0.5">
+                  <div className="w-5 sm:w-6 h-1 bg-white/40 rounded-full" />
+                  <div className="w-5 sm:w-6 h-1 bg-white/40 rounded-full" />
+                  <div className="w-5 sm:w-6 h-1 bg-white/40 rounded-full" />
                 </div>
-                <div className="text-[10px] sm:text-[11px] font-mono font-bold text-white tracking-wider">
+                <div className="text-[9.5px] sm:text-[10.5px] font-mono font-bold text-white tracking-wider">
                   CHASSIS 01
                 </div>
               </div>
@@ -96,9 +96,9 @@ export const HeroBladeRack: React.FC = () => {
                 {[0, 1, 2, 3].map((led) => (
                   <span
                     key={led}
-                    className={`h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full transition-all duration-300 ${
+                    className={`h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full transition-all duration-300 ${
                       activeLed === led
-                        ? 'bg-cyan-300 shadow-sm shadow-cyan-300 ring-2 ring-cyan-400 scale-110'
+                        ? 'bg-cyan-300 shadow-xs shadow-cyan-300 ring-2 ring-cyan-400 scale-110'
                         : 'bg-cyan-200/50'
                     }`}
                   />
@@ -108,15 +108,15 @@ export const HeroBladeRack: React.FC = () => {
           </div>
 
           {/* Blade 2 */}
-          <div className="relative rounded-xl sm:rounded-2xl bg-[#0416C0] border-2 border-[#1E3A8A] p-3 sm:p-4 shadow-xl shadow-blue-950/20">
+          <div className="relative rounded-xl sm:rounded-2xl bg-[#0416C0] border-2 border-[#1E3A8A] p-2.5 sm:p-3 shadow-lg shadow-blue-950/20">
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2 sm:gap-3">
-                <div className="space-y-0.5 sm:space-y-1">
-                  <div className="w-6 sm:w-8 h-1 bg-white/40 rounded-full" />
-                  <div className="w-6 sm:w-8 h-1 bg-white/40 rounded-full" />
-                  <div className="w-6 sm:w-8 h-1 bg-white/40 rounded-full" />
+              <div className="flex items-center gap-2 sm:gap-2.5">
+                <div className="space-y-0.5">
+                  <div className="w-5 sm:w-6 h-1 bg-white/40 rounded-full" />
+                  <div className="w-5 sm:w-6 h-1 bg-white/40 rounded-full" />
+                  <div className="w-5 sm:w-6 h-1 bg-white/40 rounded-full" />
                 </div>
-                <div className="text-[10px] sm:text-[11px] font-mono font-bold text-white tracking-wider">
+                <div className="text-[9.5px] sm:text-[10.5px] font-mono font-bold text-white tracking-wider">
                   CHASSIS 02
                 </div>
               </div>
@@ -126,9 +126,9 @@ export const HeroBladeRack: React.FC = () => {
                 {[2, 3, 0, 1].map((led) => (
                   <span
                     key={led}
-                    className={`h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full transition-all duration-300 ${
+                    className={`h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full transition-all duration-300 ${
                       activeLed === led
-                        ? 'bg-cyan-300 shadow-sm shadow-cyan-300 ring-2 ring-cyan-400 scale-110'
+                        ? 'bg-cyan-300 shadow-xs shadow-cyan-300 ring-2 ring-cyan-400 scale-110'
                         : 'bg-cyan-200/50'
                     }`}
                   />
@@ -138,15 +138,15 @@ export const HeroBladeRack: React.FC = () => {
           </div>
 
           {/* Blade 3 */}
-          <div className="relative rounded-xl sm:rounded-2xl bg-[#0416C0] border-2 border-[#1E3A8A] p-3 sm:p-4 shadow-xl shadow-blue-950/20">
+          <div className="relative rounded-xl sm:rounded-2xl bg-[#0416C0] border-2 border-[#1E3A8A] p-2.5 sm:p-3 shadow-lg shadow-blue-950/20">
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2 sm:gap-3">
-                <div className="space-y-0.5 sm:space-y-1">
-                  <div className="w-6 sm:w-8 h-1 bg-white/40 rounded-full" />
-                  <div className="w-6 sm:w-8 h-1 bg-white/40 rounded-full" />
-                  <div className="w-6 sm:w-8 h-1 bg-white/40 rounded-full" />
+              <div className="flex items-center gap-2 sm:gap-2.5">
+                <div className="space-y-0.5">
+                  <div className="w-5 sm:w-6 h-1 bg-white/40 rounded-full" />
+                  <div className="w-5 sm:w-6 h-1 bg-white/40 rounded-full" />
+                  <div className="w-5 sm:w-6 h-1 bg-white/40 rounded-full" />
                 </div>
-                <div className="text-[10px] sm:text-[11px] font-mono font-bold text-white tracking-wider">
+                <div className="text-[9.5px] sm:text-[10.5px] font-mono font-bold text-white tracking-wider">
                   CHASSIS 03
                 </div>
               </div>
@@ -156,9 +156,9 @@ export const HeroBladeRack: React.FC = () => {
                 {[1, 2, 3, 0].map((led) => (
                   <span
                     key={led}
-                    className={`h-2 w-2 sm:h-2.5 sm:w-2.5 rounded-full transition-all duration-300 ${
+                    className={`h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full transition-all duration-300 ${
                       activeLed === led
-                        ? 'bg-cyan-300 shadow-sm shadow-cyan-300 ring-2 ring-cyan-400 scale-110'
+                        ? 'bg-cyan-300 shadow-xs shadow-cyan-300 ring-2 ring-cyan-400 scale-110'
                         : 'bg-cyan-200/50'
                     }`}
                   />
@@ -169,9 +169,9 @@ export const HeroBladeRack: React.FC = () => {
         </div>
 
         {/* Circular Base Pedestal */}
-        <div className="relative mt-3 sm:mt-4 w-[280px] sm:w-[340px] md:w-[380px] flex flex-col items-center">
-          <div className="w-full h-6 sm:h-8 rounded-[100%] bg-gradient-to-b from-white to-slate-100 border border-slate-200 shadow-md"></div>
-          <div className="-mt-3.5 sm:-mt-4 w-[98%] h-5 sm:h-6 rounded-[100%] bg-gradient-to-b from-blue-700 to-bulverse-blue border-b-2 border-blue-900 shadow-pedestal-light"></div>
+        <div className="relative mt-2 sm:mt-2.5 w-[250px] sm:w-[290px] lg:w-[320px] flex flex-col items-center">
+          <div className="w-full h-5 sm:h-6 rounded-[100%] bg-gradient-to-b from-white to-slate-100 border border-slate-200 shadow-xs"></div>
+          <div className="-mt-3 sm:-mt-3.5 w-[98%] h-4 sm:h-5 rounded-[100%] bg-gradient-to-b from-blue-700 to-bulverse-blue border-b-2 border-blue-900 shadow-pedestal-light"></div>
         </div>
 
       </div>
