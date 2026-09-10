@@ -42,10 +42,13 @@ export const ConfiguratorModal: React.FC<ConfiguratorModalProps> = ({
 
   const basePrice = currency === 'NGN' ? selectedTier.priceNgn : selectedTier.priceUsd;
   const backupPrice = currency === 'NGN' ? 3000 : 2.0;
-  const ipPrice = currency === 'NGN' ? 4500 : 3.0;
+  const ipPrice = currency === 'NGN' ? 3750 : 2.5;
+  const windowsPrice = currency === 'NGN' ? 15000 : 10.0;
+  const osPrice = selectedOs === 'windows-2022' ? windowsPrice : 0;
 
   const totalPrice =
     basePrice +
+    osPrice +
     (addonBackups ? backupPrice : 0) +
     (addonDedicatedIp ? ipPrice : 0);
 
@@ -62,7 +65,18 @@ export const ConfiguratorModal: React.FC<ConfiguratorModalProps> = ({
   ];
 
   const handleDeploy = () => {
-    const whmcsUrl = `https://portal.bulverse.cloud/cart.php?a=add&pid=${selectedTier.whmcsPid}&billingcycle=monthly&os=${selectedOs}&datacenter=${selectedRegion}&hostname=${encodeURIComponent(hostname)}&backups=${addonBackups ? 1 : 0}&ip=${addonDedicatedIp ? 1 : 0}`;
+    const osMap: Record<string, number> = {
+      'ubuntu-24-04': 1,
+      'debian-12': 3,
+      'almalinux-9': 4,
+      'windows-2022': 5,
+    };
+    const osSubId = osMap[selectedOs] || 1;
+    const regionSubId = selectedRegion === 'lon' ? 7 : 6;
+    const backupSubId = addonBackups ? 9 : 8;
+    const ipSubId = addonDedicatedIp ? 11 : 10;
+
+    const whmcsUrl = `https://portal.bulverse.cloud/cart.php?a=add&pid=${selectedTier.whmcsPid}&billingcycle=monthly&configoption[1]=${osSubId}&configoption[2]=${regionSubId}&configoption[3]=${backupSubId}&configoption[4]=${ipSubId}&hostname=${encodeURIComponent(hostname)}`;
     window.open(whmcsUrl, '_blank');
   };
 

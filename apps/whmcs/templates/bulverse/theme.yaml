@@ -1,0 +1,6 @@
+name: "bulverse"
+description: "Bulverse Cloud Infrastructure Client Theme"
+author: "Bulverse"
+config:
+    parent: twenty-one
+
