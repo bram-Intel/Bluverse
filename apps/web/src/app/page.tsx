@@ -16,6 +16,7 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 export default function HomePage() {
   const [currency, setCurrency] = useState<'NGN' | 'USD'>('NGN');
   const [configuratorOpen, setConfiguratorOpen] = useState(false);
+  const [activeCategory, setActiveCategory] = useState<ServiceCategory>(CATALOG_SERVICES[0]);
   const [activeTier, setActiveTier] = useState<ServiceTier | undefined>(undefined);
 
   const toggleCurrency = () => {
@@ -23,7 +24,8 @@ export default function HomePage() {
   };
 
   const handleOpenConfiguratorWithTier = (category: ServiceCategory, tier?: ServiceTier) => {
-    setActiveTier(tier);
+    setActiveCategory(category);
+    setActiveTier(tier || category.tiers[0]);
     setConfiguratorOpen(true);
   };
 
@@ -39,6 +41,7 @@ export default function HomePage() {
         {/* Hero Section Recreating Poster 3D Server Blade Assembly */}
         <Hero
           onOpenConfigurator={() => {
+            setActiveCategory(CATALOG_SERVICES[0]);
             setActiveTier(CATALOG_SERVICES[0].tiers[1]);
             setConfiguratorOpen(true);
           }}
@@ -174,6 +177,7 @@ export default function HomePage() {
         currency={currency}
         onToggleCurrency={toggleCurrency}
         onOpenConfigurator={() => {
+          setActiveCategory(CATALOG_SERVICES[0]);
           setActiveTier(CATALOG_SERVICES[0].tiers[1]);
           setConfiguratorOpen(true);
         }}
@@ -184,6 +188,7 @@ export default function HomePage() {
         isOpen={configuratorOpen}
         onClose={() => setConfiguratorOpen(false)}
         currency={currency}
+        initialCategory={activeCategory}
         initialTier={activeTier}
       />
     </div>
