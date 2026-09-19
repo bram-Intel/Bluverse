@@ -1,0 +1,577 @@
+/* ==========================================================================
+   BULVERSE VULTR-GRADE ORDER FORM (standard_cart custom.css)
+   ========================================================================== */
+
+/* Hide legacy sidebar elements */
+#order-standard_cart .cart-sidebar,
+#order-standard_cart .sidebar,
+#order-standard_cart .sidebar-collapsed,
+#order-standard_cart .panel-sidebar,
+#order-standard_cart .card-sidebar,
+#order-standard_cart [menuitemname="Categories"],
+#order-standard_cart [menuitemname="Actions"],
+#order-standard_cart .sidebar-categories {
+  display: none !important;
+}
+
+/* Fix negative margin on Bootstrap .row inside order form */
+#order-standard_cart .row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+#order-standard_cart .cart-body {
+  width: 100% !important;
+  max-width: 100% !important;
+  flex: 0 0 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  float: none !important;
+}
+
+/* Store Header */
+.vultr-store-header {
+  margin-bottom: 22px !important;
+  border-bottom: 1px solid #E2E8F0 !important;
+  padding: 0 0 16px 0 !important;
+}
+
+.vultr-store-title {
+  font-size: 26px !important;
+  font-weight: 700 !important;
+  color: #0F172A !important;
+  letter-spacing: -0.025em !important;
+  margin: 0 0 8px 0 !important;
+  line-height: 1.3 !important;
+}
+
+.vultr-store-tagline {
+  color: #64748B !important;
+  font-size: 14.5px !important;
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+
+/* Currency Bar */
+.vultr-currency-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 18px;
+  width: 100%;
+}
+
+.vultr-currency-bar form {
+  margin: 0;
+  padding: 0;
+}
+
+.vultr-currency-select-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  padding: 6px 12px;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  transition: all 0.15s ease;
+}
+
+.vultr-currency-select-wrap:hover {
+  border-color: #CBD5E1;
+}
+
+.vultr-currency-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #64748B;
+  white-space: nowrap;
+}
+
+.vultr-currency-label svg {
+  color: #0066FF;
+}
+
+.vultr-currency-input-wrapper {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.vultr-currency-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: #F8FAFC url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") no-repeat right 10px center !important;
+  border: 1px solid #CBD5E1 !important;
+  border-radius: 6px !important;
+  padding: 4px 26px 4px 10px !important;
+  font-size: 12.5px !important;
+  font-weight: 700 !important;
+  color: #0F172A !important;
+  height: 30px !important;
+  cursor: pointer;
+  box-shadow: none !important;
+}
+
+.vultr-currency-select:focus {
+  border-color: #0066FF !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(0, 102, 255, 0.15) !important;
+}
+
+/* Enterprise Product Grid */
+.vultr-products-container {
+  width: 100% !important;
+  margin-bottom: 40px !important;
+}
+
+.vultr-products-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 24px !important;
+  width: 100% !important;
+}
+
+/* Reset WHMCS legacy float overrides on products */
+#order-standard_cart .products .product,
+#order-standard_cart .product,
+.vultr-card {
+  background: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 12px !important;
+  padding: 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  height: 100% !important;
+  min-height: 440px !important;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(15, 23, 42, 0.03) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  float: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+  position: relative !important;
+}
+
+.vultr-card:hover {
+  border-color: #0066FF !important;
+  box-shadow: 0 12px 28px -4px rgba(0, 102, 255, 0.14), 0 6px 12px -2px rgba(15, 23, 42, 0.04) !important;
+  transform: translateY(-3px) !important;
+}
+
+/* Card Header */
+.vultr-card-header {
+  margin-bottom: 16px !important;
+  border-bottom: none !important;
+  padding: 0 !important;
+}
+
+.vultr-card-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.vultr-card-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #0066FF;
+  background: #EEF4FF;
+  padding: 4px 9px;
+  border-radius: 6px;
+}
+
+.vultr-stock-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: #10B981;
+  background: #ECFDF5;
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+.vultr-card-name {
+  font-size: 18.5px !important;
+  font-weight: 700 !important;
+  color: #0F172A !important;
+  letter-spacing: -0.02em !important;
+  margin: 0 !important;
+  line-height: 1.3 !important;
+}
+
+/* Pricing Hero Block */
+.vultr-card-pricing {
+  margin-bottom: 16px !important;
+  text-align: left !important;
+  float: none !important;
+  width: 100% !important;
+}
+
+.vultr-price-bundle-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #0066FF;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.vultr-price-wrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.vultr-price-val {
+  font-size: 32px !important;
+  font-weight: 800 !important;
+  color: #0F172A !important;
+  letter-spacing: -0.035em !important;
+  line-height: 1 !important;
+}
+
+.vultr-price-cycle {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #64748B !important;
+}
+
+.vultr-price-subtext {
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: #94A3B8 !important;
+  margin-top: 6px !important;
+  line-height: 1.4 !important;
+}
+
+/* Divider */
+.vultr-card-divider {
+  height: 1px;
+  background: #F1F5F9;
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+/* Specs List (Reset float:left width:60% completely) */
+#order-standard_cart .products .product .product-desc,
+#order-standard_cart .product .product-desc,
+.vultr-card-specs {
+  float: none !important;
+  width: 100% !important;
+  flex: 1 1 auto !important;
+  margin: 0 0 20px 0 !important;
+  padding: 0 !important;
+  font-size: 13.5px !important;
+  color: #334155 !important;
+}
+
+.vultr-specs-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 11px !important;
+}
+
+.vultr-spec-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  font-size: 13.5px !important;
+  color: #334155 !important;
+  font-weight: 500 !important;
+  line-height: 1.4 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.vultr-spec-check {
+  width: 16px !important;
+  height: 16px !important;
+  color: #0066FF !important;
+  flex-shrink: 0 !important;
+}
+
+.vultr-spec-text {
+  flex: 1;
+  word-break: break-word;
+}
+
+.vultr-spec-text strong {
+  color: #0F172A;
+  font-weight: 600;
+}
+
+/* Footer / CTA (Reset float:right width:38% completely) */
+#order-standard_cart .products .product footer,
+#order-standard_cart .product footer,
+.vultr-card-footer {
+  float: none !important;
+  width: 100% !important;
+  margin-top: auto !important;
+  padding: 0 !important;
+  border-top: none !important;
+  text-align: center !important;
+  display: block !important;
+}
+
+.vultr-deploy-btn,
+#order-standard_cart .btn-order-now {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  width: 100% !important;
+  height: 44px !important;
+  background: #0066FF !important;
+  color: #FFFFFF !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  border-radius: 8px !important;
+  text-decoration: none !important;
+  box-shadow: 0 2px 6px rgba(0, 102, 255, 0.25) !important;
+  border: none !important;
+  transition: all 0.18s ease !important;
+  box-sizing: border-box !important;
+}
+
+.vultr-deploy-btn:hover,
+#order-standard_cart .btn-order-now:hover {
+  background: #0052CC !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(0, 102, 255, 0.38) !important;
+  transform: translateY(-1px) !important;
+}
+
+.vultr-deploy-btn:active,
+#order-standard_cart .btn-order-now:active {
+  transform: translateY(0) !important;
+}
+
+/* ==========================================================================
+   BOOTSTRAP SWITCH & MARKETING EMAIL PREFERENCES OVERHAUL
+   ========================================================================== */
+
+/* Fix broken vertical stacked [Yes] \n No */
+.bootstrap-switch {
+  display: inline-block !important;
+  direction: ltr !important;
+  cursor: pointer !important;
+  border-radius: 20px !important;
+  border: 1px solid #CBD5E1 !important;
+  position: relative !important;
+  text-align: left !important;
+  overflow: hidden !important;
+  line-height: 14px !important;
+  user-select: none !important;
+  vertical-align: middle !important;
+  min-width: 64px !important;
+  width: 64px !important;
+  height: 28px !important;
+  background: #E2E8F0 !important;
+  transition: all 0.2s ease !important;
+  box-sizing: border-box !important;
+}
+
+.bootstrap-switch .bootstrap-switch-container {
+  display: inline-flex !important;
+  align-items: center !important;
+  top: 0 !important;
+  height: 100% !important;
+  width: 104px !important;
+  position: absolute !important;
+  transform: translate3d(0, 0, 0) !important;
+  transition: left 0.2s ease !important;
+}
+
+.bootstrap-switch.bootstrap-switch-on .bootstrap-switch-container {
+  left: 0 !important;
+}
+
+.bootstrap-switch.bootstrap-switch-off .bootstrap-switch-container {
+  left: -40px !important;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-on,
+.bootstrap-switch .bootstrap-switch-handle-off,
+.bootstrap-switch .bootstrap-switch-label {
+  box-sizing: border-box !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 100% !important;
+  padding: 0 4px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-on {
+  background: #10B981 !important;
+  color: #FFFFFF !important;
+  width: 40px !important;
+}
+
+.bootstrap-switch .bootstrap-switch-label {
+  background: #FFFFFF !important;
+  color: #334155 !important;
+  width: 24px !important;
+  border-radius: 50% !important;
+  margin: 2px !important;
+  height: 22px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) !important;
+}
+
+.bootstrap-switch .bootstrap-switch-handle-off {
+  background: #94A3B8 !important;
+  color: #FFFFFF !important;
+  width: 40px !important;
+}
+
+/* Modernized Marketing / Newsletter Opt-in Card */
+.marketing-email-optin,
+.vultr-newsletter-card {
+  background: #F8FAFC !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 12px !important;
+  padding: 20px !important;
+  margin: 20px 0 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+}
+
+.marketing-email-optin h3,
+.marketing-email-optin h4,
+.vultr-newsletter-title {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #0F172A !important;
+  margin: 0 0 6px 0 !important;
+}
+
+.marketing-email-optin p,
+.vultr-newsletter-desc {
+  font-size: 13.5px !important;
+  color: #64748B !important;
+  margin: 0 !important;
+  line-height: 1.45 !important;
+}
+
+/* ==========================================================================
+   MOBILE & TABLET RESPONSIVENESS
+   ========================================================================== */
+
+/* Tablet (Screens < 1100px) */
+@media (max-width: 1099px) {
+  .vultr-products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+  }
+  
+  .vultr-store-title {
+    font-size: 22px !important;
+  }
+}
+
+/* Mobile Phones (Screens < 720px) */
+@media (max-width: 719px) {
+  .vultr-store-header {
+    margin-bottom: 16px !important;
+  }
+
+  .vultr-store-title {
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+  }
+
+  .vultr-store-tagline {
+    font-size: 13px !important;
+  }
+
+  /* Currency Bar Full-Width on Mobile */
+  .vultr-currency-bar {
+    justify-content: stretch !important;
+    margin-bottom: 16px !important;
+  }
+
+  .vultr-currency-bar form {
+    width: 100% !important;
+  }
+
+  .vultr-currency-select-wrap {
+    width: 100% !important;
+    justify-content: space-between !important;
+    padding: 8px 12px !important;
+    background: #F8FAFC !important;
+    border-color: #E2E8F0 !important;
+  }
+
+  .vultr-currency-label {
+    font-size: 13px !important;
+    color: #334155 !important;
+  }
+
+  .vultr-currency-select {
+    background-color: #FFFFFF !important;
+    font-size: 13px !important;
+    height: 34px !important;
+  }
+
+  .vultr-products-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .vultr-card,
+  #order-standard_cart .product {
+    padding: 20px 16px !important;
+    min-height: auto !important;
+    border-radius: 10px !important;
+  }
+
+  .vultr-price-val {
+    font-size: 28px !important;
+  }
+
+  .vultr-deploy-btn,
+  #order-standard_cart .btn-order-now {
+    height: 48px !important;
+    font-size: 15px !important;
+  }
+
+  .vultr-plan-categories-bar {
+    padding: 2px 2px 12px 2px !important;
+    gap: 8px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .vultr-cat-tab {
+    padding: 8px 14px !important;
+    font-size: 12.5px !important;
+  }
+
+  .marketing-email-optin,
+  .vultr-newsletter-card {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 16px !important;
+    gap: 14px !important;
+  }
+}

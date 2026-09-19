@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Server, Globe, Terminal, Database, Network, ChevronDown, Menu, X, ArrowUpRight } from 'lucide-react';
+import { Server, Globe, Terminal, Database, Network, ChevronDown, Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
 
 interface NavbarProps {
   currency: 'NGN' | 'USD';
@@ -62,7 +62,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
               <div className="absolute top-full -left-8 w-80 rounded-2xl border border-slate-200 bg-white p-3 shadow-xl animate-in fade-in slide-in-from-top-2 duration-200">
                 <div className="space-y-1">
                   <Link
-                    href="#cloud-vps"
+                    href="/#cloud-vps"
                     onClick={() => setServicesDropdown(false)}
                     className="flex items-start gap-3 rounded-xl p-2.5 hover:bg-slate-50 transition-colors"
                   >
@@ -76,7 +76,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
                   </Link>
 
                   <Link
-                    href="#website-hosting"
+                    href="/#website-hosting"
                     onClick={() => setServicesDropdown(false)}
                     className="flex items-start gap-3 rounded-xl p-2.5 hover:bg-slate-50 transition-colors"
                   >
@@ -90,7 +90,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
                   </Link>
 
                   <Link
-                    href="#trading-infrastructure"
+                    href="/#trading-infrastructure"
                     onClick={() => setServicesDropdown(false)}
                     className="flex items-start gap-3 rounded-xl p-2.5 hover:bg-slate-50 transition-colors"
                   >
@@ -107,16 +107,19 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
             )}
           </div>
 
-          <Link href="#cloud-storage" className="text-sm font-semibold text-slate-700 hover:text-bulverse-blue transition-colors">
+          <Link href="/#cloud-storage" className="text-sm font-semibold text-slate-700 hover:text-bulverse-blue transition-colors">
             Storage
           </Link>
-          <Link href="#cloud-networking" className="text-sm font-semibold text-slate-700 hover:text-bulverse-blue transition-colors">
+          <Link href="/#cloud-networking" className="text-sm font-semibold text-slate-700 hover:text-bulverse-blue transition-colors">
             Networking
           </Link>
-          <Link href="#datacenters" className="text-sm font-semibold text-slate-700 hover:text-bulverse-blue transition-colors">
+          <Link href="/#datacenters" className="text-sm font-semibold text-slate-700 hover:text-bulverse-blue transition-colors">
             Datacenters
           </Link>
-          <Link href="#cli" className="text-sm font-semibold text-slate-700 hover:text-bulverse-blue transition-colors flex items-center gap-1.5">
+          <Link href="/about" className="text-sm font-semibold text-slate-700 hover:text-bulverse-blue transition-colors">
+            About
+          </Link>
+          <Link href="/#cli" className="text-sm font-semibold text-slate-700 hover:text-bulverse-blue transition-colors flex items-center gap-1.5">
             <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
             CLI & API
           </Link>
@@ -193,12 +196,29 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
         <div className="fixed inset-x-0 top-16 w-full max-h-[calc(100vh-4rem)] overflow-y-auto bg-white border-b border-slate-200 p-4 sm:p-5 shadow-2xl z-50 md:hidden animate-in slide-in-from-top-4 duration-200 space-y-4">
           
           <div>
+            {/* About Bulverse Feature in Mobile Drawer */}
+            <div className="mb-3">
+              <Link
+                href="/about"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center gap-3 p-3 rounded-xl border border-blue-200/90 bg-blue-50/70 active:bg-blue-100 transition-colors shadow-2xs"
+              >
+                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-bulverse-blue text-white shrink-0 shadow-xs">
+                  <Sparkles className="h-5 w-5" />
+                </div>
+                <div>
+                  <div className="text-sm font-bold text-[#04052D]">About Bulverse</div>
+                  <div className="text-[11px] text-bulverse-blue font-semibold">Cloud & Diversified Ecosystem →</div>
+                </div>
+              </Link>
+            </div>
+
             <div className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400 mb-2">
               Infrastructure Services
             </div>
             <div className="grid grid-cols-1 gap-2">
               <Link
-                href="#cloud-vps"
+                href="/#cloud-vps"
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center gap-3 p-3 rounded-xl border border-slate-100 bg-slate-50/60 active:bg-blue-50 transition-colors"
               >
@@ -212,7 +232,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
               </Link>
 
               <Link
-                href="#website-hosting"
+                href="/#website-hosting"
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center gap-3 p-3 rounded-xl border border-slate-100 bg-slate-50/60 active:bg-blue-50 transition-colors"
               >
@@ -226,7 +246,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
               </Link>
 
               <Link
-                href="#cloud-storage"
+                href="/#cloud-storage"
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center gap-3 p-3 rounded-xl border border-slate-100 bg-slate-50/60 active:bg-blue-50 transition-colors"
               >
@@ -240,7 +260,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
               </Link>
 
               <Link
-                href="#cloud-networking"
+                href="/#cloud-networking"
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center gap-3 p-3 rounded-xl border border-slate-100 bg-slate-50/60 active:bg-blue-50 transition-colors"
               >
@@ -254,7 +274,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
               </Link>
 
               <Link
-                href="#trading-infrastructure"
+                href="/#trading-infrastructure"
                 onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center gap-3 p-3 rounded-xl border border-slate-100 bg-slate-50/60 active:bg-blue-50 transition-colors"
               >
@@ -272,14 +292,14 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
           <div className="pt-2 border-t border-slate-200">
             <div className="flex items-center justify-between py-2">
               <Link
-                href="#datacenters"
+                href="/#datacenters"
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-xs font-bold text-slate-700 hover:text-bulverse-blue"
               >
                 Global Fleet & Latency
               </Link>
               <Link
-                href="#cli"
+                href="/#cli"
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-xs font-bold text-slate-700 hover:text-bulverse-blue"
               >

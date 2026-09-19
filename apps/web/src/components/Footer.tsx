@@ -115,11 +115,11 @@ export const Footer: React.FC = () => {
               Services
             </h4>
             <ul className="space-y-2 text-slate-600">
-              <li><Link href="#cloud-vps" className="hover:text-bulverse-blue transition-colors py-1 block">Cloud VPS</Link></li>
-              <li><Link href="#website-hosting" className="hover:text-bulverse-blue transition-colors py-1 block">Website Hosting</Link></li>
-              <li><Link href="#cloud-storage" className="hover:text-bulverse-blue transition-colors py-1 block">Cloud Storage</Link></li>
-              <li><Link href="#cloud-networking" className="hover:text-bulverse-blue transition-colors py-1 block">Cloud Networking</Link></li>
-              <li><Link href="#trading-infrastructure" className="hover:text-bulverse-blue transition-colors py-1 block">Trading VPS</Link></li>
+              <li><Link href="/#cloud-vps" className="hover:text-bulverse-blue transition-colors py-1 block">Cloud VPS</Link></li>
+              <li><Link href="/#website-hosting" className="hover:text-bulverse-blue transition-colors py-1 block">Website Hosting</Link></li>
+              <li><Link href="/#cloud-storage" className="hover:text-bulverse-blue transition-colors py-1 block">Cloud Storage</Link></li>
+              <li><Link href="/#cloud-networking" className="hover:text-bulverse-blue transition-colors py-1 block">Cloud Networking</Link></li>
+              <li><Link href="/#trading-infrastructure" className="hover:text-bulverse-blue transition-colors py-1 block">Trading VPS</Link></li>
             </ul>
           </div>
 
@@ -129,8 +129,9 @@ export const Footer: React.FC = () => {
               Platform
             </h4>
             <ul className="space-y-2 text-slate-600">
-              <li><Link href="#datacenters" className="hover:text-bulverse-blue transition-colors py-1 block">Global Fleet</Link></li>
-              <li><Link href="#cli" className="hover:text-bulverse-blue transition-colors py-1 block">CLI & API</Link></li>
+              <li><Link href="/about" className="hover:text-bulverse-blue font-bold text-[#04052D] transition-colors py-1 block">About Bulverse</Link></li>
+              <li><Link href="/#datacenters" className="hover:text-bulverse-blue transition-colors py-1 block">Global Fleet</Link></li>
+              <li><Link href="/#cli" className="hover:text-bulverse-blue transition-colors py-1 block">CLI & API</Link></li>
               <li><a href="https://portal.bulverse.cloud/submitticket.php" target="_blank" rel="noopener noreferrer" className="hover:text-bulverse-blue transition-colors py-1 block">24/7 Support</a></li>
               <li><a href="https://portal.bulverse.cloud/serverstatus.php" target="_blank" rel="noopener noreferrer" className="hover:text-bulverse-blue transition-colors py-1 block">Fleet Uptime</a></li>
             </ul>

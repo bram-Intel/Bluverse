@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { Navbar } from '../components/Navbar';
 import { Hero } from '../components/Hero';
 import { TrustBadges } from '../components/TrustBadges';
@@ -95,7 +96,7 @@ export default function HomePage() {
                     Bulverse separates the customer storefront, the commerce automation engine, and the compute hypervisor fleet. Launch with confidence and expand your compute capacity without changing a single line of customer-facing architecture.
                   </p>
                   
-                  <div className="pt-2 flex flex-col sm:flex-row gap-3">
+                  <div className="pt-2 flex flex-col sm:flex-row flex-wrap gap-3">
                     <a
                       href="https://portal.bulverse.cloud/cart.php"
                       target="_blank"
@@ -106,13 +107,21 @@ export default function HomePage() {
                       <ArrowRight className="h-4 w-4" />
                     </a>
 
+                    <Link
+                      href="/about"
+                      className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-blue-200 bg-blue-50/80 px-6 py-3.5 text-xs font-bold text-bulverse-blue hover:bg-blue-100 hover:border-blue-300 transition-colors min-h-[46px]"
+                    >
+                      <span>About Bulverse Ecosystem</span>
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+
                     <a
                       href="https://portal.bulverse.cloud/contact.php"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white/90 px-6 py-3.5 text-xs font-bold text-slate-800 hover:border-bulverse-blue hover:text-bulverse-blue transition-colors min-h-[46px]"
                     >
-                      <span>Contact Solutions Engineer</span>
+                      <span>Contact Solutions</span>
                     </a>
                   </div>
                 </div>
