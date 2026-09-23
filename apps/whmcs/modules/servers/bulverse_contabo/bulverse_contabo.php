@@ -66,8 +66,8 @@ function bulverse_contabo_ConfigOptions()
         'defaultImageId' => [
             'FriendlyName' => 'Default OS Image ID',
             'Type' => 'text',
-            'Size' => '32',
-            'Default' => 'ubuntu-22.04',
+            'Size' => '40',
+            'Default' => 'afecbb85-e2fc-46f0-9684-b46b1faf00bb',
             'Description' => 'e.g. ubuntu-22.04, debian-12, almalinux-9',
         ],
     ];
@@ -130,6 +130,14 @@ function bulverse_contabo_get_token($params)
 /**
  * Helper to make authenticated Contabo API requests
  */
+function bulverse_contabo_uuid4()
+{
+    $data = random_bytes(16);
+    $data[6] = chr(ord($data[6]) & 0x0f | 0x40);
+    $data[8] = chr(ord($data[8]) & 0x3f | 0x80);
+    return vsprintf('%s%s-%s-%s-%s-%s%s%s', str_split(bin2hex($data), 4));
+}
+
 function bulverse_contabo_api_request($endpoint, $method = 'GET', $body = null, $token = '')
 {
     $url = 'https://api.contabo.com' . $endpoint;
@@ -138,7 +146,7 @@ function bulverse_contabo_api_request($endpoint, $method = 'GET', $body = null, 
     $headers = [
         'Authorization: Bearer ' . $token,
         'Content-Type: application/json',
-        'x-request-id: ' . uniqid('bulverse_whmcs_', true),
+        'x-request-id: ' . bulverse_contabo_uuid4(),
     ];
 
     curl_setopt($ch, CURLOPT_URL, $url);
