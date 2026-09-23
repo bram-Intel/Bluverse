@@ -41,12 +41,13 @@ function bulverse_contabo_ConfigOptions()
             'FriendlyName' => 'Contabo Product ID',
             'Type' => 'dropdown',
             'Options' => [
-                'V1' => 'Cloud VPS 1 (4 vCPU / 6 GB RAM / 100 GB NVMe)',
-                'V2' => 'Cloud VPS 2 (6 vCPU / 16 GB RAM / 200 GB NVMe)',
-                'V3' => 'Cloud VPS 3 (8 vCPU / 30 GB RAM / 400 GB NVMe)',
-                'V4' => 'Cloud VPS 4 (10 vCPU / 60 GB RAM / 800 GB NVMe)',
+                'V153' => 'Cloud VPS 4 (4 vCPU / 8 GB RAM / 100 GB NVMe)',
+                'V154' => 'Cloud VPS 6 (6 vCPU / 12 GB RAM / 200 GB NVMe)',
+                'V155' => 'Cloud VPS 8 (8 vCPU / 24 GB RAM / 300 GB NVMe)',
+                'V156' => 'Cloud VPS 12 (12 vCPU / 48 GB RAM / 400 GB NVMe)',
+                'V157' => 'Cloud VPS 16 (16 vCPU / 64 GB RAM / 500 GB NVMe)',
             ],
-            'Default' => 'V1',
+            'Default' => 'V153',
             'Description' => 'Select the underlying Contabo compute hardware plan.',
         ],
         'region' => [
