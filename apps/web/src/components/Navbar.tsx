@@ -85,7 +85,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
                     </div>
                     <div>
                       <div className="text-xs font-bold text-slate-900">Website Hosting</div>
-                      <div className="text-[11px] text-slate-500">Fast & secure with cPanel included</div>
+                      <div className="text-[11px] text-slate-500">OpenLiteSpeed &amp; CyberPanel cloud hosting</div>
                     </div>
                   </Link>
 
@@ -99,7 +99,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
                     </div>
                     <div>
                       <div className="text-xs font-bold text-slate-900">Trading Infrastructure</div>
-                      <div className="text-[11px] text-slate-500">Low-latency 24/7 stable access</div>
+                      <div className="text-[11px] text-slate-500">Windows Server 24/7 RDP for MT4/MT5</div>
                     </div>
                   </Link>
                 </div>
@@ -226,8 +226,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
                   <Server className="h-5 w-5" />
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-slate-900">Cloud VPS & Dedicated</div>
-                  <div className="text-[11px] text-slate-500">1-2GB, 4-6GB, 8GB+ AMD EPYC™</div>
+                  <div className="text-sm font-bold text-slate-900">Cloud VPS &amp; Dedicated</div>
+                  <div className="text-[11px] text-slate-500">8GB, 12GB, 24GB RAM NVMe Compute</div>
                 </div>
               </Link>
 
@@ -241,7 +241,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
                 </div>
                 <div>
                   <div className="text-sm font-bold text-slate-900">Website Hosting</div>
-                  <div className="text-[11px] text-slate-500">Fast NVMe with cPanel included</div>
+                  <div className="text-[11px] text-slate-500">Fast NVMe with CyberPanel &amp; LiteSpeed</div>
                 </div>
               </Link>
 
@@ -254,8 +254,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
                   <Database className="h-5 w-5" />
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-slate-900">Cloud Storage</div>
-                  <div className="text-[11px] text-slate-500">S3 API Compatible, 100GB to 1TB+</div>
+                  <div className="text-sm font-bold text-slate-900">Cloud Storage Vaults</div>
+                  <div className="text-[11px] text-slate-500">MinIO S3 &amp; SFTP, 300GB to 1TB</div>
                 </div>
               </Link>
 
@@ -268,8 +268,8 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
                   <Network className="h-5 w-5" />
                 </div>
                 <div>
-                  <div className="text-sm font-bold text-slate-900">Cloud Networking & VPN</div>
-                  <div className="text-[11px] text-slate-500">Dedicated IPs, Anycast DNS, DDoS</div>
+                  <div className="text-sm font-bold text-slate-900">Cloud Networking &amp; VPN</div>
+                  <div className="text-[11px] text-slate-500">WireGuard Gateways &amp; Clean IPv4</div>
                 </div>
               </Link>
 
@@ -283,7 +283,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currency, onToggleCurrency }) =>
                 </div>
                 <div>
                   <div className="text-sm font-bold text-slate-900">Trading Infrastructure</div>
-                  <div className="text-[11px] text-slate-500">Sub-ms liquidity broker cross-connect</div>
+                  <div className="text-[11px] text-slate-500">Windows Server 24/7 RDP for MT4/MT5</div>
                 </div>
               </Link>
             </div>

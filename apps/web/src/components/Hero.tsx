@@ -97,7 +97,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenConfigurator }) => {
               </div>
               <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-white/85 backdrop-blur-xs border border-slate-200/80 shadow-2xs text-[11px] sm:text-xs font-semibold text-slate-800">
                 <CheckCircle2 className="h-3.5 w-3.5 text-bulverse-blue shrink-0" />
-                <span className="truncate">cPanel Included</span>
+                <span className="truncate">CyberPanel &amp; LiteSpeed</span>
               </div>
               <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-white/85 backdrop-blur-xs border border-slate-200/80 shadow-2xs text-[11px] sm:text-xs font-semibold text-slate-800">
                 <CheckCircle2 className="h-3.5 w-3.5 text-bulverse-blue shrink-0" />

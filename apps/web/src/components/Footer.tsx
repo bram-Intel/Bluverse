@@ -132,8 +132,8 @@ export const Footer: React.FC = () => {
               <li><Link href="/about" className="hover:text-bulverse-blue font-bold text-[#04052D] transition-colors py-1 block">About Bulverse</Link></li>
               <li><Link href="/#datacenters" className="hover:text-bulverse-blue transition-colors py-1 block">Global Fleet</Link></li>
               <li><Link href="/#cli" className="hover:text-bulverse-blue transition-colors py-1 block">CLI & API</Link></li>
-              <li><a href="https://portal.bulverse.cloud/submitticket.php" target="_blank" rel="noopener noreferrer" className="hover:text-bulverse-blue transition-colors py-1 block">24/7 Support</a></li>
-              <li><a href="https://portal.bulverse.cloud/serverstatus.php" target="_blank" rel="noopener noreferrer" className="hover:text-bulverse-blue transition-colors py-1 block">Fleet Uptime</a></li>
+              <li><a href="https://portal.bulverse.cloud/submitticket.php" target="_blank" rel="noopener noreferrer" className="hover:text-bulverse-blue transition-colors py-1 block">24/7 Support Desk</a></li>
+              <li><a href="https://portal.bulverse.cloud/terms.php" target="_blank" rel="noopener noreferrer" className="hover:text-bulverse-blue transition-colors py-1 block">Legal, TOS &amp; SLA</a></li>
             </ul>
           </div>
 
@@ -146,6 +146,7 @@ export const Footer: React.FC = () => {
               <li><a href="https://portal.bulverse.cloud/clientarea.php" target="_blank" rel="noopener noreferrer" className="hover:text-bulverse-blue transition-colors flex items-center gap-1 font-semibold py-1">Console <ArrowUpRight className="h-3 w-3" /></a></li>
               <li><a href="https://portal.bulverse.cloud/cart.php" target="_blank" rel="noopener noreferrer" className="hover:text-bulverse-blue transition-colors py-1 block">Deploy Instance</a></li>
               <li><a href="https://portal.bulverse.cloud/clientarea.php?action=invoices" target="_blank" rel="noopener noreferrer" className="hover:text-bulverse-blue transition-colors py-1 block">Invoices & Billing</a></li>
+              <li><a href="https://portal.bulverse.cloud/supporttickets.php" target="_blank" rel="noopener noreferrer" className="hover:text-bulverse-blue transition-colors py-1 block">Support Tickets</a></li>
             </ul>
           </div>
 
@@ -155,9 +156,10 @@ export const Footer: React.FC = () => {
         <div className="pt-6 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-slate-500 text-center sm:text-left">
           <p>© {new Date().getFullYear()} Bulverse Cloud Technologies. All rights reserved.</p>
           <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 font-medium">
+            <a href="https://portal.bulverse.cloud/terms.php" target="_blank" rel="noopener noreferrer" className="hover:text-bulverse-blue transition-colors">Terms &amp; SLA</a>
+            <a href="https://portal.bulverse.cloud/terms.php#privacy" target="_blank" rel="noopener noreferrer" className="hover:text-bulverse-blue transition-colors">Privacy Policy</a>
             <span>99.9% SLA</span>
             <span>PCIe Gen4 NVMe</span>
-            <span>Zero Lock-in</span>
           </div>
         </div>
 

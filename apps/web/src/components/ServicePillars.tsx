@@ -302,9 +302,9 @@ const defaultTheme = {
 
 export const ServicePillars: React.FC<ServicePillarsProps> = ({ currency, onSelectTier }) => {
   const [activeTierMap, setActiveTierMap] = useState<Record<string, number>>({
-    'cloud-vps': 1,
-    'website-hosting': 1,
-    'cloud-storage': 1,
+    'cloud-vps': 0,
+    'website-hosting': 0,
+    'cloud-storage': 0,
     'cloud-networking': 0,
     'trading-infrastructure': 0,
     'custom-infrastructure': 0,
@@ -420,33 +420,58 @@ export const ServicePillars: React.FC<ServicePillarsProps> = ({ currency, onSele
 
                 {/* Bottom Pricing & Action Section */}
                 <div className="relative z-20 mt-2">
-                  {/* Poster Solid Deep Blue Bottom Pill Bar */}
+                  {/* Interactive Solid Deep Blue Bottom Tier Selector Bar */}
                   <div className="mb-4 sm:mb-5">
-                    <div className="rounded-xl bg-[#0312B4] px-2 sm:px-3.5 py-2 sm:py-2.5 shadow-sm text-center min-w-0 max-w-full">
-                      <div className="text-[9px] xs:text-[10px] sm:text-[11px] font-mono font-bold tracking-wider text-white uppercase flex items-center justify-center gap-1 sm:gap-1.5 flex-wrap">
-                        {service.pills.map((pill, idx) => (
-                          <React.Fragment key={idx}>
-                            <span className="whitespace-nowrap">{pill}</span>
-                            {idx < service.pills.length - 1 && (
-                              <span className="text-white/40">|</span>
-                            )}
-                          </React.Fragment>
-                        ))}
+                    <div className="rounded-xl bg-[#0312B4] p-1.5 shadow-sm text-center min-w-0 max-w-full">
+                      <div className="text-[9px] xs:text-[10px] sm:text-[11px] font-mono font-bold tracking-wider text-white uppercase flex items-center justify-center gap-1 flex-wrap">
+                        {service.tiers.map((t, idx) => {
+                          const isSelected = idx === Math.min(currentTierIndex, service.tiers.length - 1);
+                          const shortLabel =
+                            t.pills[0] ||
+                            t.name.replace(/Cloud VPS|LiteSpeed |Storage Vault |WireGuard /gi, '');
+                          return (
+                            <button
+                              key={t.id}
+                              type="button"
+                              onClick={() =>
+                                setActiveTierMap((prev) => ({
+                                  ...prev,
+                                  [service.id]: idx,
+                                }))
+                              }
+                              className={`px-2 py-1 rounded-lg transition-all whitespace-nowrap cursor-pointer ${
+                                isSelected
+                                  ? 'bg-white text-[#0312B4] font-black shadow-2xs'
+                                  : 'text-white/80 hover:text-white hover:bg-white/10'
+                              }`}
+                            >
+                              {shortLabel}
+                            </button>
+                          );
+                        })}
                       </div>
                     </div>
                   </div>
 
-                  {/* Price Row */}
-                  <div className="flex items-baseline justify-between mb-4 pt-2 pb-1 border-t border-slate-100/90 bg-white/80 backdrop-blur-[2px] rounded-xl px-2.5 -mx-2.5">
-                    <div>
-                      <span className="text-2xl sm:text-3xl font-black font-display text-[#04052D]">
-                        {currentTier ? formatPrice(currentTier.priceNgn, currentTier.priceUsd) : 'Custom'}
-                      </span>
-                      <span className="text-xs text-slate-500 font-mono"> / {currentTier?.billingPeriod || 'mo'}</span>
+                  {/* Selected Tier Name & Price Row */}
+                  <div className="mb-4 pt-2 pb-1 border-t border-slate-100/90 bg-white/80 backdrop-blur-[2px] rounded-xl px-2.5 -mx-2.5">
+                    <div className="flex items-center justify-between text-[11px] font-mono font-bold text-slate-600 mb-0.5">
+                      <span className="truncate">{currentTier?.name}</span>
+                      {currentTier?.specs?.storage && (
+                        <span className="text-bulverse-blue shrink-0 ml-2">{currentTier.specs.storage}</span>
+                      )}
                     </div>
-                    <div className="text-[11px] font-mono font-bold text-emerald-600 flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-50/90 border border-emerald-200/80">
-                      <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                      Instant Setup
+                    <div className="flex items-baseline justify-between">
+                      <div>
+                        <span className="text-2xl sm:text-3xl font-black font-display text-[#04052D]">
+                          {currentTier ? formatPrice(currentTier.priceNgn, currentTier.priceUsd) : 'Custom'}
+                        </span>
+                        <span className="text-xs text-slate-500 font-mono"> / {currentTier?.billingPeriod || 'mo'}</span>
+                      </div>
+                      <div className="text-[11px] font-mono font-bold text-emerald-600 flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-50/90 border border-emerald-200/80">
+                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                        Instant Setup
+                      </div>
                     </div>
                   </div>
 
@@ -455,7 +480,7 @@ export const ServicePillars: React.FC<ServicePillarsProps> = ({ currency, onSele
                     onClick={() => onSelectTier(service, currentTier)}
                     className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-white hover:bg-bulverse-blue px-4 py-3 text-xs font-bold uppercase tracking-wider text-slate-800 hover:text-white border border-slate-200 hover:border-bulverse-blue shadow-xs active:scale-[0.98] transition-all duration-150 min-h-[48px]"
                   >
-                    <span>Configure {service.title.split(' ')[0]}</span>
+                    <span>Configure {currentTier?.name || service.title.split(' ')[0]}</span>
                     <ArrowRight className="h-4 w-4 shrink-0" />
                   </button>
                 </div>

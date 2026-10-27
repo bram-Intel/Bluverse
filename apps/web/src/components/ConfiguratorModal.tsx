@@ -36,8 +36,8 @@ export const ConfiguratorModal: React.FC<ConfiguratorModalProps> = ({
     initialTier || currentCategory.tiers[0]
   );
   const [selectedOs, setSelectedOs] = useState('ubuntu-24-04');
-  const [selectedRegion, setSelectedRegion] = useState('fra');
-  const [addonBackups, setAddonBackups] = useState(true);
+  const [selectedRegion, setSelectedRegion] = useState('eu');
+  const [addonBackups, setAddonBackups] = useState(false);
   const [addonDedicatedIp, setAddonDedicatedIp] = useState(false);
   const [hostname, setHostname] = useState('vps-node-01.bulverse.cloud');
   const [domainName, setDomainName] = useState('mybusiness.com');
@@ -65,23 +65,34 @@ export const ConfiguratorModal: React.FC<ConfiguratorModalProps> = ({
 
   if (!isOpen) return null;
 
-  const isComputeOrTrading =
-    currentCategory.id === 'cloud-vps' || currentCategory.id === 'trading-infrastructure';
+  const isCloudVps = currentCategory.id === 'cloud-vps';
+  const isTrading = currentCategory.id === 'trading-infrastructure';
+  const isComputeOrTrading = isCloudVps || isTrading;
   const isHosting = currentCategory.id === 'website-hosting';
   const isStorage = currentCategory.id === 'cloud-storage';
   const isNetworking = currentCategory.id === 'cloud-networking';
   const isCustom = currentCategory.id === 'custom-infrastructure';
 
-  // Pricing calculations
+  const activeDatacenter = DATACENTERS.find((d) => d.id === selectedRegion) || DATACENTERS[0];
+
+  // Pricing calculations synchronized with WHMCS tblpricing
   const basePrice = currency === 'NGN' ? selectedTier.priceNgn : selectedTier.priceUsd;
   const backupPrice = currency === 'NGN' ? 3000 : 2.0;
-  const ipPrice = currency === 'NGN' ? 3750 : 2.5;
-  const windowsPrice = currency === 'NGN' ? 15000 : 10.0;
-  const osPrice = isComputeOrTrading && selectedOs === 'windows-2022' ? windowsPrice : 0;
+  const ipPrice = currency === 'NGN' ? 5250 : 3.5;
+  const windowsPrice = currency === 'NGN' ? 25500 : 16.99;
+  // Trading VPS tiers already include Windows Server 2022 license in basePrice
+  const osPrice = isCloudVps && selectedOs === 'windows-2022' ? windowsPrice : 0;
+  const regionSurcharge =
+    isComputeOrTrading || isStorage
+      ? currency === 'NGN'
+        ? activeDatacenter.surchargeNgn
+        : activeDatacenter.surchargeUsd
+      : 0;
 
   const totalPrice =
     basePrice +
     osPrice +
+    regionSurcharge +
     (isComputeOrTrading && addonBackups ? backupPrice : 0) +
     (isComputeOrTrading && addonDedicatedIp ? ipPrice : 0);
 
@@ -90,35 +101,46 @@ export const ConfiguratorModal: React.FC<ConfiguratorModalProps> = ({
       ? `₦${totalPrice.toLocaleString()}`
       : `$${totalPrice.toFixed(2)}`;
 
-  const osList = [
-    { id: 'ubuntu-24-04', name: 'Ubuntu 24.04 LTS', desc: 'Recommended for Docker, Node, Python & Web apps' },
-    { id: 'debian-12', name: 'Debian 12 Bookworm', desc: 'Ultra-stable minimal Linux kernel' },
-    { id: 'almalinux-9', name: 'AlmaLinux 9.4', desc: 'Enterprise RHEL binary compatible' },
-    { id: 'windows-2022', name: 'Windows Server 2022', desc: 'Standard GUI with RDP (+ license fee applies)' },
-  ];
+  const osList = isTrading
+    ? [
+        { id: 'windows-2022', name: 'Windows Server 2022 Standard (Included)', desc: 'Pre-configured RDP GUI for MetaTrader 4/5 & Trading Bots' },
+        { id: 'ubuntu-24-04', name: 'Ubuntu 24.04 LTS', desc: 'For Python/Node/C++ algorithmic trading engines' },
+      ]
+    : [
+        { id: 'ubuntu-24-04', name: 'Ubuntu 24.04 LTS (Included)', desc: 'Recommended for Docker, Node, Python & Web apps' },
+        { id: 'debian-12', name: 'Debian 12 Bookworm (Included)', desc: 'Ultra-stable minimal Linux kernel' },
+        { id: 'almalinux-9', name: 'AlmaLinux 9 (Included)', desc: 'Enterprise RHEL binary compatible' },
+        { id: 'windows-2022', name: 'Windows Server 2022 Standard', desc: `Full Desktop GUI with RDP (+${currency === 'NGN' ? '₦25,500' : '$16.99'}/mo)` },
+      ];
 
   const handleDeploy = () => {
     const pid = selectedTier.whmcsPid;
+    const currId = currency === 'NGN' ? 2 : 1;
 
-    if (isComputeOrTrading) {
+    if (isComputeOrTrading || isStorage) {
       const osMap: Record<string, number> = {
         'ubuntu-24-04': 1,
         'debian-12': 3,
         'almalinux-9': 4,
         'windows-2022': 5,
       };
-      const osSubId = osMap[selectedOs] || 1;
-      const regionSubId = selectedRegion === 'lon' ? 7 : 6;
+      const osSubId = isTrading ? 5 : isStorage ? 1 : (osMap[selectedOs] || 1);
+      const regionSubId = activeDatacenter.subId || 6;
       const backupSubId = addonBackups ? 9 : 8;
       const ipSubId = addonDedicatedIp ? 11 : 10;
 
-      const whmcsUrl = `https://portal.bulverse.cloud/cart.php?a=add&pid=${pid}&billingcycle=monthly&configoption[1]=${osSubId}&configoption[2]=${regionSubId}&configoption[3]=${backupSubId}&configoption[4]=${ipSubId}&hostname=${encodeURIComponent(
+      const whmcsUrl = `https://portal.bulverse.cloud/cart.php?a=add&pid=${pid}&currency=${currId}&billingcycle=monthly&configoption[1]=${osSubId}&configoption[2]=${regionSubId}&configoption[3]=${backupSubId}&configoption[4]=${ipSubId}&hostname=${encodeURIComponent(
         hostname
       )}`;
       window.open(whmcsUrl, '_blank');
+    } else if (isHosting) {
+      const whmcsUrl = `https://portal.bulverse.cloud/cart.php?a=add&pid=${pid}&currency=${currId}&billingcycle=monthly&sld=${encodeURIComponent(
+        domainName.split('.')[0] || 'mybusiness'
+      )}&tld=.${encodeURIComponent(domainName.split('.').slice(1).join('.') || 'com')}`;
+      window.open(whmcsUrl, '_blank');
     } else {
-      // Direct category/product checkout
-      const whmcsUrl = `https://portal.bulverse.cloud/cart.php?a=add&pid=${pid}&billingcycle=monthly`;
+      // Direct category/product checkout with currency sync
+      const whmcsUrl = `https://portal.bulverse.cloud/cart.php?a=add&pid=${pid}&currency=${currId}&billingcycle=monthly`;
       window.open(whmcsUrl, '_blank');
     }
   };
@@ -355,7 +377,7 @@ export const ConfiguratorModal: React.FC<ConfiguratorModalProps> = ({
               <div className="p-3.5 rounded-xl border border-blue-100 bg-blue-50/50 flex items-start gap-3">
                 <Check className="h-4 w-4 text-bulverse-blue shrink-0 mt-0.5" />
                 <div className="text-xs text-slate-700">
-                  <span className="font-bold">Included Free:</span> Free Wildcard SSL, cPanel Control Panel, Unlimited Email Accounts & DDoS Shield.
+                  <span className="font-bold">Included Free:</span> Let&apos;s Encrypt AutoSSL, CyberPanel &amp; OpenLiteSpeed Control Panel, Professional Business Email &amp; LSCache.
                 </div>
               </div>
             </div>
@@ -364,22 +386,22 @@ export const ConfiguratorModal: React.FC<ConfiguratorModalProps> = ({
           {isStorage && (
             <div className="pt-2 border-t border-slate-100 space-y-3">
               <div className="text-[11px] sm:text-xs font-mono font-bold uppercase tracking-wider text-bulverse-blue">
-                3. Storage Cluster Architecture
+                3. Storage Vault Architecture (Pre-Installed via Cloud-Init)
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                 <div className="p-3 rounded-xl border border-bulverse-blue bg-blue-50/80 ring-1 ring-bulverse-blue">
                   <div className="flex items-center gap-2 font-bold text-xs text-slate-900 mb-1">
                     <Database className="h-4 w-4 text-bulverse-blue" />
-                    <span>S3 Compatible API</span>
+                    <span>MinIO S3 API &amp; Console</span>
                   </div>
-                  <p className="text-[10px] text-slate-600">Standard AWS S3 API endpoints for backups, apps & assets.</p>
+                  <p className="text-[10px] text-slate-600">Standard AWS S3 API (:9000) &amp; Web Console (:9001) pre-installed automatically.</p>
                 </div>
                 <div className="p-3 rounded-xl border border-slate-200 bg-white">
                   <div className="flex items-center gap-2 font-bold text-xs text-slate-900 mb-1">
                     <HardDrive className="h-4 w-4 text-slate-600" />
-                    <span>Nextcloud WebDAV</span>
+                    <span>Root SSH, SFTP &amp; Rclone</span>
                   </div>
-                  <p className="text-[10px] text-slate-600">Cross-platform desktop & mobile file synchronization.</p>
+                  <p className="text-[10px] text-slate-600">Dedicated Storage VPS with full root access for Rsync, SFTP, and Borg backups.</p>
                 </div>
               </div>
             </div>
